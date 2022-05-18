@@ -12,6 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts/public');
+});
+
+Route::get('/catalogo', function () {
+    return view('catalogo');
 });
 
