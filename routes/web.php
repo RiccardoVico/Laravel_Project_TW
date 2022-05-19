@@ -19,3 +19,17 @@ Route::get('/catalogo', function () {
     return view('catalogo');
 });
 
+Route::get('/chi_siamo', function () {
+    return view('chi_siamo');
+});
+
+Route::get('/faq', function () {
+    return view('faq');
+});
+
+Route::view('/login', 'login')
+        ->name('login');
+
+Route::view('/register', 'register')
+        ->name('register');
+

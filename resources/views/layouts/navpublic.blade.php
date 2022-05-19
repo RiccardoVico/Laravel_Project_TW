@@ -15,16 +15,16 @@
             <a href="catalogo" class="nav-link">Catalogo</a>
           </li>
           <li class="nav-item">
-            <a href="chi_siamo.html" class="nav-link">Chi Siamo</a>
+            <a href="chi_siamo" class="nav-link">Chi Siamo</a>
           </li>
           <li class="nav-item">
-            <a href="faq.html" class="nav-link">FAQ</a>
+            <a href="faq" class="nav-link">FAQ</a>
           </li>
           <li class="nav-item">
-            <a href="login_form.html" class="nav-link">Login</a>
+            <a href="{{ route('login') }}" class="nav-link">Login</a>
           </li>
           <li class="nav-item">
-            <a href="registration_form_modificato.html" class="nav-link">Registrazione</a>
+            <a href="{{ route('register') }}" class="nav-link">Registrazione</a>
           </li>
         </ul>
       </div>
