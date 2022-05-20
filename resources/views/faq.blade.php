@@ -10,10 +10,6 @@
   <title>Revetive - Free Business Corporate Template By MACode ID</title>
 
   <link rel="stylesheet" href="css/bootstrap.css">
-  <!-- <link rel="stylesheet" href="../css/maicons.css"> -->
-  <!-- <link rel="stylesheet" href="../vendor/animate/animate.css"> -->
-  <!-- <link rel="stylesheet" href="../owl-carousel/css/owl.carousel.css"> -->
-  <link rel="stylesheet" href="vendor/fancybox/css/jquery.fancybox.css">
   <link rel="stylesheet" href="css/theme.css">
 
 </head>
@@ -46,8 +42,63 @@
 
   <main>
     <div class="page-section">
-      
-    </div> 
+      <div class="list-group w-75" style="margin-left: auto; margin-right: auto">
+        <a href="#shortExampleAnswer1collapse" data-toggle="collapse" aria-expanded="false"
+            aria-controls="shortExampleAnswer1collapse" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Question 1</h5>
+            </div>
+            <p class="mb-1">
+                Short & concise version of the answer.
+            </p>
+            <small><u>Learn more</u></small>
+            <!-- Collapsed content -->
+            <div class="collapse mt-3" id="shortExampleAnswer1collapse">
+                Detailed and comprehensive answer goes here. pariatur cliche reprehenderit, enim eiusmod
+                high
+                life accusamus terry richardson ad
+                squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+                sapiente ea proident.
+            </div>
+        </a>
+        <a href="#shortExampleAnswer2collapse" data-toggle="collapse" aria-expanded="false"
+            aria-controls="shortExampleAnswer1collapse" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Question 2</h5>
+            </div>
+            <p class="mb-1">
+                Short & concise version of the answer.
+            </p>
+            <small class="text-muted"><u>Learn more</u></small>
+            <!-- Collapsed content -->
+            <div class="collapse mt-3" id="shortExampleAnswer2collapse">
+                Detailed and comprehensive answer goes here. pariatur cliche reprehenderit, enim eiusmod
+                high
+                life accusamus terry richardson ad
+                squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+                sapiente ea proident.
+            </div>
+        </a>
+        <a href="#shortExampleAnswer3collapse" data-toggle="collapse" aria-expanded="false"
+            aria-controls="shortExampleAnswer1collapse" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Question 3</h5>
+            </div>
+            <p class="mb-1">
+                Short & concise version of the answer.
+            </p>
+            <small class="text-muted"><u>Learn more</u></small>
+            <!-- Collapsed content -->
+            <div class="collapse mt-3" id="shortExampleAnswer3collapse">
+                Detailed and comprehensive answer goes here. pariatur cliche reprehenderit, enim eiusmod
+                high
+                life accusamus terry richardson ad
+                squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+                sapiente ea proident.
+            </div>
+        </a>
+    </div>
+    </div>
   </main>
 
     <footer class="page-footer">
