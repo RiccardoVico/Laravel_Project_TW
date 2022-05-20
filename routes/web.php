@@ -15,9 +15,7 @@ Route::get('/', function () {
     return view('layouts/public');
 });
 
-Route::get('/catalogo', function () {
-    return view('catalogo');
-});
+Route::get('/catalogo', 'PublicController@show');
 
 Route::get('/chi_siamo', function () {
     return view('chi_siamo');

@@ -220,7 +220,11 @@
                 </div> 
               </div>
             </main>
+                            <?php
+echo('ciao');
 
+foreach($products as $product)
+           echo( $product->via);?>
         <footer class="page-footer">
             @include('layouts/footer_public')
         </footer>
