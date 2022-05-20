@@ -74,7 +74,7 @@
                     </div>
                     <div class="col-lg-6 py-3">
                       <div class="about-img">
-                        <img src="images/about.jpg" alt="">
+                        <img src="images/chi_siamo.png" alt="">
                       </div>
                     </div>
                   </div>
