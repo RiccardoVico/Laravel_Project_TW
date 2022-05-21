@@ -23,7 +23,7 @@
 
       <div class="row mt-4">
           <div class="col-md-6">
-              <p>Copyright 2020. This template designed by <a href="https://macodeid.com">MACode ID</a></p>
+              <p>Copyright 2022.</p>
           </div>
       </div>
   </div>

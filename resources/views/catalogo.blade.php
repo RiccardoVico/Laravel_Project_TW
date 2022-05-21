@@ -5,7 +5,6 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="copyright" content="MACode ID, https://macodeid.com/">
 
         <title>Catalogo</title>
 
@@ -40,90 +39,66 @@
         </header>
 
         <main>
-            <div class="page-section">
-              <div class="container">
-                <div class="text-center">
-                  <div class="subhead">Our Services</div>
-                  <h2 class="title-section">See what can we do for your Projects</h2>
+          <div class="page-section">
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-md-6 py-3">
+                  <div class="subhead">Catalogo</div>
+                  <h2 class="title-section"></h2>
                 </div>
-        
-                <div class="row justify-content-center">
-                  <div class="col-md-6 col-lg-4 col-xl-3 py-3 mb-3">
-                    <div class="text-center">
-                      <div class="img-fluid mb-4">
-                        <img src="../img/icons/web_development.svg" alt="">
-                      </div>
-                      <h5>Web Development</h5>
-                    </div>
+                <!--<div class="col-md-6 py-3 text-md-right">
+                  <a href="portfolio.html" class="btn btn-outline-primary">Catalogo Completo <span class="mai-arrow-forward ml-2"></span></a>
+                </div>-->
+              </div>
+      
+              <div class="row mt-3">
+                <div class="col-lg-4 py-3">
+                  <div class="portfolio">
+                    <a href="images/portfolio/work-1.jpg" data-fancybox="portfolio">
+                      <img src="images/portfolio/work-1.jpg" alt="">
+                    </a>
                   </div>
-                  <div class="col-md-6 col-lg-4 col-xl-3 py-3 mb-3">
-                    <div class="text-center">
-                      <div class="img-fluid mb-4">
-                        <img src="../img/icons/graphics_design.svg" alt="">
-                      </div>
-                      <h5>Graphics Design</h5>
-                    </div>
-                  </div>
-        
-                  <div class="col-md-6 col-lg-4 col-xl-3 py-3 mb-3">
-                    <div class="text-center">
-                      <div class="img-fluid mb-4">
-                        <img src="../img/icons/seo_and_marketing.svg" alt="">
-                      </div>
-                      <h5>SEO & Marketing</h5>
-                    </div>
-                  </div>
-        
-                  <div class="col-md-6 col-lg-4 col-xl-3 py-3 mb-3">
-                    <div class="text-center">
-                      <div class="img-fluid mb-4">
-                        <img src="../img/icons/customer_services.svg" alt="">
-                      </div>
-                      <h5>Customer Services</h5>
-                    </div>
-                  </div>
-        
-                  <div class="col-md-6 col-lg-4 col-xl-3 py-3 mb-3">
-                    <div class="text-center">
-                      <div class="img-fluid mb-4">
-                        <img src="../img/icons/app_development.svg" alt="">
-                      </div>
-                      <h5>App Development</h5>
-                    </div>
-                  </div>
-        
-                  <div class="col-md-6 col-lg-4 col-xl-3 py-3 mb-3">
-                    <div class="text-center">
-                      <div class="img-fluid mb-4">
-                        <img src="../img/icons/ui_ux_design.svg" alt="">
-                      </div>
-                      <h5>UI/UX Design</h5>
-                    </div>
-                  </div>
-        
-                  <div class="col-md-6 col-lg-4 col-xl-3 py-3 mb-3">
-                    <div class="text-center">
-                      <div class="img-fluid mb-4">
-                        <img src="../img/icons/product_design.svg" alt="">
-                      </div>
-                      <h5>Product Design</h5>
-                    </div>
-                  </div>
-        
-                  <div class="col-md-6 col-lg-4 col-xl-3 py-3 mb-3">
-                    <div class="text-center">
-                      <div class="img-fluid mb-4">
-                        <img src="../img/icons/data_analyst.svg" alt="">
-                      </div>
-                      <h5>Data Analyst</h5>
-                    </div>
-                  </div>
-        
                 </div>
-              </div> <!-- .container -->
-            </div>
+                <div class="col-lg-4 py-3">
+                  <div class="portfolio">
+                    <a href="images/portfolio/work-2.jpg" data-fancybox="portfolio">
+                      <img src="images/portfolio/work-2.jpg" alt="">
+                    </a>
+                  </div>
+                </div>
+                <div class="col-lg-4 py-3">
+                  <div class="portfolio">
+                    <a href="images/portfolio/work-3.jpg" data-fancybox="portfolio">
+                      <img src="images/portfolio/work-3.jpg" alt="">
+                    </a>
+                  </div>
+                </div>
+                <div class="col-lg-4 py-3">
+                  <div class="portfolio">
+                    <a href="images/portfolio/work-4.jpg" data-fancybox="portfolio">
+                      <img src="images/portfolio/work-4.jpg" alt="">
+                    </a>
+                  </div>
+                </div>
+                <div class="col-lg-4 py-3">
+                  <div class="portfolio">
+                    <a href="images/portfolio/work-5.jpg" data-fancybox="portfolio">
+                      <img src="images/portfolio/work-5.jpg" alt="">
+                    </a>
+                  </div>
+                </div>
+                <div class="col-lg-4 py-3">
+                  <div class="portfolio">
+                    <a href="images/portfolio/work-6.jpg" data-fancybox="portfolio">
+                      <img src="images/portfolio/work-6.jpg" alt="">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
 
-            <div class="page-section">
+            <!--<div class="page-section">
                 <div class="container">
                   <div class="owl-carousel testimonial-carousel">
                     <div class="card-testimonial">
@@ -218,7 +193,7 @@
           
                   </div>
                 </div> 
-              </div>
+              </div>-->
             </main>
 
         <footer class="page-footer">

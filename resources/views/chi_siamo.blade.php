@@ -59,16 +59,18 @@
                       <img src="images/chi_siamo.png" alt="">
                     </div>
                   </div>
-                  <p>
-                    Lavoriamo per facilitare la ricerca di un alloggio in una nuova città, un problema che sta aumentando fra  studenti fuorisede e studenti internazionali.Al contempo, offriamo la possibilità, a coloro che dispongono di alloggi da mettere a disposizione, di gestire la loro offerta in maniera semplice e veloce.
-                    SCEGLI E OFFRI L'ALLOGGIO IDEALE: IL NOSTRO SITO RIUNISCE UNA VASTA GAMMA DI ANNUNCI ALLOGGI PER STUDENTI
-                    Il nostro prodotto offre la possibilità a coloro che dispongono di offerte di affitti di locazione e a coloro che sono alla ricerca di un alloggio (studenti) di far incontrare le loro esigenze.A tal fine, ricordiamo che, la miglior esperienza utente è offerta previa registrazione. Le pagine iniziali, accessibili anche a coloro non registrati, hanno la finalità di illustrare semplicemente il prodotto, il catalogo,..
-                    I locatori, dopo essersi registrati, possono inserire i dati relativi ai locali messi a disposizione, definire le varie specifiche e i vari vincoli, visulizzare gli alloggi che sono stati opzionati, visulizzare i dettagli dei richiedenti.In particolare, per un singolo alloggio, può essere speicifcato se si tratta di uno stanza/appartamento, stanza singola/doppia, la tipologia di utenze disponibili, connessione WI-FI, presenza di climatizzatore, superifice,disponibilità dell'angolo studio,presenza di un locale ricreativo nella casa, prezzo,...
-                    I locatari, dopo essersi registrati, possono scorrere il catalogo e opzionare le varie offerte disponibili a cui sono interessati. E'disponibile anche la funzionalità di filtraggio catalogo per questa tipologia di utenti, in base a:
-                    fascia prezzo, tipogia di alloggio, periodo di locazione, caratteristiche dell'alloggio
-                    Il sito prevede, inoltre, un sistema di messaggistica per gli utenti registarti in modo da permettere la comunicazione fra locatari e locatori: i locatari, infatti, possono comunicare con i proprietari dei vari alloggi disponibili a cui sono interessati e i locatori possono rispondere ai potenziali locatari che hanno opzionato un'offerta. L'opzionamento di un'offerta da parte di uno studente prevede, infatti, l'invio di un messaggio preimpostato al locatore (è possibile anche la modifica).
-                    Il nostro obiettivo è quello di affiancare lo studente nella ricerca di un alloggio nella nuova città che lo ospita, per questo siamo in costante contatto con le varie Università italiane per offrire una migliore esperienza agli studenti.
-                  </p>
+                  <div class="paragrafo" style="margin: 20px">
+                    <p>
+                      Lavoriamo per facilitare la ricerca di un alloggio in una nuova città, un problema che sta aumentando fra  studenti fuorisede e studenti internazionali.Al contempo, offriamo la possibilità, a coloro che dispongono di alloggi da mettere a disposizione, di gestire la loro offerta in maniera semplice e veloce.
+                      SCEGLI E OFFRI L'ALLOGGIO IDEALE: IL NOSTRO SITO RIUNISCE UNA VASTA GAMMA DI ANNUNCI ALLOGGI PER STUDENTI
+                      Il nostro prodotto offre la possibilità a coloro che dispongono di offerte di affitti di locazione e a coloro che sono alla ricerca di un alloggio (studenti) di far incontrare le loro esigenze.A tal fine, ricordiamo che, la miglior esperienza utente è offerta previa registrazione. Le pagine iniziali, accessibili anche a coloro non registrati, hanno la finalità di illustrare semplicemente il prodotto, il catalogo,..
+                      I locatori, dopo essersi registrati, possono inserire i dati relativi ai locali messi a disposizione, definire le varie specifiche e i vari vincoli, visulizzare gli alloggi che sono stati opzionati, visulizzare i dettagli dei richiedenti.In particolare, per un singolo alloggio, può essere speicifcato se si tratta di uno stanza/appartamento, stanza singola/doppia, la tipologia di utenze disponibili, connessione WI-FI, presenza di climatizzatore, superifice,disponibilità dell'angolo studio,presenza di un locale ricreativo nella casa, prezzo,...
+                      I locatari, dopo essersi registrati, possono scorrere il catalogo e opzionare le varie offerte disponibili a cui sono interessati. E'disponibile anche la funzionalità di filtraggio catalogo per questa tipologia di utenti, in base a:
+                      fascia prezzo, tipogia di alloggio, periodo di locazione, caratteristiche dell'alloggio
+                      Il sito prevede, inoltre, un sistema di messaggistica per gli utenti registarti in modo da permettere la comunicazione fra locatari e locatori: i locatari, infatti, possono comunicare con i proprietari dei vari alloggi disponibili a cui sono interessati e i locatori possono rispondere ai potenziali locatari che hanno opzionato un'offerta. L'opzionamento di un'offerta da parte di uno studente prevede, infatti, l'invio di un messaggio preimpostato al locatore (è possibile anche la modifica).
+                      Il nostro obiettivo è quello di affiancare lo studente nella ricerca di un alloggio nella nuova città che lo ospita, per questo siamo in costante contatto con le varie Università italiane per offrire una migliore esperienza agli studenti.
+                    </p>
+                  </div>
                 </div>
               </div> <!-- .container -->
             </div> <!-- .page-section -->

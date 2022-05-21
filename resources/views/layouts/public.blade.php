@@ -7,7 +7,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
           
-            <title>Progetto_TW</title>
+            <title>HomexStudent</title>
           
             <link rel="stylesheet" href="css/bootstrap.css">
             <link rel="stylesheet" href="css/maicons.css">
@@ -33,12 +33,12 @@
                         <img src="images/bg_image_1.jpg" alt="">
                         <div class="img-caption">
                             <div class="subhead"></div>
-                            <h1 class="mb-4">HomexStudents</h1>
+                            <h1 class="mb-4">Homex<span class="fg-primary">Students</span></h1>
                             <a href="#services" class="btn btn-outline-light">Get Started</a>
                         </div>
                     </div>
                     <div class="hero-carousel-item">
-                        <img src="images/bg_image_2.jpg" alt="">
+                        <img src="images/bg_image_4.png" alt="">
                         <div class="img-caption">
                             <h1 class="mb-4">We combine Design, Thinking, and Technical</h1>
                             <a href="#services" class="btn btn-outline-light">Get Started</a>
@@ -46,7 +46,7 @@
                         </div>
                     </div>
                     <div class="hero-carousel-item">
-                        <img src="images/bg_image_3.jpg" alt="">
+                        <img src="images/bg_image_8.png" alt="">
                         <div class="img-caption">
                             <div class="subhead">Easy way to build perfect website</div>
                             <h1 class="mb-4">Beautify handcrafted templates for your website</h1>
@@ -70,7 +70,7 @@
                          Gli annunci degli affitti presenti nel sito riguardano singole stanze o interi appartamenti che posso essere affittati agli studenti
                          che possono scegliere tra le varie offerte messe a diposizione dai vari affittuari.</p>
           
-                      <a href="about.html" class="btn btn-primary mt-4">Mostra di piu</a>
+                      <a href="{{ route('chi_siamo') }}" class="btn btn-primary mt-4">Mostra di piu</a>
                     </div>
                     <div class="col-lg-6 py-3">
                       <div class="about-img">
@@ -89,7 +89,7 @@
                       <h2 class="title-section"></h2>
                     </div>
                     <div class="col-md-6 py-3 text-md-right">
-                      <a href="portfolio.html" class="btn btn-outline-primary">Catalogo Completo <span class="mai-arrow-forward ml-2"></span></a>
+                      <a href="{{ route('catalogo') }}" class="btn btn-outline-primary">Catalogo Completo <span class="mai-arrow-forward ml-2"></span></a>
                     </div>
                   </div>
           
@@ -235,6 +235,29 @@
           
                   </div> <!-- .row -->
                 </div> <!-- .container -->
+            </div>
+
+            <div class="page-section">
+              <div class="title" style="text-align: center; font-weight: 700; margin-bottom: 30px;">Le universita con cui collaboriamo</div>
+              <div class="container-fluid">
+                <div class="row row-cols-md-3 row-cols-lg-5 justify-content-center text-center">
+                  <div class="py-3 px-5">
+                    <img src="images/clients/logo_univpm.png" alt="" width="175" style="margin-top: 25px">
+                  </div>
+                  <div class="py-3 px-5">
+                    <img src="images/clients/logo_sapienza.png" alt="" width="350" style="margin-top: 50px">
+                  </div>
+                  <div class="py-3 px-5">
+                    <img src="images/clients/logo_bologno.png" alt="">
+                  </div>
+                  <div class="py-3 px-5">
+                    <img src="images/clients/logo_siena.png" alt="" width="225">
+                  </div>
+                  <div class="py-3 px-5">
+                    <img src="images/clients/logo_bho.png" alt="" width="200">
+                  </div>
+                </div>
+              </div> 
             </div>
 
         </main>

@@ -16,13 +16,11 @@ Route::get('/', function () {
     return view('layouts/public');
 });
 
-Route::get('/catalogo', function () {
-    return view('catalogo');
-});
+Route::view('/catalogo', 'catalogo')
+        ->name('catalogo');
 
-Route::get('/chi_siamo', function () {
-    return view('chi_siamo');
-});
+Route::view('/chi_siamo', 'chi_siamo')
+        ->name('chi_siamo');
 
 Route::get('/faq', function () {
     return view('faq');
