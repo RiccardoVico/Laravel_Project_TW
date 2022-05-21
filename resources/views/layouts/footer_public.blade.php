@@ -5,16 +5,16 @@
       </div>
       <div class="col-lg-3 py-3">
         <h5>Contact Information</h5>
-        <p>301 The Greenhouse, Custard Factory, London, E2 8DY.</p>
-        <p>Email: example@mail.com</p>
+        <p>Università Politecnica delle Marche</p>
+        <p>Email:protocollo@pec.univpm.it</p>
         <p>Phone: +00 112323980</p>
       </div>
       <div class="col-lg-3 py-3">
         <h5>Links</h5>
         <ul class="footer-menu">
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Resources</a></li>
-          <li><a href="#">News & Feed</a></li>
+          <li><a href="faq">FAQ</a></li>
+          <li><a href="https://www.agid.gov.it/it">Norme e linee guida sviluppo</a></li>
+          <li><a href="https://www.governo.it/it/privacy-policy">Regolamento trattamento dati</a></li>
         </ul>
       </div>
     </div>
