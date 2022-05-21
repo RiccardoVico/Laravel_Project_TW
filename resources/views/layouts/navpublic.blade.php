@@ -18,7 +18,7 @@
             <a href="{{ route('chi_siamo') }}" class="nav-link">Chi Siamo</a>
           </li>
           <li class="nav-item">
-            <a href="faq" class="nav-link">FAQ</a>
+            <a href="{{ route('faq') }}" class="nav-link">FAQ</a>
           </li>
           <li class="nav-item">
             <a href="{{ route('login') }}" class="nav-link">Login</a>

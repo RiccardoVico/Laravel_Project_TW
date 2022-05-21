@@ -22,7 +22,8 @@ Route::get('/catalogo', 'PublicController@show')
 Route::view('/chi_siamo', 'chi_siamo')
         ->name('chi_siamo');
 
-Route::get('/faq','PublicController@showfaq') ;
+Route::get('/faq','PublicController@showfaq')
+        ->name('faq');
 
 Route::view('/login', 'login')
         ->name('login');
