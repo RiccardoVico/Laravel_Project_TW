@@ -22,9 +22,7 @@ Route::get('/chi_siamo', function () {
     return view('chi_siamo');
 });
 
-Route::get('/faq', function () {
-    return view('faq');
-});
+Route::get('/faq','PublicController@showfaq') ;
 
 Route::view('/login', 'login')
         ->name('login');

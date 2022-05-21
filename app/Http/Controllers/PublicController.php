@@ -18,4 +18,9 @@ public function show(){
     return view('catalogo')
             ->with('products',$res);
 }
+public function showfaq(){
+    $res=$this->_catalogModel->getfaq();
+    return view('faq')
+    ->with('products',$res);
+}
 }
