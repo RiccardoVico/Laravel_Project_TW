@@ -78,8 +78,8 @@
             <div class="page-section">
               <div class="container">
                 <div class="text-center">
-                  <div class="subhead">Our Teams</div>
-                  <h2 class="title-section">The Expert Team on ReveTive</h2>
+                  <div class="subhead">Chi siamo</div>
+                  <h2 class="title-section">Il nostro Team</h2>
                 </div>
         
                 <div class="owl-carousel team-carousel mt-5">
@@ -88,8 +88,21 @@
                       <img src="images/teams/team_1.jpg" alt="">
                     </div>
                     <div class="team-content">
-                      <h5>Walter White</h5>
-                      <div class="text-sm fg-grey">Chief Executive Officer</div>
+                      <h5>Riccardo Vico</h5>
+                      <div class="social-button">
+                        <a href="#"><span class="mai-logo-facebook-messenger"></span></a>
+                        <a href="#"><span class="mai-call"></span></a>
+                        <a href="#"><span class="mai-mail"></span></a>
+                      </div>
+                    </div>
+                  </div>
+                    
+                  <div class="team-wrap">
+                    <div class="team-profile">
+                      <img src="images/teams/team_2.jpg" alt="">
+                    </div>
+                    <div class="team-content">
+                      <h5>Marisonia Ferrandino</h5>
         
                       <div class="social-button">
                         <a href="#"><span class="mai-logo-facebook-messenger"></span></a>
@@ -101,11 +114,10 @@
         
                   <div class="team-wrap">
                     <div class="team-profile">
-                      <img src="images/teams/team_2.jpg" alt="">
+                      <img src="images/teams/team_1.jpg" alt="">
                     </div>
                     <div class="team-content">
-                      <h5>Sarah Johanson</h5>
-                      <div class="text-sm fg-grey">Chief Technology Officer</div>
+                      <h5>Riccardo Malpiedi</h5>
         
                       <div class="social-button">
                         <a href="#"><span class="mai-logo-facebook-messenger"></span></a>
@@ -120,8 +132,8 @@
                       <img src="images/teams/team_3.jpg" alt="">
                     </div>
                     <div class="team-content">
-                      <h5>Anna Anderson</h5>
-                      <div class="text-sm fg-grey">Product Manager</div>
+                      <h5>Martina Mammarella</h5>
+                      
         
                       <div class="social-button">
                         <a href="#"><span class="mai-logo-facebook-messenger"></span></a>
