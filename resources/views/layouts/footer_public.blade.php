@@ -13,8 +13,8 @@
         <h5>Links</h5>
         <ul class="footer-menu">
           <li><a href="faq">FAQ</a></li>
-          <li><a href="https://www.agid.gov.it/it">Norme e linee guida sviluppo</a></li>
-          <li><a href="https://www.governo.it/it/privacy-policy">Regolamento trattamento dati</a></li>
+          <li><a href="images/trattamento.txt">Termini e condizioni d'utilizzo</a></li>
+          <li><a href="images/privacy.pdf">Privacy policy dati</a></li>
         </ul>
       </div>
     </div>
