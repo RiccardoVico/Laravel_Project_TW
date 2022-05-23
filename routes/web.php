@@ -30,4 +30,12 @@ Route::view('/login', 'login')
 
 Route::view('/register', 'register')
         ->name('register');
+Route::get('/locatario',function(){
+    return view('/locatario');
+});
 
+Route::get('/locatore',function(){
+    return view('locatore');
+});
+
+//logoutmessaggiprofilo
