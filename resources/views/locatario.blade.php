@@ -57,9 +57,17 @@
                 </div>
             </div>
         </header>
-
         <main>
-            <h1>Catalogo completo annunci disponibili</h1>;
+<form method="post" action="admin.blade.php" >
+    <h3>Applica filtri</h3>
+<input type="checkbox" id="1" name="appartamento" value="appartamento"><label for="appartamento"> Appartamento</label><input type="checkbox" id="postoletto" name="postoletto" value="Car"><label for="postoletto"> Posto Letto</label><br>
+<input type="checkbox" id="3" name="WIFI" value="WIFI"><label for="WIFI"> WIFI</label><input type="checkbox" id="4" name="climatizzatore" value="climatizzatore"><label for="climatizzatore"> climatizzatore</label><br>
+<input type="checkbox" id="5" name="angolostudio" value="angolostudio"><label for="angolostudio"> angolostudio</label>
+<button type="submit">filtra</button>
+  
+</form>
+            
+<h1>Catalogo completo annunci disponibili</h1>;
         </main>
 
         <!-- end #content -->

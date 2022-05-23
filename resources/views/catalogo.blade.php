@@ -21,7 +21,7 @@
                 @include('layouts/navpublic')
             </div>
 
-            <div class="page-banner bg-img bg-img-parallax overlay-dark" style="background-image: url(images/bg_image_3.jpg);">
+            <div class="page-banner bg-img bg-img-parallax overlay-dark" style="background-image: url(images/chiave2.jpeg);">
                 <div class="container h-100">
                   <div class="row justify-content-center align-items-center h-100">
                     <div class="col-lg-8">

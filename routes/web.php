@@ -14,6 +14,7 @@
 
 Route::get('/', function () {
     return view('layouts/public');
+    
 });
 
 Route::get('/catalogo', 'PublicController@show')
@@ -37,5 +38,12 @@ Route::get('/locatario',function(){
 Route::get('/locatore',function(){
     return view('locatore');
 });
-
+Route::get('/admin',function(){
+    return view('admin');
+});
+Route::post('/admininserimentofaq','AdminController@inseriscifaq')
+       ->name('admininserimentofaq');//fare
 //logoutmessaggiprofilo
+Route::get('/gestisciofferte',function(){
+    return view('gestioneofferte');//fare
+});

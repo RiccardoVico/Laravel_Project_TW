@@ -9,24 +9,9 @@
       <div class="navbar-collapse collapse" id="navbarContent">
         <ul class="navbar-nav ml-auto pt-3 pt-lg-0">
           <li class="nav-item active">
-            <a href="../public" class="nav-link">Home</a>
-          </li>
           <li class="nav-item">
-            <a href="{{ route('chi_siamo') }}" class="nav-link">Chi Siamo</a>
+            <a href="{{ route('admininserimentofaq') }}" class="nav-link">Gestisci FAQ</a>
           </li>
-          <li class="nav-item">
-            <a href="{{ route('faq') }}" class="nav-link">FAQ</a>
-          </li>
-           <li class="nav-item">
-            <a href="{{ route('faq') }}" class="nav-link">Messaggi</a>
-          </li>
-          <li class="nav-item">
-            <a href="{{ route('faq') }}" class="nav-link">Profilo</a>
-          </li>
-          <li class="nav-item">
-            <a href="{{ route('faq') }}" class="nav-link">Logout</a>
-          </li>
-         
         </ul>
       </div>
     </div>

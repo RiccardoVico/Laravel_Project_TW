@@ -59,7 +59,8 @@
         </header>
 
         <main>
-            <h1>Catalogo completo annunci disponibili</h1>;
+            <a href="{{ route('catalogo') }}" class="nav-link">Gestisci le tue offerte</a>
+            <h1>Catalogo completo annunci disponibili</h1>
         </main>
 
         <!-- end #content -->
