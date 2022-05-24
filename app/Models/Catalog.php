@@ -6,13 +6,19 @@
  */namespace App\Models;
 use App\Models\Resources\utente;
 use App\Models\Resources\faq;
+use App\Models\Resources\Annuncio;
 
-class Catalog{
-    public function getutente(){
+class Catalog {
+    public function getutente() {
         return utente::where('username','prova0')->get();
     }
-    public function getfaq(){
+    
+    public function getfaq() {
         return faq::all();
+    }
+    
+    public function getAnnunci() {
+        return Annuncio::all();
     }
 }
 

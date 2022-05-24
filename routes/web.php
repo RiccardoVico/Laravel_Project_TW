@@ -36,27 +36,32 @@ Route::view('/register', 'register')
 
 Route::post('register', 'UtenteController@store');
 
-Route::get('/locatario',function(){
-    return view('/locatario');
-});
+Route::get('/locatore', 'PublicController@showHomeLocatore')
+        ->name('home_locatore');
 
-Route::get('/locatore',function(){
-    return view('locatore');
-});
+Route::get('/gestisci_offerte', 'PublicController@showGestisciOfferte')
+        ->name('gestisci_offerte');
+
+Route::get('/locatario', 'PublicController@showHomeLocatario')
+        ->name('home_locatario');
+
 Route::get('/admin',function(){
     return view('admin');
 });
+
 Route::post('admininserimentofaq','AdminController@store');
+
 Route::view('/inseriscifaq','inseriscifaq')
 ->name('inseriscifaq');
+
 Route::get('/statistiche','AdminController@statistiche')
         ->name('statistiche');
-Route::view('/gestioneofferte','gestioneofferte')
-->name('gestioneofferte');//fare
+
 Route::view('/inserisciannuncio', 'inserisciannuncio')
         ->name('inserimentoannuncio');
 
 Route::post('inserimentoann','LocatoreController@inserisciannuncio');
+
 Route::get('/statistiche','AdminController@totaleannunci')
         ->name('statistiche');
 //logoutmessaggiprofilo

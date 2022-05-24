@@ -9,22 +9,42 @@ use  App\Http\Controllers\Controller;
 use App\Models\Catalog;
 use App\Utente;
 
-class PublicController extends Controller{
+class PublicController extends Controller {
+
     protected $_catalogModel;
 
-public function __construct(){
-    $this->_catalogModel=new Catalog();
-}
-public function show(){
-    $res=$this->_catalogModel->getutente();
-    return view('catalogo')
-            ->with('products',$res);
-}
-public function showfaq(){
-    $res=$this->_catalogModel->getfaq();
-    return view('faq')
-    ->with('products',$res);
-}
+    public function __construct() {
+        $this->_catalogModel = new Catalog();
+    }
 
+    public function show() {
+        $annunci = $this->_catalogModel->getAnnunci();
+        return view('catalogo')
+                        ->with('annunci', $annunci);
+    }
+
+    public function showfaq() {
+        $res = $this->_catalogModel->getfaq();
+        return view('faq')
+                        ->with('products', $res);
+    }
+
+    public function showHomeLocatore() {
+        $annunci = $this->_catalogModel->getannunci();
+        return view('locatore_home')
+                        ->with('annunci', $annunci);
+    }
+
+    public function showGestisciOfferte() {
+        $annunci = $this->_catalogModel->getannunci();
+        return view('locatore_gestisci_offerte')
+                        ->with('annunci', $annunci);
+    }
+
+    public function showHomeLocatario() {
+        $annunci = $this->_catalogModel->getannunci();
+        return view('locatario_home')
+                        ->with('annunci', $annunci);
+    }
 
 }
