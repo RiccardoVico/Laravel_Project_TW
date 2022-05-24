@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,6 +33,9 @@ Route::view('/login', 'login')
 
 Route::view('/register', 'register')
         ->name('register');
+
+Route::post('register', 'UtenteController@store');
+
 Route::get('/locatario',function(){
     return view('/locatario');
 });

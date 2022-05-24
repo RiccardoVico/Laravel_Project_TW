@@ -14,7 +14,7 @@ body{
     background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
 .registration_container{
-    max-width: 700px;
+    max-width: 1025px;
     width: 100%;
     background: #fff;
     padding: 25px 30px;
@@ -37,13 +37,13 @@ body{
 .registration_container form .user-details{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     margin: 20px 0 12px 0;
 }
 form .user-details .input-box,
 form .user-details .input-box2{
     margin-bottom: 15px;
-    width: calc(100% / 2 - 20px);
+    margin-left: 15px;
+    width: 300px;
 }
 .user-details .input-box .details,
 .user-details .input-box2 .details{
@@ -121,76 +121,41 @@ form .button input:hover{
     background: linear-gradient(-135deg, #71b7e6, #9b59b6);
 }
 
-.registration_container .mode{
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-    margin-top: 30px;
-}
-.li .mode-toggle .switch{
-    position: absolute;
-    right: 14px;
-    height: 50px;
-    min-width: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-.mode-toggle .switch{
-    position: relative;
-    display: inline-block;
-    height: 40px;
-    width: 350px;
-    margin-left: 10px;
-    border-radius: 25px;
-    background-color: #DDD;
-    cursor: pointer;
-    
-}
-.switch:before{
-    content: "";
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 33px;
-    width: 160px;
-    background-color: #FFF;
-    border-radius: 25px;
-    transition: all 0.3s ease; 
+.tipologia{
+    margin-top: 20px;
+    height: 70px;
+    width: 100%;
 }
 
-.switch .scelta{
+.tipologia .tipologia-title{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.tipologia .tipo-account{
     display: flex;
-    position: absolute;
-    top: 50%;
-    width: 80%;
-    transform: translateY(-50%);
-    left: 15px;
-    color: black;
     justify-content: space-between;
-    
+    margin-top: 15px;
+    width: 50%;
+}
+.tipo-account .tipo_1 span,
+.tipo-account .tipo_2 span{
+    margin-left: 5px;
 }
 
 .scelta .locatore{
     position: relative;
 }
 
-.scelta .locatario{
-    position: relative;
-    left: 40px;
-}
-
-body.active .switch::before{
-    left: 180px;
-    transition: all 0.3s ease;
-}
-
 body.active .input-box2{
     pointer-events: none;
     opacity: 0;
     transition: all 0.3s ease;
+}
+
+.input-box3{
+    pointer-events: none;
+    opacity: 0;
 }
 
 body .input-box2{

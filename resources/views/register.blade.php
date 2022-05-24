@@ -12,46 +12,82 @@
 	<body>
 		<div class="registration_container">
 			<div class="title">Registration</div>
-            <li class="mode">
-                <div class="mode-toggle">
-                    <span class="switch">
-                        <div class="scelta">
-                            <div class="locatario">Locatario</div>
-                            <div class="locatore">Locatore</div>
-                        </div>
-                    </span>
-                </div>
-            </li>
-			<form action="#" method="POST">
-                
+            <div class="tipologia">
+
+				<span class="tipologia-title">Tipo Account</span>
+
+				<div class="tipo-account">
+					<div class="tipo_1">
+						<input type="radio" name="tipo" value="Locatario" checked><span>Locatario</span>
+					</div>
+					<div class="tipo_2">
+						<input type="radio" name="tipo" value="Locatore"><span>Locatore</span>
+					</div>
+				</div>
+            </div>
+			<form action="register" method="POST">
+                @csrf
+				
 				<div class="user-details">
 					<div class="input-box">
-						<span class="details">Full Name</span>
-						<input type="text" placeholder="Enter your name" name="full_name" required>
+						<span class="details">Username</span>
+						<input type="text" placeholder="Scegli uno username" name="username" required>
 					</div>
 					<div class="input-box">
-						<span class="details">Username</span>
-						<input type="text" placeholder="Enter your username" name="username" required>
+						<span class="details">Nome</span>
+						<input type="text" placeholder="Inserisci il nome" name="nome" required>
+					</div>
+					<div class="input-box">
+						<span class="details">Cognome</span>
+						<input type="text" placeholder="Inserisci il cognome" name="cognome" required>
 					</div>
 					<div class="input-box">
 						<span class="details">Email</span>
-						<input type="text" placeholder="Enter your email" name="email" required>
+						<input type="text" placeholder="Inserisci l'indirizzo email" name="mail" required>
 					</div>
 					<div class="input-box">
-						<span class="details">Phone number</span>
-						<input type="text" placeholder="Enter your phone number" name="phone_number" required>
+						<span class="details">Recapito</span>
+						<input type="text" placeholder="Inserisci un recapito telefonico" name="recapito" required>
+					</div>
+					<div class="input-box">
+						<span class="details">Via</span>
+						<input type="text" placeholder="Inserisci via di residenza" name="via" required>
+					</div>
+					<div class="input-box">
+						<span class="details">Città</span>
+						<input type="text" placeholder="Inserisci città residenza" name="citta" required>
+					</div>
+					<div class="input-box">
+						<span class="details">Numero Civico</span>
+						<input type="text" placeholder="Inserisci il numero civico" name="numerocivico" required>
+					</div>
+					<div class="input-box">
+						<span class="details">Cap</span>
+						<input type="text" placeholder="Inserisci il codice postale" name="cap" required>
+					</div>
+					<div class="input-box">
+						<span class="details">Provincia</span>
+						<input type="text" placeholder="Inserisci provincia di residenza" name="provincia" required>
+					</div>
+					<div class="input-box">
+						<span class="details">Paese</span>
+						<input type="text" placeholder="Inserisci lo stato" name="paese" required>
 					</div>
 					<div class="input-box">
 						<span class="details">Password</span>
-						<input type="text" placeholder="Enter your password" name="password" required>
+						<input type="text" placeholder="Inserisci password" name="password" required>
 					</div>
 					<div class="input-box">
 						<span class="details">Confirm Password</span>
-						<input type="text" placeholder="Confirm your password" required>
+						<input type="text" placeholder="Inserisci password" name="confirm password" required>
 					</div>
-                    <div class="input-box2">
-						<span class="details">Confirm Password</span>
-						<input type="text" placeholder="Confirm your password">
+					<div class="input-box2">
+						<span class="details">Città Interesse</span>
+						<input type="text" placeholder="Inserisci la città d'interesse" name="cittainteresse" nullable>
+					</div>
+					<div class="input-box3">
+						<span class="details">Tipologia</span>
+						<input type="text" value="" id="tipologia" name="tipologia">
 					</div>
 				</div>
 
