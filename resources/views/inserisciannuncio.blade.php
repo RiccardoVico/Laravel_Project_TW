@@ -21,6 +21,14 @@
 						<span class="details">idannuncio</span>
 						<input type="int" placeholder="id" name="idannuncio" required>
 					</div>
+                                    <div class="input-box">
+						<span class="details">nomeannuncio</span>
+						<input type="varchar(20)" placeholder="nome" name="nomeannuncio" required>
+					</div>
+                                     <div class="input-box">
+						<span class="details">canoneaffitto</span>
+						<input type="int" placeholder="canone" name="canoneaffitto" required>
+					</div>
 					<div class="input-box">
 						<span class="details">cap</span>
 						<input type="varchar(5)" placeholder="cap" name="cap" required>

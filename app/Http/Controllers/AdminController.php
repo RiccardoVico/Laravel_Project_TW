@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\FAQ;
-use App\Annuncio;
+use App\Models\Resources\Annuncio;
 
 class AdminController extends Controller
 {

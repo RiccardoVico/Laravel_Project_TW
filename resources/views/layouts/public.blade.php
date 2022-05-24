@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -49,7 +50,7 @@
                         <img src="images/bg_image_8.png" alt="">
                         <div class="img-caption">
                             <div class="subhead">Easy way to build perfect website</div>
-                            <h1 class="mb-4">Beautify handcrafted templates for your website</h1>
+                            <h1 class="mb-4">Live a unique experience</h1>
                             <!--<a href="#services" class="btn btn-primary">Read More</a>-->
                         </div>
                     </div>
@@ -80,66 +81,10 @@
                   </div>
                 </div>
             </div>
+      <a href="{{ route('catalogo') }}" class="btn btn-outline-primary">Catalogo Completo <span class="mai-arrow-forward ml-2"></span></a>
+         <div class="back-to-top"></div>
 
-            <div class="page-section">
-                <div class="container">
-                  <div class="row align-items-center">
-                    <div class="col-md-6 py-3">
-                      <div class="subhead">Catalogo</div>
-                      <h2 class="title-section"></h2>
-                    </div>
-                    <div class="col-md-6 py-3 text-md-right">
-                      <a href="{{ route('catalogo') }}" class="btn btn-outline-primary">Catalogo Completo <span class="mai-arrow-forward ml-2"></span></a>
-                    </div>
-                  </div>
-          
-                  <div class="row mt-3">
-                    <div class="col-lg-4 py-3">
-                      <div class="portfolio">
-                        <a href="images/portfolio/work-1.jpg" data-fancybox="portfolio">
-                          <img src="images/portfolio/work-1.jpg" alt="">
-                        </a>
-                      </div>
-                    </div>
-                    <div class="col-lg-4 py-3">
-                      <div class="portfolio">
-                        <a href="images/portfolio/work-2.jpg" data-fancybox="portfolio">
-                          <img src="images/portfolio/work-2.jpg" alt="">
-                        </a>
-                      </div>
-                    </div>
-                    <div class="col-lg-4 py-3">
-                      <div class="portfolio">
-                        <a href="images/portfolio/work-3.jpg" data-fancybox="portfolio">
-                          <img src="images/portfolio/work-3.jpg" alt="">
-                        </a>
-                      </div>
-                    </div>
-                    <div class="col-lg-4 py-3">
-                      <div class="portfolio">
-                        <a href="images/portfolio/work-4.jpg" data-fancybox="portfolio">
-                          <img src="images/portfolio/work-4.jpg" alt="">
-                        </a>
-                      </div>
-                    </div>
-                    <div class="col-lg-4 py-3">
-                      <div class="portfolio">
-                        <a href="images/portfolio/work-5.jpg" data-fancybox="portfolio">
-                          <img src="images/portfolio/work-5.jpg" alt="">
-                        </a>
-                      </div>
-                    </div>
-                    <div class="col-lg-4 py-3">
-                      <div class="portfolio">
-                        <a href="images/portfolio/work-6.jpg" data-fancybox="portfolio">
-                          <img src="images/portfolio/work-6.jpg" alt="">
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div> 
-            </div>
-            
+//catalogo
             <div class="page-section">
                 <div class="container">
                   <div class="owl-carousel testimonial-carousel">
@@ -147,7 +92,7 @@
                       <div class="content">
                         Scorri catalogo
                         <hr>
-                        <p>djlghdfjkslghdfjklghsdfk</p>
+                        <p>Divertiti a sfogliare tutti i nostri annunci</p>
                       </div>
                       <!--<div class="author">
                         <div class="avatar">
@@ -164,7 +109,7 @@
                       <div class="content">
                         Trova il tuo annuncio ideale
                         <hr>
-                        <p>njeklabgrjeklagbrjaekl</p>
+                        <p>Valuta fra le varie opzioni a disposizione la soluzione più adatta per te</p>
                       </div>
                       <!--<div class="author">
                         <div class="avatar">
@@ -181,7 +126,7 @@
                       <div class="content">
                         Registrati e contatta il locatore
                         <hr>
-                        <p>fhdjsklhfdjkalhgdfkslahfjkdlhf</p>
+                        <p>Accedi al nostro sito per contattare i locatari</p>
                       </div>
                       <!--<div class="author">
                         <div class="avatar">
@@ -196,9 +141,9 @@
           
                     <div class="card-testimonial">
                       <div class="content">
-                        Vuoi inserire un annuncio per una casa o appartamento? Registrati e fallo!!!!!
+                        Vuoi inserire un annuncio per una casa o appartamento? 
                         <hr>
-                        <p>fbdhjakfvdjalfbdalbv</p>
+                        <p>Registrati sul nostro sito e vai nella sezione Locatore-Gestisci le tue offerte-Inserisci annuncio</p>
                       </div>
                       <!--<div class="author">
                         <div class="avatar">
@@ -215,7 +160,7 @@
                       <div class="content">
                         Inserisci un annuncio
                         <hr>
-                        <p>fdbjsbfhidsobgrfuidso</p>
+                        <p>Proponi il tuo locale da affittare</p>
                       </div>
                       <!--<div class="author">
                         <div class="avatar">
@@ -232,7 +177,7 @@
                       <div class="content">
                         Messaggistica incorporata
                         <hr>
-                        <p>fbdslfalfhaklfag</p>
+                        <p>Comunica con i possibili locatari</p>
                       </div>
                       <!--<div class="author">
                         <div class="avatar">

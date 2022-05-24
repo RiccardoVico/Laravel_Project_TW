@@ -15,6 +15,8 @@ class LocatoreController extends Controller
         $utente = new Annuncio();
         
         $utente->idannuncio = request('idannuncio');
+        $utente->nomeannuncio = request('nomeannuncio');
+        $utente->canoneaffitto = request('canoneaffitto');
         $utente->cap = request('cap');
         $utente->numerocivico = request('numerocivico');
         $utente->citta = request('citta');
@@ -31,6 +33,7 @@ class LocatoreController extends Controller
          $utente->descrizione = request('descrizione');
         $utente->utenze = request('utenze');
         $utente->via = request('via');
+      
 
         $utente->save();
 
