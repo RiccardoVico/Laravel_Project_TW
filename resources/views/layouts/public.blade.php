@@ -34,15 +34,15 @@
                         <div class="img-caption">
                             <div class="subhead"></div>
                             <h1 class="mb-4">Homex<span class="fg-primary">Students</span></h1>
-                            <a href="#services" class="btn btn-outline-light">Get Started</a>
+                            <!--<a href="#services" class="btn btn-outline-light">Get Started</a>-->
                         </div>
                     </div>
                     <div class="hero-carousel-item">
                         <img src="images/bg_image_4.png" alt="">
                         <div class="img-caption">
                             <h1 class="mb-4">We combine Design, Thinking, and Technical</h1>
-                            <a href="#services" class="btn btn-outline-light">Get Started</a>
-                            <a href="#services" class="btn btn-primary">See Pricing</a>
+                            <!--<a href="#services" class="btn btn-outline-light">Get Started</a>
+                            <a href="#services" class="btn btn-primary">See Pricing</a>-->
                         </div>
                     </div>
                     <div class="hero-carousel-item">
@@ -50,7 +50,7 @@
                         <div class="img-caption">
                             <div class="subhead">Easy way to build perfect website</div>
                             <h1 class="mb-4">Beautify handcrafted templates for your website</h1>
-                            <a href="#services" class="btn btn-primary">Read More</a>
+                            <!--<a href="#services" class="btn btn-primary">Read More</a>-->
                         </div>
                     </div>
                 </div>
@@ -145,92 +145,104 @@
                   <div class="owl-carousel testimonial-carousel">
                     <div class="card-testimonial">
                       <div class="content">
-                        The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph
+                        Scorri catalogo
+                        <hr>
+                        <p>djlghdfjkslghdfjklghsdfk</p>
                       </div>
-                      <div class="author">
+                      <!--<div class="author">
                         <div class="avatar">
-                          <img src="images/person/person_1.jpg" alt="">
+                          <img src="img/person/person_1.jpg" alt="">
                         </div>
                         <div class="d-inline-block ml-2">
                           <div class="author-name">Sam Watson</div>
                           <div class="author-info">CEO - Mosh Elite Ltd.</div>
                         </div>
-                      </div>
+                      </div>-->
                     </div>
           
                     <div class="card-testimonial">
                       <div class="content">
-                        The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph
+                        Trova il tuo annuncio ideale
+                        <hr>
+                        <p>njeklabgrjeklagbrjaekl</p>
                       </div>
-                      <div class="author">
+                      <!--<div class="author">
                         <div class="avatar">
-                          <img src="images/person/person_2.jpg" alt="">
+                          <img src="img/person/person_2.jpg" alt="">
                         </div>
                         <div class="d-inline-block ml-2">
                           <div class="author-name">Edinson Alfa</div>
                           <div class="author-info">CEO - Mosh Elite Ltd.</div>
                         </div>
-                      </div>
+                      </div>-->
                     </div>
           
                     <div class="card-testimonial">
                       <div class="content">
-                        The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph
+                        Registrati e contatta il locatore
+                        <hr>
+                        <p>fhdjsklhfdjkalhgdfkslahfjkdlhf</p>
                       </div>
-                      <div class="author">
+                      <!--<div class="author">
                         <div class="avatar">
-                          <img src="images/person/person_3.jpg" alt="">
+                          <img src="img/person/person_3.jpg" alt="">
                         </div>
                         <div class="d-inline-block ml-2">
                           <div class="author-name">May Halloway</div>
                           <div class="author-info">CEO - Mosh Elite Ltd.</div>
                         </div>
-                      </div>
+                      </div> -->
                     </div>
           
                     <div class="card-testimonial">
                       <div class="content">
-                        The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph
+                        Vuoi inserire un annuncio per una casa o appartamento? Registrati e fallo!!!!!
+                        <hr>
+                        <p>fbdhjakfvdjalfbdalbv</p>
                       </div>
-                      <div class="author">
+                      <!--<div class="author">
                         <div class="avatar">
-                          <img src="images/person/person_1.jpg" alt="">
+                          <img src="img/person/person_1.jpg" alt="">
                         </div>
                         <div class="d-inline-block ml-2">
                           <div class="author-name">Sam Watson</div>
                           <div class="author-info">CEO - Mosh Elite Ltd.</div>
                         </div>
-                      </div>
+                      </div>-->
                     </div>
           
                     <div class="card-testimonial">
                       <div class="content">
-                        The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph
+                        Inserisci un annuncio
+                        <hr>
+                        <p>fdbjsbfhidsobgrfuidso</p>
                       </div>
-                      <div class="author">
+                      <!--<div class="author">
                         <div class="avatar">
-                          <img src="images/person/person_2.jpg" alt="">
+                          <img src="img/person/person_2.jpg" alt="">
                         </div>
                         <div class="d-inline-block ml-2">
                           <div class="author-name">Edinson Alfa</div>
                           <div class="author-info">CEO - Mosh Elite Ltd.</div>
                         </div>
-                      </div>
+                      </div>-->
                     </div>
           
                     <div class="card-testimonial">
                       <div class="content">
-                        The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph
+                        Messaggistica incorporata
+                        <hr>
+                        <p>fbdslfalfhaklfag</p>
                       </div>
-                      <div class="author">
+                      <!--<div class="author">
                         <div class="avatar">
-                          <img src="images/person/person_3.jpg" alt="">
+                          <img src="img/person/person_3.jpg" alt="">
                         </div>
                         <div class="d-inline-block ml-2">
                           <div class="author-name">May Halloway</div>
                           <div class="author-info">CEO - Mosh Elite Ltd.</div>
                         </div>
-                      </div>
+                      </div>-->
                     </div>
           
                   </div> <!-- .row -->

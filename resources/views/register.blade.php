@@ -75,11 +75,11 @@
 					</div>
 					<div class="input-box">
 						<span class="details">Password</span>
-						<input type="text" placeholder="Inserisci password" name="password" required>
+						<input type="password" placeholder="Inserisci password" name="password" required>
 					</div>
 					<div class="input-box">
 						<span class="details">Confirm Password</span>
-						<input type="text" placeholder="Inserisci password" name="confirm password" required>
+						<input type="password" placeholder="Inserisci password" name="confirm password" required>
 					</div>
 					<div class="input-box2">
 						<span class="details">Città Interesse</span>
@@ -91,7 +91,7 @@
 					</div>
 				</div>
 
-				<div class="gender-details">
+				<!--<div class="gender-details">
 					<input type="radio" name="gender" id="dot-1">
 					<input type="radio" name="gender" id="dot-2">
 					<input type="radio" name="gender" id="dot-3">
@@ -110,7 +110,7 @@
 							<span class="gender">Prefer not to say</span>
 						</label>
 					</div>
-				</div>
+				</div>-->
 
 				<div class="button">
 					<input type="submit" value="Register">
