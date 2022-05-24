@@ -46,9 +46,17 @@ Route::get('/locatore',function(){
 Route::get('/admin',function(){
     return view('admin');
 });
-Route::post('/admininserimentofaq','AdminController@inseriscifaq')
-       ->name('admininserimentofaq');//fare
+Route::post('admininserimentofaq','AdminController@store');
+Route::view('/inseriscifaq','inseriscifaq')
+->name('inseriscifaq');
+Route::get('/statistiche','AdminController@statistiche')
+        ->name('statistiche');
+Route::view('/gestioneofferte','gestioneofferte')
+->name('gestioneofferte');//fare
+Route::view('/inserisciannuncio', 'inserisciannuncio')
+        ->name('inserimentoannuncio');
+
+Route::post('inserimentoann','LocatoreController@inserisciannuncio');
+Route::get('/statistiche','AdminController@totaleannunci')
+        ->name('statistiche');
 //logoutmessaggiprofilo
-Route::get('/gestisciofferte',function(){
-    return view('gestioneofferte');//fare
-});

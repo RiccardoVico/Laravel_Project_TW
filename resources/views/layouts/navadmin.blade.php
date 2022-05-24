@@ -10,7 +10,9 @@
         <ul class="navbar-nav ml-auto pt-3 pt-lg-0">
           <li class="nav-item active">
           <li class="nav-item">
-            <a href="{{ route('admininserimentofaq') }}" class="nav-link">Gestisci FAQ</a>
+          <li>  <a href="{{ route('faq') }}" class="nav-link">Gestisci FAQ</a></li>
+          <li>   <a href="{{ route('inseriscifaq') }}" class="nav-link">Inserisci FAQ</a></li>
+          <a href="{{ route('statistiche') }}" class="nav-link">Statistiche</a></li>
           </li>
         </ul>
       </div>

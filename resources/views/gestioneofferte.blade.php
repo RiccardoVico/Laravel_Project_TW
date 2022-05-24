@@ -22,7 +22,7 @@
 
         <header>
             <div id="menu">
-                @include('layouts/navaccesso')
+                @include('layouts/navadmin')
             </div>
 
             <!-- end #menu -->
@@ -57,11 +57,16 @@
                 </div>
             </div>
         </header>
+    <body>
+         <a href="{{ route('inserimentoannuncio') }}" class="nav-link">Inserisci Annuncio</a>
+       
+        <a href="{{ route('faq') }}" class="nav-link">Visulizza richieste </a>
+    </center
+        <h1>Catalogo completo  suoi annunci con possibilita modifica e eliminazione</h1>;
+    
+                
+    </body>
 
-        <main>
-            <a href="{{ route('gestioneofferte') }}" class="nav-link">Gestisci le tue offerte</a>
-            <h1>Catalogo completo annunci disponibili</h1>
-        </main>
 
         <!-- end #content -->
         <footer class="page-footer">

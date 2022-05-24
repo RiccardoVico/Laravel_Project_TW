@@ -7,6 +7,7 @@
 namespace App\Http\Controllers;
 use  App\Http\Controllers\Controller;
 use App\Models\Catalog;
+use App\Utente;
 
 class PublicController extends Controller{
     protected $_catalogModel;
@@ -24,4 +25,6 @@ public function showfaq(){
     return view('faq')
     ->with('products',$res);
 }
+
+
 }
