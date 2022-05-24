@@ -60,7 +60,14 @@
 
 
         <main>
-            <h1>Catalogo completo annunci disponibili</h1>;
+            <div class="page-section">
+                <div class="container">
+                    <div class="col text-center pb-3">
+                        <h1>Catalogo completo annunci disponibili</h1>
+                    </div>
+                    @include('layouts/catalogo')
+                </div>
+            </div>
         </main>
 
         <!-- end #content -->

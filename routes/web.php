@@ -14,10 +14,8 @@ use Illuminate\Support\Facades\Route;
 
 */
 
-Route::get('/', function () {
-    return view('layouts/public');
-    
-});
+Route::get('/', 'PublicController@showHome')
+        ->name('home');
 
 Route::get('/catalogo', 'PublicController@show')
         ->name('catalogo');
@@ -45,9 +43,8 @@ Route::get('/gestisci_offerte', 'PublicController@showGestisciOfferte')
 Route::get('/locatario', 'PublicController@showHomeLocatario')
         ->name('home_locatario');
 
-Route::get('/admin',function(){
-    return view('admin');
-});
+Route::get('/admin', 'PublicController@showHomeAdmin')
+        ->name('home_admin');
 
 Route::post('admininserimentofaq','AdminController@store');
 

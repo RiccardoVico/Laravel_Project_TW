@@ -16,6 +16,12 @@ class PublicController extends Controller {
     public function __construct() {
         $this->_catalogModel = new Catalog();
     }
+    
+    public function showHome() {
+        $annunci = $this->_catalogModel->getAnnunci();
+        return view('layouts/public')
+                        ->with('annunci', $annunci);
+    }
 
     public function show() {
         $annunci = $this->_catalogModel->getAnnunci();
@@ -44,6 +50,12 @@ class PublicController extends Controller {
     public function showHomeLocatario() {
         $annunci = $this->_catalogModel->getannunci();
         return view('locatario_home')
+                        ->with('annunci', $annunci);
+    }
+    
+    public function showHomeAdmin() {
+        $annunci = $this->_catalogModel->getannunci();
+        return view('admin')
                         ->with('annunci', $annunci);
     }
 
