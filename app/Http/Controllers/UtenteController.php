@@ -31,6 +31,6 @@ class UtenteController extends Controller
 
         $utente->save();
 
-        return redirect('/');                         
+        return redirect('/locatario');                         
     }
 }

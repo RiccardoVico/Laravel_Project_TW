@@ -49,7 +49,7 @@
                     <div class="hero-carousel-item">
                         <img src="images/bg_image_8.png" alt="">
                         <div class="img-caption">
-                            <div class="subhead">Easy way to build perfect website</div>
+                            <div class="subhead"></div>
                             <h1 class="mb-4">Live a unique experience</h1>
                             <!--<a href="#services" class="btn btn-primary">Read More</a>-->
                         </div>
