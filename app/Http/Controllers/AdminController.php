@@ -29,7 +29,12 @@ class AdminController extends Controller
     }
 public function totaleannunci(){
 $count = Annuncio::count();
-echo('totale annunci presenti nel sito');
-echo($count);
+return view('statistiche')
+->with('count',$count);
 }
+ public function showHomeLocatario() {
+        $annunci = $this->_catalogModel->getannunci();
+        return view('locatario_home')
+                        ->with('annunci', $annunci);
+    }
 }

@@ -99,7 +99,7 @@
 				
 
 				<div class="button">
-					<input type="submit" value="inseriscifaq">
+					<input type="submit" value="inserisci">
 				</div>
 			</form>
 		</div>
