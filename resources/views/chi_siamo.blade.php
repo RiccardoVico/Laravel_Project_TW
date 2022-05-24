@@ -16,6 +16,7 @@
 
     </head>
     <body>
+        
 
         <div class="back-to-top"></div>
 
@@ -90,9 +91,7 @@
                     <div class="team-content">
                       <h5>Riccardo Vico</h5>
                       <div class="social-button">
-                        <a href="#"><span class="mai-logo-facebook-messenger"></span></a>
-                        <a href="#"><span class="mai-call"></span></a>
-                        <a href="#"><span class="mai-mail"></span></a>
+                        <a href="mailto:malpediriccardo@gmail.com"><span class="mai-mail"></span></a>
                       </div>
                     </div>
                   </div>
@@ -105,9 +104,7 @@
                       <h5>Marisonia Ferrandino</h5>
         
                       <div class="social-button">
-                        <a href="#"><span class="mai-logo-facebook-messenger"></span></a>
-                        <a href="#"><span class="mai-call"></span></a>
-                        <a href="#"><span class="mai-mail"></span></a>
+                        <a href="mailto:ferrandinomarisonia@gmail.com"><span class="mai-mail"></span></a>
                       </div>
                     </div>
                   </div>
@@ -120,9 +117,7 @@
                       <h5>Riccardo Malpiedi</h5>
         
                       <div class="social-button">
-                        <a href="#"><span class="mai-logo-facebook-messenger"></span></a>
-                        <a href="#"><span class="mai-call"></span></a>
-                        <a href="#"><span class="mai-mail"></span></a>
+                        <a href="mailto:malpiediriccardo@gmail.com"><span class="mai-mail"></span></a>
                       </div>
                     </div>
                   </div>
@@ -133,12 +128,9 @@
                     </div>
                     <div class="team-content">
                       <h5>Martina Mammarella</h5>
-                      
-        
+                     
                       <div class="social-button">
-                        <a href="#"><span class="mai-logo-facebook-messenger"></span></a>
-                        <a href="#"><span class="mai-call"></span></a>
-                        <a href="#"><span class="mai-mail"></span></a>
+                    <a href="mailto:mammarellamartina@gmail.com"><span class="mai-mail"></span></a>
                       </div>
                     </div>
                   </div>
