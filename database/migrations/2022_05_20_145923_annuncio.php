@@ -14,25 +14,25 @@ class Annuncio extends Migration
     public function up()
     {
         Schema::create('annuncio',function (Blueprint $table) {
-            $table->integer('idannuncio')->index();
+            $table->BigIncrements('idannuncio')->index();
             $table->string('nomeannuncio', 20);
-            $table->integer('canoneaffitto')->index();
-            $table->string('cap', 5);
-            $table->string('numerocivico', 5);
-            $table->string('citta', 20);
-            $table->boolean('disponibilita', 1);
+            $table->integer('canoneaffitto');
+            $table->string('cap', 5)->nullable();
+            $table->string('numerocivico', 5)->nullable();
+            $table->string('citta', 20)->nullable();
+            $table->boolean('disponibilita', 1)->nullable();
             $table->date('datacc')->nullable();
-            $table->double('superficie');
-            $table->boolean('postiletto');
-            $table->boolean('wifi');
-            $table->boolean('angolostudio');
-            $table->boolean('climatizzatore');
-            $table->integer('etamin');
-            $table->integer('etamax');
-            $table->boolean('tipologia');
-            $table->text('descrizione');
-            $table->text('utenze');
-            $table->string('via', 20);
+            $table->double('superficie')->nullable();
+            $table->integer('postiletto')->nullable();
+            $table->boolean('wifi')->nullable();
+            $table->boolean('angolostudio')->nullable();
+            $table->boolean('climatizzatore')->nullable();
+            $table->integer('etamin')->nullable();
+            $table->integer('etamax')->nullable();
+            $table->boolean('tipologia')->nullable();
+            $table->text('descrizione')->nullable();
+            $table->text('utenze')->nullable();
+            $table->string('via', 20)->nullable();
         });  
     }
 

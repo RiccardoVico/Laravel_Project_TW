@@ -23,9 +23,10 @@
                 <li class="nav-item">
                     <a href="{{ route('faq') }}" class="nav-link">Profilo</a>
                 </li>
-                <li class="nav-item">
-                    <a href="{{ route('faq') }}" class="nav-link">Logout</a>
-                </li>
+                 <li><a href="" title="Esci dal sito" class="highlight" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+        <form id="logout-form" action="{{ route('logout') }}" class="nav-link" method="POST" style="display: none;">
+            {{ csrf_field() }}
+        </form>
 
             </ul>
         </div>

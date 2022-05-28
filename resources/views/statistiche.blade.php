@@ -18,7 +18,5 @@
   <button type="submit">Invia i dati</button>
   
 </form>
-<?php
-echo('totale annunci presenti nel sito');
-echo($count);
-?>
+<?php 
+echo($count);?>

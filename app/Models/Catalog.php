@@ -9,16 +9,40 @@ use App\Models\Resources\faq;
 use App\Models\Resources\Annuncio;
 
 class Catalog {
+    protected $_res;
     public function getutente() {
         return utente::where('username','prova0')->get();
     }
     
     public function getfaq() {
         return faq::all();
-    }
+    }                                     //(spostare)
     
     public function getAnnunci() {
         return Annuncio::all();
     }
+    public function getAnnunciFiltroPosto($posto){
+       $totale=Annuncio::all();
+        return $totale->filter(function($ann)use ($posto){
+           return $ann->tipologia==$posto;
+    });}
+    public function getAnnunciFiltroPrezzoMax($prezzomax){
+        $totale=Annuncio::all();
+        return $totale->filter(function($ann)use ($prezzomax){
+            return $ann->canoneaffitto<=$prezzomax;
+    });}
+         public function getAnnunciFiltroPrezzoMin($prezzomin){
+        $totale=Annuncio::all();
+        return $totale->filter(function($ann)use ($prezzomin){
+            return $ann->canoneaffitto>=$prezzomin;
+        });
+    }
+    public function getFiltroPeriodo($periodo){
+        $totale=Annuncio::all();
+        return $totale->filter(function($ann)use ($periodo){
+            return $ann->superficie=$periodo;
+        });
+    }
+    
 }
 

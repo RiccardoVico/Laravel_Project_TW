@@ -58,5 +58,4 @@ class PublicController extends Controller {
         return view('admin')
                         ->with('annunci', $annunci);
     }
-
 }

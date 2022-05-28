@@ -16,7 +16,7 @@ class Contratto extends Migration
         Schema::create('contratto',function(Blueprint $table)
         {
             $table->integer('idcontratto')->index();
-            $table->integer('idannuncio');
+            $table->BigIncrements('idannuncio');
             $table->date('data');
             $table->string('username1',20);
             $table->string('username2',20);

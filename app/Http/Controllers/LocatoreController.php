@@ -39,4 +39,5 @@ class LocatoreController extends Controller
 
         return redirect('/locatore');                         
     }
+    
 }

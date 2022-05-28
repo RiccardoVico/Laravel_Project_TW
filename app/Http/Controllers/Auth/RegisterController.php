@@ -21,14 +21,14 @@ class RegisterController extends Controller
     |
     */
 
-    use RegistersUsers;
+    use RegistersUsers; //processo predefinito,metodi già definiti per il controller di registrazione,lavoriamo in override con i metodi di base
 
     /**
      * Where to redirect users after registration.
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -37,7 +37,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware('guest');     //utenti che hanno accesso a questo controller , se un utente che non ha ancora fatto login accede viene rifiutato e lo blocca se già registrato
     }
 
     /**
@@ -49,9 +49,11 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            //'nome' => ['required', 'string', 'max:255'],
+           // 'cognome' => ['required', 'string', 'max:255'],//
+           // 'email' => ['required', 'string', 'email', 'max:255', 'unique:users','unique:utente'],//email validatore chiocciola, unica mail registrata se esiste non accetta
+            'username' => ['required', 'string', 'min:4', 'unique:users'],
+           // 'username' => ['required', 'string', 'min:4', 'confirmed'],//campo soggetto a conferma altro campo della form gestito come campo per la verigfica correttezza della password automaticamente
         ]);
     }
 
@@ -63,10 +65,13 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
+        return Utente::create([
+            //'nome' => $data['nome'],
+            //'cognome' => $data['cognome'],
+           // 'tipologia' =>$data['tipologia'],
+            'username'=>($data['username']),
             'password' => Hash::make($data['password']),
         ]);
     }
+    
 }

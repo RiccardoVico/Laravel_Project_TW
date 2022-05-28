@@ -30,7 +30,7 @@
 				
 				<div class="user-details">
 					<div class="input-box">
-						<span class="details">Username</span>
+						<span class="details">Username</span><div class="input-box">
 						<input type="text" placeholder="Scegli uno username" name="username" required>
 					</div>
 					<div class="input-box">

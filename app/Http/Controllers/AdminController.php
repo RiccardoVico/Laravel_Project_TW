@@ -4,10 +4,26 @@ namespace App\Http\Controllers;
 
 use App\FAQ;
 use App\Models\Resources\Annuncio;
+use App\Models\Cat2;
+use App\Models\Resources\Product;
+use App\Http\Requests\NewProductRequest;
 
-class AdminController extends Controller
-{
-    function index(){
+class AdminController extends Controller {
+
+    protected $_adminModel;
+
+    public function __construct() {
+        $this->middleware('can:isAdmin');
+        $this->_adminModel = new Cat2;
+    
+    }
+
+    public function index() {
+        return view('admin');
+    }
+
+
+    function index1(){
         $prova=request('idfaq');
         echo( $prova);
       //  return view('/admin');

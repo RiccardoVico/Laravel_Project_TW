@@ -20,7 +20,7 @@ class Messaggio extends Migration
             $table->string('username2',20);
             $table->text('testo');
             $table->date('data');
-            $table->integer('idannuncio');
+            $table->BigIncrements('idannuncio');
             $table->foreign('username1')->references('username')->on('utente');
             $table->foreign('username2')->references('username')->on('utente');
             $table->foreign('idannuncio')->references('idannuncio')->on('annuncio');

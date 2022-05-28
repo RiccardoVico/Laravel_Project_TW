@@ -19,7 +19,7 @@ class Operazione extends Migration
             $table->date('data');
             $table->string('descrizione',20);
             $table->string('username');
-            $table->integer('idannuncio');
+            $table->BigIncrements('idannuncio');
             $table->foreign('username')->references('username')->on('utente');
             $table->foreign('idannuncio')->references('idannuncio')->on('annuncio');
         });

@@ -19,6 +19,7 @@
         <header>
             <div id="menu">
                 @include('layouts/navaccesso')
+       
                 @yield('header')
             </div>
         </header>

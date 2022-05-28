@@ -10,4 +10,5 @@ class utente extends Model{
     protected $table='utente';
     protected $primarykey='id';
     public $timestamp=false;
+    
 }
