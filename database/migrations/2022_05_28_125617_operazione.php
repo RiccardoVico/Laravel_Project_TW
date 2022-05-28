@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -35,4 +36,3 @@ class Operazione extends Migration
         Schema::dropIfExists('operazione');
     }
 }
-

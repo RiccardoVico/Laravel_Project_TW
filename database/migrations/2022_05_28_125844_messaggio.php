@@ -21,8 +21,8 @@ class Messaggio extends Migration
             $table->text('testo');
             $table->date('data');
             $table->BigIncrements('idannuncio');
-            $table->foreign('username1')->references('username')->on('utente');
-            $table->foreign('username2')->references('username')->on('utente');
+            $table->foreign('username1')->references('username')->on('users');
+            $table->foreign('username2')->references('username')->on('users');
             $table->foreign('idannuncio')->references('idannuncio')->on('annuncio');
             
         });
