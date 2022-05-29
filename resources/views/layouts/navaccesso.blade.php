@@ -23,11 +23,12 @@
                 <li class="nav-item">
                     <a href="{{ route('faq') }}" class="nav-link">Profilo</a>
                 </li>
-                 <li><a href="" title="Esci dal sito" class="highlight" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
-        <form id="logout-form" action="{{ route('logout') }}" class="nav-link" method="POST" style="display: none;">
-            {{ csrf_field() }}
-        </form>
-
+                @auth
+                <li><a href="" title="Esci dal sito" class="highlight" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+                <form id="logout-form" action="{{ route('logout') }}" class="nav-link" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+                @endauth
             </ul>
         </div>
     </div>
