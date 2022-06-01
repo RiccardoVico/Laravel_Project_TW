@@ -12,7 +12,7 @@
                 <li class="nav-item">
                 <li>  <a href="{{ route('faq') }}" class="nav-link">Gestisci FAQ</a></li>
                 <li>   <a href="{{ route('inseriscifaq') }}" class="nav-link">Inserisci FAQ</a></li>
-                <a href="{{ route('statistiche') }}" class="nav-link">Statistiche</a></li>
+                <a href="{{ route('stats') }}" class="nav-link">Statistiche</a></li>
             <li><a href="" title="Esci dal sito" class="highlight" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
         <form id="logout-form" action="{{ route('logout') }}" class="nav-link" method="POST" style="display: none;">
             {{ csrf_field() }}

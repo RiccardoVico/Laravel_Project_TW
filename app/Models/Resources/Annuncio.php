@@ -11,4 +11,5 @@ class Annuncio extends Model {
     protected $table='annuncio';
     protected $primarykey='idannuncio';
     public $timestamp=false;
+
 }

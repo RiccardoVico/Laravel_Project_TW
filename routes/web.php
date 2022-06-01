@@ -50,7 +50,7 @@ Route::get('/locatario', 'PublicController@showHomeLocatario')
 Route::get('/admin', 'PublicController@showHomeAdmin')
         ->name('home_admin')->middleware('can:isAdmin');
 
-Route::post('admininserimentofaq','AdminController@store');
+Route::post('admininserimentofaq','AdminController@store')->name('insfaq');
 
 Route::view('/inseriscifaq','inseriscifaq')
 ->name('inseriscifaq');
@@ -63,10 +63,14 @@ Route::view('/inserisciannuncio', 'inserisciannuncio')
 
 Route::post('inserimentoann','LocatoreController@inserisciannuncio');
 
-Route::get('/statistiche','AdminController@totaleannunci')
+Route::post('/statistiche','AdminController@totaleannunci')
         ->name('statistiche');
+Route::get('/stats','AdminController@tot')
+        ->name('stats');
 //logoutmessaggiprofilo
 Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/provafiltraggio','LocatarioController@showfiltroPrezzoMin')-> name('filtraggio1');
+Route::post('/provafiltraggio','LocatarioController@showfiltro')-> name('filtraggio1');
+Route::get('/storagein/{nome}','LocatoreController@inserimentoperazione')
+        ->name('storagein');

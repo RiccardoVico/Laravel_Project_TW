@@ -5,14 +5,14 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-body{
+/*body{
     display: flex;
     height: 100vh;
     justify-content: center;
     align-items: center;
     padding: 10px;
     background: linear-gradient(135deg, #71b7e6, #9b59b6);
-}
+} */
 .registration_container{
     max-width: 1025px;
     width: 100%;
@@ -98,9 +98,9 @@ form .gender-details .category{
     border-color: #d9d9d9;
     background: #9b59b6;
 }
-form input[type="radio"]{
+/* form input[type="radio"]{
     display: none;
-}
+} */
 form .button{
     height: 45px;
     margin: 45px 0;
@@ -143,17 +143,13 @@ form .button input:hover{
     margin-left: 5px;
 }
 
-.scelta .locatore{
-    position: relative;
-}
-
 body.active .input-box2{
     pointer-events: none;
     opacity: 0;
     transition: all 0.3s ease;
 }
 
-.input-box3{
+.user-details .input-box3{
     pointer-events: none;
     opacity: 0;
 }
@@ -182,3 +178,50 @@ body .input-box2{
        width: 0; 
     }
 }
+
+
+/* Applicazione CSS Filtri */
+
+.container_filtri .niente{
+    pointer-events: none;
+    opacity: 0;
+}
+
+.container_filtri.active form .filtri_scomparsa{
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.container_filtri form .filtri_scomparsa{
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+.container_filtri form .filtri_posto_letto{
+    margin-top: 5px;
+    margin-left: 36%;
+    display: flex;
+}
+.container_filtri form .filtri_posto_letto .filtri_comparsa{
+
+    opacity: 0;
+
+    transition: all 0.3s ease;
+
+}
+.container_filtri.active form .filtri_comparsa{
+
+    opacity: 1;
+
+    transition: all 0.3s ease;
+
+}
+.errors {
+	color: #f93d00;
+        font-size: 12px;
+}
+.errors ul {
+	line-height: 100%;
+}
+
+

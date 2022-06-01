@@ -33,5 +33,3 @@ class Contratto extends Migration
         Schema::dropIfExists('contratto');
     }
 }
-
-
