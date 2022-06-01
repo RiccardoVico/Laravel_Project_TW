@@ -25,7 +25,7 @@
 					</div>
 				</div>
             </div>
-			<form action="register" method="POST">
+			<form action="{{ route('register') }}" method="POST">
                 @csrf
 				
 				<div class="user-details">
@@ -86,8 +86,8 @@
 						<input type="text" placeholder="Inserisci la città d'interesse" name="cittainteresse" nullable>
 					</div>
 					<div class="input-box3">
-						<span class="details">Tipologia</span>
-						<input type="text" value="" id="tipologia" name="tipologia">
+						<span class="details">Role</span>
+						<input type="text" value="" id="role" name="role">
 					</div>
 				</div>
 

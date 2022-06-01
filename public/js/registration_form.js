@@ -6,7 +6,7 @@ let result = document.getElementById("result");
 let findSelected = () => {
     let selected = document.querySelector("input[name='tipo']:checked").value;
     //result.textContent = `${selected}`;
-    document.getElementById("tipologia").value = `${selected}`;
+    document.getElementById("role").value = `${selected}`;
 
     if(selected == "Locatore") {
         body.classList.toggle("active");

@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
 use App\User;
-use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Foundation\Auth\RegistersUsers;
+
 
 class RegisterController extends Controller
 {
@@ -65,13 +66,24 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return Utente::create([
-            //'nome' => $data['nome'],
-            //'cognome' => $data['cognome'],
-           // 'tipologia' =>$data['tipologia'],
+        return User::create([
             'username'=>($data['username']),
+            'nome'=>($data['nome']),
+            'cognome'=>($data['cognome']),
+            'recapito'=>($data['recapito']),
+            'role' =>($data['role']),
             'password' => Hash::make($data['password']),
+            'cittainteresse' =>($data['cittainteresse']),
+            'via' =>($data['via']),
+            'citta' =>($data['citta']),
+            'numerocivico' =>($data['numerocivico']),
+            'cap' =>($data['cap']),
+            'provincia' =>($data['provincia']),
+            'paese' =>($data['paese']),
+            'mail' =>($data['mail']),
         ]);
+
+
     }
     
 }

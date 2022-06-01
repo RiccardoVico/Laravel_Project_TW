@@ -35,12 +35,12 @@ use AuthenticatesUsers;
         $role = auth()->user()->role;
         switch ($role) {
             case 'admin': return '/admin';
-            break;
-            case 'user': return '/locatore';
+                break;
+            case 'Locatore': return '/locatore';
+                break;
+            case'Locatario':return'/locatario';
                 break;
             default: return '/';
-                case'user2':return'/locatario';
-                    break;
         };
     }
 

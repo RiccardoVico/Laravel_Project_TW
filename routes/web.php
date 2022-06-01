@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,19 +35,20 @@ Route::post('login', 'Auth\LoginController@login');
 Route::post('logout','Auth\LoginController@logout')
         ->name('logout');
 
-Route::view('/register', 'register')
+Route::get('register', 'Auth\RegisterController@showRegisterForm')
         ->name('register');
 
-Route::post('register', 'UtenteController@store');
+Route::post('register', 'Auth\RegisterController@create')
+        ->name('register.store');
 
 Route::get('/locatore', 'PublicController@showHomeLocatore')
-        ->name('home_locatore')->middleware('can:isUser');
+        ->name('home_locatore')->middleware('can:isLocatore');
 
 Route::get('/gestisci_offerte', 'PublicController@showGestisciOfferte')
         ->name('gestisci_offerte');
 
 Route::get('/locatario', 'PublicController@showHomeLocatario')
-        ->name('home_locatario')->middleware('can:isUser2');
+        ->name('home_locatario')->middleware('can:isLocatario');
 
 Route::get('/admin', 'PublicController@showHomeAdmin')
         ->name('home_admin')->middleware('can:isAdmin');

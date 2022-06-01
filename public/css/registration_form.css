@@ -143,17 +143,13 @@ form .button input:hover{
     margin-left: 5px;
 }
 
-.scelta .locatore{
-    position: relative;
-}
-
 body.active .input-box2{
     pointer-events: none;
     opacity: 0;
     transition: all 0.3s ease;
 }
 
-.input-box3{
+.user-details .input-box3{
     pointer-events: none;
     opacity: 0;
 }
