@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'PublicController@showHome')
         ->name('home');
 
-Route::get('/catalogo', 'PublicController@showCatalogo')
+Route::get('/catalogo', 'PublicController@show')
         ->name('catalogo');
 
 Route::view('/chi_siamo', 'chi_siamo')
@@ -30,7 +30,6 @@ Route::get('login', 'Auth\LoginController@showLoginForm')
         ->name('login');
 
 Route::post('login', 'Auth\LoginController@login');
-
 Route::post('logout','Auth\LoginController@logout')
         ->name('logout');
 

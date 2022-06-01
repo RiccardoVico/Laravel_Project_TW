@@ -19,11 +19,11 @@ class PublicController extends Controller {
     
     public function showHome() {
         $annunci = $this->_catalogModel->getAnnunci();
-        return view('public_home')
+        return view('layouts/public')
                         ->with('annunci', $annunci);
     }
 
-    public function showCatalogo() {
+    public function show() {
         $annunci = $this->_catalogModel->getAnnunci();
         return view('catalogo')
                         ->with('annunci', $annunci);
@@ -43,7 +43,7 @@ class PublicController extends Controller {
 
     public function showGestisciOfferte() {
         $annunci = $this->_catalogModel->getannunci();
-        return view('gestisci_offerte')
+        return view('locatore_gestisci_offerte')
                         ->with('annunci', $annunci);
     }
 
