@@ -8,7 +8,7 @@ let findSelected = () => {
     //result.textContent = `${selected}`;
     document.getElementById("role").value = `${selected}`;
 
-    if(selected == "Locatore") {
+    if(selected == "locatore") {
         body.classList.toggle("active");
     } else{
         body.classList.remove("active");

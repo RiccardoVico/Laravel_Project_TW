@@ -19,10 +19,10 @@
 
 				<div class="tipo-account">
 					<div class="tipo_1">
-						<input type="radio" name="tipo" value="Locatario" checked><span>Locatario</span>
+						<input type="radio" name="tipo" value="locatario" checked><span>Locatario</span>
 					</div>
 					<div class="tipo_2">
-						<input type="radio" name="tipo" value="Locatore"><span>Locatore</span>
+						<input type="radio" name="tipo" value="locatore"><span>Locatore</span>
 					</div>
 				</div>
             </div>
