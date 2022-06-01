@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import url('https://fonts.google.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
     margin: 0;
@@ -178,3 +179,232 @@ body .input-box2{
        width: 0; 
     }
 }
+=======
+@import url('https://fonts.google.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+/*body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+} */
+.registration_container{
+    max-width: 1025px;
+    width: 100%;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+}
+.registration_container .title{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+.registration_container .title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+.registration_container form .user-details{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 0 12px 0;
+}
+form .user-details .input-box,
+form .user-details .input-box2{
+    margin-bottom: 15px;
+    margin-left: 15px;
+    width: 300px;
+}
+.user-details .input-box .details,
+.user-details .input-box2 .details{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.user-details .input-box input,
+.user-details .input-box2 input{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid,
+.user-details .input-box2 input:focus,
+.user-details .input-box2 input:valid{
+    border-color: #9b59b6;
+}
+form .gender-details .gender-title{
+    font-size: 20px;
+    font-weight: 500;
+}
+form .gender-details .category{
+    display: flex;
+    width: 80%;
+    margin: 14px 0;
+    justify-content: space-between;
+}
+.gender-details .category label{
+    display: flex;
+    align-items: center;
+}
+.gender-details .category .dot{
+    height: 18px;
+    width: 18px;
+    background-color: #d9d9d9;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 5px solid transparent;
+    transition: all 0.3s ease;
+}
+#dot-1:checked ~ .category label .one,
+#dot-2:checked ~ .category label .two,
+#dot-3:checked ~ .category label .three{
+    border-color: #d9d9d9;
+    background: #9b59b6;
+}
+/* form input[type="radio"]{
+    display: none;
+} */
+form .button{
+    height: 45px;
+    margin: 45px 0;
+}
+form .button input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+form .button input:hover{
+    background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+}
+
+.tipologia{
+    margin-top: 20px;
+    height: 70px;
+    width: 100%;
+}
+
+.tipologia .tipologia-title{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.tipologia .tipo-account{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    width: 50%;
+}
+.tipo-account .tipo_1 span,
+.tipo-account .tipo_2 span{
+    margin-left: 5px;
+}
+
+body.active .input-box2{
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.user-details .input-box3{
+    pointer-events: none;
+    opacity: 0;
+}
+
+body .input-box2{
+    transition: all 0.3s ease;
+}
+
+
+@media (max-width: 584px) {
+    .registration_container{
+        max-width: 100%;
+    }
+    form .user-details .input-box{
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    form .gender-details .category{
+        width: 100%;
+    }
+    .registration_container form .user-details{
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+    .user-details::-webkit-scrollbar{
+       width: 0; 
+    }
+}
+
+
+/* Applicazione CSS Filtri */
+
+.container_filtri .niente{
+    pointer-events: none;
+    opacity: 0;
+}
+
+.container_filtri.active form .filtri_scomparsa{
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.container_filtri form .filtri_scomparsa{
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+.container_filtri form .filtri_posto_letto{
+    margin-top: 5px;
+    margin-left: 36%;
+    display: flex;
+}
+.container_filtri form .filtri_posto_letto .filtri_comparsa{
+
+    opacity: 0;
+
+    transition: all 0.3s ease;
+
+}
+.container_filtri.active form .filtri_comparsa{
+
+    opacity: 1;
+
+    transition: all 0.3s ease;
+
+}
+.errors {
+	color: #f93d00;
+        font-size: 12px;
+}
+.errors ul {
+	line-height: 100%;
+}
+
+
+>>>>>>> 3b4c5ccc330dc42e73ea4c077b38a66f81c90a48

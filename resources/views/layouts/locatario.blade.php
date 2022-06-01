@@ -11,6 +11,8 @@
         <link rel="stylesheet" href="css/maicons.css">
         <link rel="stylesheet" href="css/owl-carousel/owl.carousel.css">
         <link rel="stylesheet" href="css/theme.css">
+        <link rel="stylesheet" href="css/registration_form.css">
+        
     </head>
     
     <body>
@@ -31,11 +33,12 @@
             @include('layouts/footer_public')
         </footer>
         <!-- end #footer -->
-
-        <script src="js/jquery-3.5.1.min.js"></script>
-        <script src="js/bootstrap.bundle.min.js"></script>
-        <script src="js/owl-carousel/owl.carousel.min.js"></script>
-        <script src="js/theme.js"></script>
+ <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/owl-carousel/owl.carousel.min.js"></script>
+    <script src="js/theme.js"></script>
+    <!-- <script src="js/registration_form.js"></script> -->
+    <script src="js/filtri.js"></script>
 
     </body>
 </html>

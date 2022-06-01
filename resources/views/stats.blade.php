@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <title>StatsFiltrate</title>
+        <title>HomeAdmin</title>
 
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/theme.css">
@@ -43,17 +43,42 @@
 
         <main>
             <main>
+                       <center>
+<h5> Opzioni filtraggio</h5>
+{{ Form::open(array('route' => 'statistiche', 'class' => 'contact-form')) }}
+  Tipologia appartamento<br>
+   {{ Form::label('tipo', 'Appartamento', ['class' => 'label-input']) }}
+   {{ Form::radio('tipo', '0', ['class' => 'input','id' => 'tipo']) }}
+   {{ Form::label('tipo', 'PostoLetto', ['class' => 'label-input']) }}
+   {{ Form::radio('tipo', '1', ['class' => 'input','id' => 'tipo']) }}
+   <br>
+   {{ Form::label('mydatetime', 'DataInizio', ['class' => 'label-input']) }}
+   {{ Form::date('mydatetime', '', ['class' => 'input','id' => 'mydatetime']) }}
+    {{ Form::label('mydatetime2', 'DataFine', ['class' => 'label-input']) }}
+   {{ Form::date('mydatetime2', '', ['class' => 'input','id' => 'mydatetime2']) }}
+    
+                 {{ Form::submit('Filtra', ['class' => 'form-btn1']) }}
+            
+            
+            {{ Form::close() }}
+
+  <!--<select name="tipo">
+      <option value=''></option>
+  <option value='0'>appartamento</option>
+  <option value='1'>posto letto</option>
+  </select><br>
+  Periodo temporale<br>
+  <input type="date" name="mydatetime" min><span>DataInizio</span>
+  <input type="date" name="mydatetime2" min><span>DataFine</span>
+  <button type="submit">Filtra</button>
+  -->
+</form></center>
+            </main>
+            <main>
                 <p>Totale annunci presenti nel sito</p>
                             <?php echo($count);?></main>
         </main>
 
-   <footer class="page-footer">
-            @include('layouts/footer_public')
-        </footer>
 
-        <script src="js/jquery-3.5.1.min.js"></script>
-        <script src="js/bootstrap.bundle.min.js"></script>
-        <script src="js/theme.js"></script>
 
-    </body>
-</html>
+

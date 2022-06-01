@@ -13,7 +13,7 @@ class Faq extends Migration
      */
     public function up()
     { Schema::create ('faq', function(Blueprint $table){
-        $table-> integer('idfaq')->index();
+        $table->bigIncrements('idfaq')->index();
         $table->text ('domanda');
         $table->text('risposta');
         $table->string('categoria');

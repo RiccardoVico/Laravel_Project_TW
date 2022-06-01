@@ -12,26 +12,46 @@
 	<body>
 		<div class="registration_container">
 			<div class="title">InserisciFaq</div>
-           
-			<form action="admininserimentofaq" method="POST">
-                @csrf
+           {{ Form::open(array('route' => 'insfaq', 'class' => 'contact-form')) }}
 				
 				<div class="user-details">
+					
 					<div class="input-box">
-						<span class="details">idfaq</span>
-						<input type="int" placeholder="Scegli uno username" name="idfaq" required>
+						
+						 {{ Form::label('domanda', 'domanda', ['class' => 'label-input']) }}
+                                                 {{ Form::text('domanda','', ['class' => 'input','id' => 'domanda']) }}
+                                                @if ($errors->first('domanda'))
+                                                <ul class="errors">
+                                                @foreach ($errors->get('domanda') as $message)
+                                                <li>{{ $message }}</li>
+                                                 @endforeach
+                                                 </ul>
+                                                @endif
 					</div>
 					<div class="input-box">
-						<span class="details">domanda</span>
-						<input type="text" placeholder="domanda" name="domanda" required>
+						
+						  {{ Form::label('risposta', 'rispostacompleta', ['class' => 'label-input']) }}
+                                                 {{ Form::text('risposta', '', ['class' => 'input','id' => 'risposta']) }}
+                                                  @if ($errors->first('risposta'))
+                                                   <ul class="errors">
+                                                   @foreach ($errors->get('risposta') as $message)
+                                                   <li>{{ $message }}</li>
+                                                   @endforeach
+                                                   </ul>
+                                                    @endif
+                        
 					</div>
 					<div class="input-box">
-						<span class="details">risposta</span>
-						<input type="text" placeholder="Inserisci il cognome" name="risposta" required>
-					</div>
-					<div class="input-box">
-						<span class="details">categoria</span>
-						<input type="text" placeholder="Inserisci l'indirizzo email" name="categoria" required>
+						 {{ Form::label('categoria', 'rispostabreve', ['class' => 'label-input']) }}
+                                                 {{ Form::text('categoria', '', ['class' => 'input','id' => 'categoria']) }}
+						 @if ($errors->first('categoria'))
+                                                 <ul class="errors">
+                                                 @foreach ($errors->get('categoria') as $message)
+                                                 <li>{{ $message }}</li>
+                                                 @endforeach
+                                                 </ul>
+                                                 @endif
+                        
 					
 					
 					</div>
@@ -41,8 +61,9 @@
 
 				<div class="button">
 					<input type="submit" value="inseriscifaq">
+                                        
 				</div>
-			</form>
+			 {{ Form::close() }}
 		</div>
         
         <script src="js/registration_form.js"></script>

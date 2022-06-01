@@ -16,12 +16,12 @@ class Operazione extends Migration
     {
         Schema::create('operazione',function(Blueprint $table)
         {
-            $table->integer('idoperazione')->index();
-            $table->date('data');
+            $table->bigIncrements('idoperazione')->index();
+            $table->datetime('data');
             $table->string('descrizione',20);
             $table->string('username');
-            $table->BigIncrements('idannuncio');
-            $table->foreign('username')->references('username')->on('utente');
+            $table->BigInteger('idannuncio')->unsigned();
+            $table->foreign('username')->references('username')->on('users');
             $table->foreign('idannuncio')->references('idannuncio')->on('annuncio');
         });
         //

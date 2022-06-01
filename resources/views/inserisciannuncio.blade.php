@@ -11,16 +11,13 @@
 	</head>
 	<body>
 		<div class="registration_container">
-			<div class="title">InserisciFaq</div>
+			<div class="title">InserisciAnnuncio</div>
            
 			<form action="inserimentoann" method="POST">
                 @csrf
 				
 				<div class="user-details">
-					<div class="input-box">
-						<span class="details">idannuncio</span>
-						<input type="int" placeholder="id" name="idannuncio" required>
-					</div>
+					
                                     <div class="input-box">
 						<span class="details">nomeannuncio</span>
 						<input type="varchar(20)" placeholder="nome" name="nomeannuncio" required>
@@ -47,7 +44,7 @@
 					</div>
                                     <div class="input-box">
 						<span class="details">datacc</span>
-                                                <input type="date" placeholder="datacc" name="datacc" required>
+                                                <input type="date" placeholder="datacc" name="datacc" min>
 					</div>
                                     <div class="input-box">
 						<span class="details">superificie</span>
@@ -93,6 +90,15 @@
 						<span class="details">via</span>
                                                 <input type="varchar(20)" placeholder="via" name="via" required>
 					</div>
+                                    <div class="input-box">
+						<span class="details">in_at</span>
+                                                <input type="date" placeholder="in_at" name="in_at" required>
+					</div>
+                                    <div class="input-box">
+						<span class="details">out_at</span>
+                                                <input type="date" placeholder="out_at" name="out_at" required>
+					</div>
+                                    
                                 </div>
 				
 

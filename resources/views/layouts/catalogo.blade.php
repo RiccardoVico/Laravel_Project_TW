@@ -1,3 +1,4 @@
+
 @isset($annunci)
 @foreach ($annunci as $annuncio)
 <div class="container py-3">
@@ -38,7 +39,9 @@
                             </div>
                             <h6 class="text-success">Disponibile</h6>
                             <div class="d-flex flex-column mt-4">
+  
                                 <button class="btn btn-primary btn-sm" type="button">Apri</button>
+             
                             </div>
                         </div>
                     </div>

@@ -38,4 +38,3 @@ class Messaggio extends Migration
         Schema::dropIfExists('messaggio');
     }
 }
-
