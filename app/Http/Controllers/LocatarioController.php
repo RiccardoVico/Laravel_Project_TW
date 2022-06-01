@@ -4,20 +4,15 @@ namespace App\Http\Controllers;
 
 use  App\Http\Controllers\Controller;
 use App\Models\Catalog;
-<<<<<<< HEAD
-
-=======
 use App\Utente;
 use App\Http\Requests\newF;
->>>>>>> 3b4c5ccc330dc42e73ea4c077b38a66f81c90a48
 class locatarioController extends Controller {
     protected $_catalogModel;
 
     public function __construct() {
         $this->_catalogModel = new Catalog();
     }
-<<<<<<< HEAD
-
+/*
     public function showfiltro(){    
         $prova=request('tipologia');
         $res=$this->_catalogModel->getAnnunciFiltroPosto($prova);
@@ -43,7 +38,6 @@ class locatarioController extends Controller {
         return view('provafiltro')
                 ->with('annuncifiltro',$res);
     }
-=======
     public function showfiltro(newF $request){
         $prezzomax=request('prezzomax');
         $prezzomin=request('prezzomin');
@@ -96,8 +90,7 @@ class locatarioController extends Controller {
         $res=$this->_catalogModel->getAnnunciFiltroPrezzoMin($prova);
         return view('provafiltro')
         ->with('annuncifiltro',$res);}
+ * 
+ */
         
-   
-
->>>>>>> 3b4c5ccc330dc42e73ea4c077b38a66f81c90a48
 }
