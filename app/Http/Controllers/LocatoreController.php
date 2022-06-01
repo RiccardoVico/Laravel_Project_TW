@@ -61,7 +61,7 @@ class LocatoreController extends Controller
        $prova=Carbon::parse(now());
        $mydatetime=$prova->format('Y-m-d 00:00:00');
        $utente2->data=$mydatetime;
-       $utente2->username=auth()->user()->username;
+       $utente2->idutente=auth()->user()->id;
        $utente2->idannuncio=$id;
        $utente2->save();
     }

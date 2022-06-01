@@ -20,7 +20,7 @@
 					
                                     <div class="input-box">
 						<span class="details">nomeannuncio</span>
-						<input type="varchar(20)" placeholder="nome" name="nomeannuncio" required>
+						<input type="varchar(30)" placeholder="nome" name="nomeannuncio" required>
 					</div>
                                      <div class="input-box">
 						<span class="details">canoneaffitto</span>
@@ -88,7 +88,7 @@
 					</div>
                                     <div class="input-box">
 						<span class="details">via</span>
-                                                <input type="varchar(20)" placeholder="via" name="via" required>
+                                                <input type="varchar(30)" placeholder="via" name="via" required>
 					</div>
                                     <div class="input-box">
 						<span class="details">in_at</span>
