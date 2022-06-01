@@ -7,6 +7,7 @@
 use App\Models\Resources\utente;
 use App\Models\Resources\faq;
 use App\Models\Resources\Annuncio;
+use App\Models\Resources\Operazione;
 use Carbon\Carbon;
 class Catalog {
     protected $_res;
@@ -23,8 +24,23 @@ class Catalog {
     }                                     //(spostare)
     
     public function getAnnunci() {
+        $annunci = Annuncio::paginate(2);
+        return $annunci;
+    }
+    
+    public function getAnnunciSpaginati() {
         return Annuncio::all();
     }
+    
+    public function getAnnunciById($idannunci) {
+        $annunci = Annuncio::whereIn('idannuncio', $idannunci);
+        return $annunci->paginate(1);
+    }
+    
+    public function getOperazioni() {
+        return Operazione::all();
+    }
+    
     public function getAnnunciFiltroPosto($posto,$res){
         $totale=$res;
         return $totale->filter(function($ann)use ($posto){

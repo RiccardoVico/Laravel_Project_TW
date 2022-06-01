@@ -19,7 +19,7 @@ class PublicController extends Controller {
     
     public function showHome() {
         $annunci = $this->_catalogModel->getAnnunci();
-        return view('layouts/public')
+        return view('public_home')
                         ->with('annunci', $annunci);
     }
 
@@ -41,9 +41,10 @@ class PublicController extends Controller {
                         ->with('annunci', $annunci);
     }
 
-    public function showGestisciOfferte() {
-        $annunci = $this->_catalogModel->getannunci();
-        return view('locatore_gestisci_offerte')
+    public function showGestisciOfferte($userId) {
+        $operazioni = $this->_catalogModel->getOperazioni()->where('idutente', $userId);
+        $annunci = $this->_catalogModel->getAnnunciById($operazioni->pluck('idannuncio')->toArray());
+        return view('gestisci_offerte')
                         ->with('annunci', $annunci);
     }
 
@@ -57,5 +58,15 @@ class PublicController extends Controller {
         $annunci = $this->_catalogModel->getannunci();
         return view('admin')
                         ->with('annunci', $annunci);
+    }
+    
+    public function showAnnuncio($annuncioId) {
+        $annunci = $this->_catalogModel->getAnnunciSpaginati();
+        $annuncio = $annunci->where('idannuncio', $annuncioId)->first();
+        $operazioni = $this->_catalogModel->getOperazioni();
+        $idutente = $operazioni->where('idannuncio', $annuncioId)->first()->idutente;
+        return view('annuncio')
+                ->with('annuncio', $annuncio)
+                ->with('idutente', $idutente);
     }
 }

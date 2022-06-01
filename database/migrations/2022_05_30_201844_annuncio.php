@@ -15,7 +15,7 @@ class Annuncio extends Migration
     {
         Schema::create('annuncio',function (Blueprint $table) {
             $table->BigIncrements('idannuncio')->index();
-            $table->string('nomeannuncio', 20)->unique();
+            $table->string('nomeannuncio', 30)->unique();
             $table->integer('canoneaffitto');
             $table->string('cap', 5)->nullable();
             $table->string('numerocivico', 5)->nullable();
@@ -32,7 +32,7 @@ class Annuncio extends Migration
             $table->boolean('tipologia')->nullable();
             $table->text('descrizione')->nullable();
             $table->text('utenze')->nullable();
-            $table->string('via', 20)->nullable();
+            $table->string('via', 30)->nullable();
             $table->integer('tipo_stanza')->nullable()->default(1); //camerasingolaodoppia
             $table->integer('numeroletticamera')->nullable()->default(0);
             $table->integer('numerototalicamere')->nullable()->default(0);

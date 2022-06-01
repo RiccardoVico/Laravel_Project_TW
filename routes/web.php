@@ -43,8 +43,8 @@ Route::post('register', 'Auth\RegisterController@create')
 Route::get('/locatore', 'PublicController@showHomeLocatore')
         ->name('home_locatore')->middleware('can:isLocatore');
 
-Route::get('/gestisci_offerte', 'PublicController@showGestisciOfferte')
-        ->name('gestisci_offerte');
+Route::get('/gestisci_offerte/{utente}', 'PublicController@showGestisciOfferte')
+        ->name('gestisci_offerte')->middleware('can:isLocatore');
 
 Route::get('/locatario', 'PublicController@showHomeLocatario')
         ->name('home_locatario')->middleware('can:isLocatario');
@@ -76,3 +76,6 @@ Auth::routes();
 Route::post('/provafiltraggio','LocatarioController@showfiltro')-> name('filtraggio1');
 Route::get('/storagein/{nome}','LocatoreController@inserimentoperazione')
         ->name('storagein');
+
+Route::get('/annuncio/{annuncio}', 'PublicController@showAnnuncio')
+        ->name('annuncio');

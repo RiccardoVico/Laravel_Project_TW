@@ -19,9 +19,9 @@ class Operazione extends Migration
             $table->bigIncrements('idoperazione')->index();
             $table->datetime('data');
             $table->string('descrizione',20);
-            $table->string('username');
+            $table->bigInteger('idutente')->unsigned();
             $table->BigInteger('idannuncio')->unsigned();
-            $table->foreign('username')->references('username')->on('users');
+            $table->foreign('idutente')->references('id')->on('users');
             $table->foreign('idannuncio')->references('idannuncio')->on('annuncio');
         });
         //
