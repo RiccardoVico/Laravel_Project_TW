@@ -10,6 +10,7 @@
         <title>Registrazione</title>
 	</head>
 	<body>
+		<div class="registration-box">
 		<div class="registration_container">
 			<div class="title">Registration</div>
             <div class="tipologia">
@@ -116,6 +117,7 @@
 					<input type="submit" value="Register">
 				</div>
 			</form>
+		</div>
 		</div>
         
         <script src="js/registration_form.js"></script>
