@@ -14,8 +14,14 @@ class newF extends FormRequest{
     }
     public function rules(){
         return[
-        'prezzomax'=>'numeric',
-        'prezzomin'=>'numeric',
+        'prezzomax'=>'nullable|numeric|min:0',
+        'prezzomin'=>'nullable|numeric|min:0',
+        'superficie'=>'nullable|numeric|min:0',
+        'postilettototali'=>'nullable|numeric|min:0', 
+        'letticamera'=>'nullable|numeric|min:0',
+        'numerocamere'=>'nullable|numeric|min:0',
+        'etamin'=>'nullable|numeric|min:0',
+        'etamax'=>'nullable|numeric|min:0;'
           ];
     }
 }

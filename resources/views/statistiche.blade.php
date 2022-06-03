@@ -45,6 +45,10 @@
             <main>
                 <p>Totale annunci presenti nel sito</p>
                             <?php echo($count);?></main>
+            <p>Totale richieste fatte dai potenziali locatari</p>
+            <?php echo($count4);?></main>
+        <p>Totale alloggi locati</p>
+            <?php echo($count3);?></main>
         </main>
 
    <footer class="page-footer">

@@ -84,6 +84,7 @@
                         
                         {{ Form::label('prezzomin', 'prezzomin', ['class' => 'label-input']) }}
                         {{ Form::text('prezzomin', '', ['class' => 'input','id' => 'prezzomin']) }}
+                       
                          
                          @if ($errors->first('prezzomin'))
                          <ul class="errors">
@@ -92,15 +93,59 @@
                          @endforeach
                          </ul>
                             @endif
+                        {{ Form::label('etamin', 'etamin', ['class' => 'label-input']) }}
+                        {{ Form::number('etamin', '', ['class' => 'input','id' => 'etamin']) }}
+                        @if ($errors->first('etamin'))
+                         <ul class="errors">
+                         @foreach ($errors->get('etamin') as $message)
+                         <li>{{ $message }}</li>
+                         @endforeach
+                         </ul>
+                            @endif
+                         {{ Form::label('etamax', 'etamax', ['class' => 'label-input']) }}
+                        {{ Form::number('etamax', '', ['class' => 'input','id' => 'etamax']) }}
+                        @if ($errors->first('etamax'))
+                         <ul class="errors">
+                         @foreach ($errors->get('etamax') as $message)
+                         <li>{{ $message }}</li>
+                         @endforeach
+                         </ul>
+                            @endif
+                       
                         {{ Form::label('mydatetime', 'DataInizio', ['class' => 'label-input']) }}
                         {{ Form::date('mydatetime', '', ['class' => 'input','id' => 'mydatetime']) }}
                         {{ Form::label('mydatetime2', 'DataFine', ['class' => 'label-input']) }}
                         {{ Form::date('mydatetime2', '', ['class' => 'input','id' => 'mydatetime2']) }}
                         {{ Form::label('superficie', 'superficie', ['class' => 'label-input']) }}
-                        {{ Form::text('superifice','', ['class' => 'input','id' => 'superificie']) }}
+                        {{ Form::text('superficie','', ['class' => 'input','id' => 'superficie']) }}
+                        
+                        @if ($errors->first('superficie'))
+                        <ul class="errors">
+                        @foreach ($errors->get('superficie') as $message)
+                        <li>{{ $message }}</li>
+                        @endforeach
+                        </ul>
+                            @endif
+                            <br>
                         {{ Form::label('postilettototali', 'postilettototali', ['class' => 'label-input']) }}
-                        {{ Form::text('postilettototali','', ['class' => 'input','id' => 'postilettototali']) }}
-   
+                        {{ Form::number('postilettototali','', ['class' => 'input','id' => 'postilettototali']) }}
+                        
+                        @if ($errors->first('postilettototali'))
+                        <ul class="errors">
+                        @foreach ($errors->get('postilettototali') as $message)
+                        <li>{{ $message }}</li>
+                        @endforeach
+                        </ul>
+                            @endif
+                            <br>
+                        {{ Form::label('wifis', 'wifi richiesto', ['class' => 'label-input']) }}
+                        {{ Form::checkbox('wifis', '1', ['class' => 'input','id' => 'wifis']) }}
+                        {{ Form::label('wifin', 'wifi non richiesto', ['class' => 'label-input']) }}
+                        {{ Form::checkbox('wifin', '0', ['class' => 'input','id' => 'wifin']) }}
+                        {{ Form::label('balcones', 'balcone richiesto', ['class' => 'label-input']) }}
+                        {{ Form::checkbox('balcones', '1', ['class' => 'input','id' => 'balcones']) }}
+                        {{ Form::label('balconen', 'balcone non richiesto', ['class' => 'label-input']) }}
+                        {{ Form::checkbox('balconen', '0', ['class' => 'input','id' => 'balconen']) }}
                         <div class="filtri_posto_letto">
                             <div class="filtri_scomparsa">
                              {{ Form::label('tipostanzas', 'CameraSingola', ['class' => 'label-input']) }}
@@ -108,27 +153,51 @@
                              {{ Form::label('tipostanzad', 'CameraDoppia', ['class' => 'label-input']) }}
                              {{ Form::checkbox('tipostanzad', '2', ['class' => 'input','id' => 'tipostanzad']) }}
                              {{ Form::label('letticamera', 'letti nella camera', ['class' => 'label-input']) }}
-                             {{ Form::text('letticamera','', ['class' => 'input','id' => 'letticamera']) }}
-                             <br>
-                             {{ Form::label('angolostudio', 'angolostudio richiesto', ['class' => 'label-input']) }}
-                             {{ Form::radio('angolostudio', '0', ['class' => 'input','id' => 'angolostudio']) }}
-                             {{ Form::label('angolostudio', 'angolostudio non richiesto', ['class' => 'label-input']) }}
-                             {{ Form::radio('angolostudio', '1', ['class' => 'input','id' => 'angolostudio']) }}
+                             {{ Form::number('letticamera','', ['class' => 'input','id' => 'letticamera']) }}
+                             
+                        @if ($errors->first('letticamera'))
+                        <ul class="errors">
+                        @foreach ($errors->get('letticamera') as $message)
+                        <li>{{ $message }}</li>
+                        @endforeach
+                        </ul>
+                            @endif
+                            <br> <br>
+                             {{ Form::label('angolostudion', 'angolostudiononrichiesto', ['class' => 'label-input']) }}
+                             {{ Form::checkbox('angolostudion', '0', ['class' => 'input','id' => 'angolostudion']) }}
+                             {{ Form::label('angolostudios', 'angolostudio  richiesto', ['class' => 'label-input']) }}
+                             {{ Form::checkbox('angolostudios', '1', ['class' => 'input','id' => 'angolostudios']) }}
                           <!--      <input type="text" name=""><label>Metri Quadri</label>-->
                             </div>
 
                             <div class="filtri_comparsa">
                               {{ Form::label('numerocamere', 'numerocamere', ['class' => 'label-input']) }}
-                              {{ Form::text('numerocamere', '', ['class' => 'input','id' => 'numerocamere']) }}
+                              {{ Form::number('numerocamere', '', ['class' => 'input','id' => 'numerocamere']) }}
+                              
+                               @if ($errors->first('numerocamere'))
+                                <ul class="errors">
+                               @foreach ($errors->get('numerocamere') as $message)
+                              <li>{{ $message }}</li>
+                              @endforeach
+                              </ul>
+                              @endif
                               <br>
-                              {{ Form::label('cucina', 'cucina non richiesta', ['class' => 'label-input']) }}
-                              {{ Form::radio('cucina', '0', ['class' => 'input','id' => 'cucina']) }}
-                              {{ Form::label('cucina', 'cucina non richiesta', ['class' => 'label-input']) }}
-                              {{ Form::radio('cucina', '1', ['class' => 'input','id' => 'cucina']) }}
-                              {{ Form::label('localer', 'locale ricreativo non richiesto', ['class' => 'label-input']) }}
-                              {{ Form::radio('localer', '0', ['class' => 'input','id' => 'localer']) }}
-                              {{ Form::label('localer', 'locale ricreativo richiesto', ['class' => 'label-input']) }}
-                              {{ Form::radio('localer', '1', ['class' => 'input','id' => 'localer']) }}
+                              {{ Form::label('cucinan', 'cucina non richiesta', ['class' => 'label-input']) }}
+                              {{ Form::checkbox('cucinan', '0', ['class' => 'input','id' => 'cucinan']) }}
+                              {{ Form::label('cucinas', 'cucina richiesta', ['class' => 'label-input']) }}
+                              {{ Form::checkbox('cucinas', '1', ['class' => 'input','id' => 'cucinas']) }}
+                              {{ Form::label('localern', 'locale ricreativo non richiesto', ['class' => 'label-input']) }}
+                              {{ Form::checkbox('localern', '0', ['class' => 'input','id' => 'localern']) }}
+                              {{ Form::label('localers', 'locale ricreativo richiesto', ['class' => 'label-input']) }}
+                              {{ Form::checkbox('localers', '1', ['class' => 'input','id' => 'localers']) }}
+                              {{ Form::label('lavatricen', 'lavatrice non richiesta', ['class' => 'label-input']) }}
+                              {{ Form::checkbox('lavatricen', '0', ['class' => 'input','id' => 'lavatricen']) }}
+                               {{ Form::label('lavatrices', 'lavatrice  richiesta', ['class' => 'label-input']) }}
+                              {{ Form::checkbox('lavatrices', '1', ['class' => 'input','id' => 'lavatrices']) }}
+                              {{ Form::label('lavastovn', 'lavastoviglie non richiesta', ['class' => 'label-input']) }}
+                              {{ Form::checkbox('lavastovn', '0', ['class' => 'input','id' => 'lavastovn']) }}
+                              {{ Form::label('lavastovs', 'lavastoviglie richiesta', ['class' => 'label-input']) }}
+                              {{ Form::checkbox('lavastovs', '1', ['class' => 'input','id' => 'lavastovs']) }}
                             </div>
                         </div>
                         <button type="submit" class="btn btn-outline-light">Filtra</button>

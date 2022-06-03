@@ -12,6 +12,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/owl-carousel/owl.carousel.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/theme.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/registration_form.css') }}">
+        <style> .col { background-color:  #99cbff  ; }</style>
         
     </head>
     

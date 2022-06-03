@@ -23,6 +23,8 @@ class Operazione extends Migration
             $table->BigInteger('idannuncio')->unsigned();
             $table->foreign('idutente')->references('id')->on('users');
             $table->foreign('idannuncio')->references('idannuncio')->on('annuncio');
+            $table->rememberToken();
+            $table->timestamps();
         });
         //
 }

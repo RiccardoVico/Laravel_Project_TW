@@ -21,13 +21,13 @@ class DatabaseSeeder extends Seeder
         
         DB::table('users')->insert([
             ['nome' => 'Martina', 'cognome' => 'Mamy', 'mail' => 'mario@rossiii.it', 'username' => 'martymarty',
-                'password' => Hash::make('martymarty'), 'role' => 'locatario'],
+                'password' => Hash::make('martymarty'),'eta'=>'18 ','role' => 'locatario'],
             ['nome' => 'Alex', 'cognome' => 'Mamy', 'mail' => 'mario@rossiii.it', 'username' => 'adminadmin',
-                'password' => Hash::make('adminadmin'), 'role' => 'admin'],
+                'password' => Hash::make('adminadmin'), 'eta'=>'18','role' => 'admin'],
             ['nome' => 'Alex', 'cognome' => 'Mamy', 'mail' => 'mario@rossiii.it', 'username' => 'alexalex',
-                'password' => Hash::make('alexalex'), 'role' => 'locatore'],
+                'password' => Hash::make('alexalex'),'eta'=>'18', 'role' => 'locatore'],
             ['nome' => 'Pippo', 'cognome' => 'Pippo', 'mail' => 'pippo@pippo.it', 'username' => 'pippopippo',
-                'password' => Hash::make('pippopippo'), 'role' => 'locatore']
+                'password' => Hash::make('pippopippo'),'eta'=>'18', 'role' => 'locatore']
         ]);
 
         DB::table('faq')->insert([
@@ -39,9 +39,9 @@ class DatabaseSeeder extends Seeder
         ]);
         
         DB::table('operazione')->insert([
-            ['data' => Carbon::parse('2000-01-01'), 'descrizione' => 'Inserimento', 'idutente' => '3', 'idannuncio' => '1'],
-            ['data' => Carbon::parse('2000-01-01'), 'descrizione' => 'Inserimento', 'idutente' => '3', 'idannuncio' => '2'],
-            ['data' => Carbon::parse('2000-01-01'), 'descrizione' => 'Inserimento', 'idutente' => '4', 'idannuncio' => '3']
+            ['data' => Carbon::parse('2000-01-01'), 'descrizione' => 'inserimento', 'idutente' => '3', 'idannuncio' => '1'],
+            ['data' => Carbon::parse('2000-01-01'), 'descrizione' => 'inserimento', 'idutente' => '3', 'idannuncio' => '2'],
+            ['data' => Carbon::parse('2000-01-01'), 'descrizione' => 'inserimento', 'idutente' => '4', 'idannuncio' => '3']
         ]);
     }}
 

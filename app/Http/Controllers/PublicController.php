@@ -8,7 +8,10 @@ namespace App\Http\Controllers;
 use  App\Http\Controllers\Controller;
 use App\Models\Catalog;
 use App\Utente;
-
+use Illuminate\Support\Arr;
+use Illuminate\Support\Collection;
+use App\Models\Resources\users;
+use App\Models\Resources\Annuncio;
 class PublicController extends Controller {
 
     protected $_catalogModel;
@@ -42,10 +45,11 @@ class PublicController extends Controller {
     }
 
     public function showGestisciOfferte($userId) {
-        $operazioni = $this->_catalogModel->getOperazioni()->where('idutente', $userId);
-        $annunci = $this->_catalogModel->getAnnunciById($operazioni->pluck('idannuncio')->toArray());
-        return view('gestisci_offerte')
-                        ->with('annunci', $annunci);
+       $operazioni = $this->_catalogModel->getOperazioni()->where('idutente', $userId);
+       $oo=$this->_catalogModel->getOperazioniFiltro($operazioni);
+       $annunci = $this->_catalogModel->getAnnunciById($oo->pluck('idannuncio')->toArray());
+       return view('gestisci_offerte')
+       ->with('annunci', $annunci);
     }
 
     public function showHomeLocatario() {
@@ -69,4 +73,50 @@ class PublicController extends Controller {
                 ->with('annuncio', $annuncio)
                 ->with('idutente', $idutente);
     }
-}
+    public function annunciopzionati($userId){
+        $coll=new Collection;
+                  $operazioni = $this->_catalogModel->getOperazioni()->where('idutente', $userId);
+         $oo=$this->_catalogModel->getOperazioniFiltro($operazioni);
+         foreach($oo as $o){
+             ($r=$o->idannuncio);
+             ($coll->add($this->_catalogModel->getAnnId($r)));
+             
+         }
+         
+        
+        (($opp=$this->_catalogModel->getOperazioniOpziona()));
+        
+        ($tt=$this->_catalogModel-> getAnnunciOpzionati($coll,$opp));
+        //foreach($opp as $op){
+          //  echo($op->idannuncio);
+          //  echo($op->idutente);
+        //}
+        return view('prova3')
+       ->with('annunci', $tt);
+        
+        
+             //  return redirect('annopzionati');
+
+
+    }
+    public function opzionatoda($idannuncio){
+          $res2= new Collection;
+        // echo($opp=$this->_catalogModel->getOperazioniOpziona());
+          
+         ($res=$this->_catalogModel->getOperazioniOpzionaId($idannuncio));
+         foreach($res as $r){
+         ($idutente=$r->idutente);
+         $res2->add($this->_catalogModel->getutente($idutente));
+         }
+         return view('prova4')
+        ->with('annunci', $res2);
+         }
+    
+      
+      
+     
+        
+
+
+    }
+

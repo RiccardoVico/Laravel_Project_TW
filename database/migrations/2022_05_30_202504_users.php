@@ -19,8 +19,10 @@ class users extends Migration
         $table->string('username',20)->index();
         $table->string('nome',20);
         $table->string('cognome',20);
+        $table->integer('eta');
         $table->string('recapito',10)->nullable();
         $table->string('password',500);
+        $table->char('genere')->nullable();
         $table->string('cittainteresse',20)->nullable();
         $table->string('via',20)->nullable();
         $table->string('citta',20)->nullable();

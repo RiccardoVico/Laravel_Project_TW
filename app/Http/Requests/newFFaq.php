@@ -14,9 +14,9 @@ class newFFaq extends FormRequest{
     }
     public function rules(){
         return[
-        'domanda'=>'max:3',
-        'risposta'=>'max:3',
-        'categoria'=>'max:3'
+        'domanda'=>'required|max:300',
+        'risposta'=>'required|max:600',
+        'categoria'=>'max:300'
           ];
     }
 }

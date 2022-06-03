@@ -42,15 +42,15 @@
         </header>
 
         <main>
-            <main>
+            
                        <center>
 <h5> Opzioni filtraggio</h5>
 {{ Form::open(array('route' => 'statistiche', 'class' => 'contact-form')) }}
   Tipologia appartamento<br>
-   {{ Form::label('tipo', 'Appartamento', ['class' => 'label-input']) }}
-   {{ Form::radio('tipo', '0', ['class' => 'input','id' => 'tipo']) }}
-   {{ Form::label('tipo', 'PostoLetto', ['class' => 'label-input']) }}
-   {{ Form::radio('tipo', '1', ['class' => 'input','id' => 'tipo']) }}
+   {{ Form::label('tipoa', 'Appartamento', ['class' => 'label-input']) }}
+   {{ Form::checkbox('tipoa', '0', ['class' => 'input','id' => 'tipoa']) }}
+   {{ Form::label('tipop', 'PostoLetto', ['class' => 'label-input']) }}
+   {{ Form::checkbox('tipop', '1', ['class' => 'input','id' => 'tipop']) }}
    <br>
    {{ Form::label('mydatetime', 'DataInizio', ['class' => 'label-input']) }}
    {{ Form::date('mydatetime', '', ['class' => 'input','id' => 'mydatetime']) }}
@@ -72,13 +72,19 @@
   <input type="date" name="mydatetime2" min><span>DataFine</span>
   <button type="submit">Filtra</button>
   -->
-</form></center>
-            </main>
+  </form</center></main>
+            
             <main>
                 <p>Totale annunci presenti nel sito</p>
-                            <?php echo($count);?></main>
+                       <?php echo($count);?>
+               <p> Totale offerte di locazione fatte dai potenziali locatari<p>
+                <?php echo($count3);?>
+               <p>Totale alloggi locati</p>
+               <?php echo($count4);?>
+                
         </main>
 
 
-
+    </body>
+</html>
 

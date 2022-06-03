@@ -7,97 +7,107 @@
 
         <link rel="stylesheet" href="css/registration_form.css">
         
-        <title>Registrazione</title>
+        <title>Inserimento Annuncio</title>
 	</head>
 	<body>
 		<div class="registration_container">
 			<div class="title">InserisciAnnuncio</div>
-           
-			<form action="inserimentoann" method="POST">
-                @csrf
+                          
+                
+                             {{ Form::open(array('route' => 'inserimentoann', 'id' => 'add', 'files' => true, 'class' => 'contact-form')) }}
 				
 				<div class="user-details">
 					
                                     <div class="input-box">
-						<span class="details">nomeannuncio</span>
-						<input type="varchar(30)" placeholder="nome" name="nomeannuncio" required>
+						
+						{{ Form::label('nomeannuncio', 'nomeannuncio', ['class' => 'label-input']) }}
+                                                 {{ Form::text('nomeannuncio','', ['class' => 'input','id' => 'nomeannuncio']) }}
 					</div>
                                      <div class="input-box">
-						<span class="details">canoneaffitto</span>
-						<input type="int" placeholder="canone" name="canoneaffitto" required>
+						
+						{{ Form::label('canoneaffitto', 'canoneaffitto', ['class' => 'label-input']) }}
+                                                 {{ Form::text('canoneaffitto','', ['class' => 'input','id' => 'canoneaffitto']) }}
 					</div>
 					<div class="input-box">
-						<span class="details">cap</span>
-						<input type="varchar(5)" placeholder="cap" name="cap" required>
+						
+						{{ Form::label('cap', 'cap', ['class' => 'label-input']) }}
+                                                 {{ Form::text('cap','', ['class' => 'input','id' => 'cap']) }}
 					</div>
                                     <div class="input-box">
-						<span class="details">numerocivico</span>
-						<input type="varchar(5)" placeholder="numerocivico" name="numerocivico" required>
+						
+						{{ Form::label('numerocivico', 'numerocivico', ['class' => 'label-input']) }}
+                                                 {{ Form::text('numerocivico','', ['class' => 'input','id' => 'numerocivico']) }}
 					</div>
 					<div class="input-box">
-						<span class="details">citta</span>
-						<input type="varchar(5)" placeholder="citta" name="citta" required>
-					</div>
-					<div class="input-box">
-						<span class="details">disponibilita</span>
-                                                <input type="tinyint" placeholder="disponibilita" name="disponibilita" required>
+						
+						{{ Form::label('citta', 'citta', ['class' => 'label-input']) }}
+                                                 {{ Form::text('citta','', ['class' => 'input','id' => 'citta']) }}
 					</div>
                                     <div class="input-box">
-						<span class="details">datacc</span>
-                                                <input type="date" placeholder="datacc" name="datacc" min>
-					</div>
-                                    <div class="input-box">
-						<span class="details">superificie</span>
-                                                <input type="double" placeholder="superificie" name="superificie" required>
-					</div>
-                                    <div class="input-box">
-						<span class="details">postiletto</span>
-                                                <input type="tinyint" placeholder="postiletto" name="postiletto" required>
-					</div>
-                                    <div class="input-box">
-						<span class="details">wifi</span>
-                                                <input type="tinyintt" placeholder="wifi" name="wifi" required>
+						
+                                                {{ Form::label('wifi', 'wifi presente', ['class' => 'label-input']) }}
+                                                {{ Form::radio('wifi', '0', ['class' => 'input','id' => 'wifi']) }}
+                                                {{ Form::label('wifi', 'wifi non presente', ['class' => 'label-input']) }}
+                                                {{ Form::radio('wifi', '1', ['class' => 'input','id' => 'wifi']) }}
 					</div>
 				 <div class="input-box">
-						<span class="details">angolostudio</span>
-                                                <input type="tinyint" placeholder="angolostudio" name="angolostudio" required>
+						
+                                                {{ Form::label('angolostudio', ' angolo studio non presente', ['class' => 'label-input']) }}
+                                                {{ Form::radio('angolostudio', '0', ['class' => 'input','id' => 'angolostudio']) }}
+                                                {{ Form::label('angolostudio', 'angolo studio presente', ['class' => 'label-input']) }}
+                                                {{ Form::radio('angolostudio', '1', ['class' => 'input','id' => 'angolostudio']) }}
 					</div>
                                      <div class="input-box">
-						<span class="details">climatizzatore</span>
-                                                <input type="tinyint" placeholder="climatizzatore" name="climatizzatore" required>
+						
+                                                {{ Form::label('climatizzatore', 'climatizzatore non presente', ['class' => 'label-input']) }}
+                                                {{ Form::radio('climatizzatore', '0', ['class' => 'input','id' => 'climatizzatore']) }}
+                                                {{ Form::label('climatizzatore', ' climatizzatore presente', ['class' => 'label-input']) }}
+                                                {{ Form::radio('climatizzatore', '1', ['class' => 'input','id' => 'climatizzatore']) }}
 					</div>
                                     <div class="input-box">
-						<span class="details">etamin</span>
-                                                <input type="int" placeholder="etamin" name="etamin" required>
+						
+                                                {{ Form::label('etamin', 'etamin', ['class' => 'label-input']) }}
+                                                 {{ Form::number('etamin','', ['class' => 'input','id' => 'etamin']) }}
 					</div>
                                     <div class="input-box">
-						<span class="details">etamax</span>
-                                                <input type="int" placeholder="etamax" name="etamax" required>
+						{{ Form::label('etamax', 'etamax', ['class' => 'label-input']) }}
+                                                 {{ Form::number('etamax','', ['class' => 'input','id' => 'etamax']) }}
 					</div>
                                     <div class="input-box">
-						<span class="details">tipologia</span>
-                                                <input type="tinyint" placeholder="tipologia" name="tipologia" required>
+						
+                                                {{ Form::label('tipologia', 'appartamento', ['class' => 'label-input']) }}
+                                                {{ Form::radio('tipologia', '0', ['class' => 'input','id' => 'tipologia']) }}
+                                                {{ Form::label('tipologia', 'posto letto', ['class' => 'label-input']) }}
+                                                {{ Form::radio('tipologia', '1', ['class' => 'input','id' => 'tipologia']) }}
 					</div>
                                     <div class="input-box">
-						<span class="details">descrizione</span>
-                                                <input type="text" placeholder="descrizione" name="descrizione" required>
+						
+                                                 {{ Form::label('descrizione', 'descrizione', ['class' => 'label-input']) }}
+                                                 {{ Form::text('descrizione','', ['class' => 'input','id' => 'descrizione']) }}
 					</div>
                                     <div class="input-box">
-						<span class="details">utenze</span>
-                                                <input type="text" placeholder="utenze" name="utenze" required>
+						
+                                                  {{ Form::label('utenze', 'utenze', ['class' => 'label-input']) }}
+                                                 {{ Form::text('utenze','', ['class' => 'input','id' => 'utenze']) }}
 					</div>
                                     <div class="input-box">
-						<span class="details">via</span>
-                                                <input type="varchar(30)" placeholder="via" name="via" required>
+					
+                                                {{ Form::label('via', 'via', ['class' => 'label-input']) }}
+                                                 {{ Form::text('via','', ['class' => 'input','id' => 'via']) }}
 					</div>
                                     <div class="input-box">
-						<span class="details">in_at</span>
-                                                <input type="date" placeholder="in_at" name="in_at" required>
+						
+                                                  {{ Form::label('in_at', 'in_at', ['class' => 'label-input']) }}
+                                                 {{ Form::date('in_at','', ['class' => 'input','id' => 'in_at']) }}
 					</div>
                                     <div class="input-box">
-						<span class="details">out_at</span>
-                                                <input type="date" placeholder="out_at" name="out_at" required>
+						
+                                                  {{ Form::label('out_at', 'out_at', ['class' => 'label-input']) }}
+                                                 {{ Form::date('out_at','', ['class' => 'input','id' => 'out_at']) }}
 					</div>
+                                    <div class="input-box">
+                                        { Form::label('image', 'Immagine', ['class' => 'label-input']) }}
+                                        {{ Form::file('image','', ['class' => 'input','id' => 'image']) }}
                                     
                                 </div>
 				
@@ -105,8 +115,10 @@
 				
 
 				<div class="button">
-					<input type="submit" value="inserisci">
+                                    <input type="submit" value="inserisciAnnuncio">
+					
 				</div>
+                              {{ Form::close() }}
 			</form>
 		</div>
         

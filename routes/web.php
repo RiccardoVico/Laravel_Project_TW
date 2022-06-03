@@ -63,10 +63,12 @@ Route::get('/statistiche','AdminController@totaleannunci')
 Route::view('/inserisciannuncio', 'inserisciannuncio')
         ->name('inserimentoannuncio');
 
-Route::post('inserimentoann','LocatoreController@inserisciannuncio');
+Route::post('inserimentoann','LocatoreController@inserisciannuncio')->name('inserimentoann');
 
 Route::post('/statistiche','AdminController@totaleannunci')
         ->name('statistiche');
+Route::get('/stats','AdminController@tot')
+        ->name('stats');
 Route::get('/stats','AdminController@tot')
         ->name('stats');
 //logoutmessaggiprofilo
@@ -74,8 +76,19 @@ Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/provafiltraggio','LocatarioController@showfiltro')-> name('filtraggio1');
-Route::get('/storagein/{nome}','LocatoreController@inserimentoperazione')
+Route::get('/storagein/{nome}/{imagename}','LocatoreController@inserimentoperazione')
         ->name('storagein');
+Route::get('/salvafoto/{id}/{imagename}','LocatoreController@salvafoto')
+        ->name('salvafoto');
 
 Route::get('/annuncio/{annuncio}', 'PublicController@showAnnuncio')
         ->name('annuncio');
+Route::view('/okay','okay')
+        ->name('okay');
+Route::view('/okayfaq','okayfaq')
+        ->name('okayfaq');
+Route::view('/ins2','ins2')
+        ->name('ins2');
+Route::get('/annunciopzionati/{userId}','PublicController@annunciopzionati')->name('annunciopzionati');
+
+Route::get('/opziona/{annuncio}', 'PublicController@opzionatoda')->name('opziona');

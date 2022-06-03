@@ -6,8 +6,8 @@
  */
 namespace  App\Models\Resources;
 use Illuminate\Database\Eloquent\Model;
-class utente extends Model{
-    protected $table='utente';
+class users extends Model{
+    protected $table='users';
     protected $primarykey='id';
     public $timestamp=false;
     
