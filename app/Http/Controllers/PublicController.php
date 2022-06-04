@@ -74,42 +74,41 @@ class PublicController extends Controller {
                 ->with('idutente', $idutente);
     }
     public function annunciopzionati($userId){
-        $coll=new Collection;
-                  $operazioni = $this->_catalogModel->getOperazioni()->where('idutente', $userId);
-         $oo=$this->_catalogModel->getOperazioniFiltro($operazioni);
-         foreach($oo as $o){
-             ($r=$o->idannuncio);
-             ($coll->add($this->_catalogModel->getAnnId($r)));
+        
+        $res=$this->_catalogModel->getOperazioni();
+        $operazioniins1= $this->_catalogModel->getOperazioniFiltro($res);
+        $operazioniins2=$operazioniins2=$this->_catalogModel->getOperazioniFiltro2($operazioniins1, $userId);
+        $ann=$this->_catalogModel->getAnnunci2();
+        $coll2=$this->_catalogModel->opzionati($operazioniins2, $ann);
+   
+         
              
-         }
+         
          
         
-        (($opp=$this->_catalogModel->getOperazioniOpziona()));
+        //(($opp=$this->_catalogModel->getOperazioniOpziona()));
         
-        ($tt=$this->_catalogModel-> getAnnunciOpzionati($coll,$opp));
+       // ($tt=$this->_catalogModel-> getAnnunciOpzionati($coll,$opp));
         //foreach($opp as $op){
           //  echo($op->idannuncio);
           //  echo($op->idutente);
         //}
-        return view('prova3')
-       ->with('annunci', $tt);
+      
+
+   
+       return view('prova3')
+       ->with('annunci', $coll2);
         
         
              //  return redirect('annopzionati');
 
 
-    }
-    public function opzionatoda($idannuncio){
-          $res2= new Collection;
-        // echo($opp=$this->_catalogModel->getOperazioniOpziona());
-          
-         ($res=$this->_catalogModel->getOperazioniOpzionaId($idannuncio));
-         foreach($res as $r){
-         ($idutente=$r->idutente);
-         $res2->add($this->_catalogModel->getutente($idutente));
-         }
-         return view('prova4')
-        ->with('annunci', $res2);
+}
+public function opzionatoda($idannuncio){
+    $annunci=$this->_catalogModel->showopzionatoda($idannuncio);
+    
+    return view('prova4')
+       ->with('annunci', $annunci);
          }
     
       

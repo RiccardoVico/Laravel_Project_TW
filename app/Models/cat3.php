@@ -12,11 +12,14 @@ use Carbon\Carbon;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 
-class Cat2{
+
+class cat3{
     protected $_res;
    // public function getutente() {
       //  return utente::where('username','prova0')->get();
    // }
+ 
+   
     
      public function getAnnunciById($id){
          return $annunci = Annuncio::where('idannuncio', $id)->get();
@@ -24,31 +27,14 @@ class Cat2{
     
     public function getfaq() {
     return faq::all();}
-
-    //}                                     //(spostare)
-    
-    public function getAnnunci() {
+       public function getAnnunci() {
         return Annuncio::all();
     }
-    public function getAnnunciOpzionati(){
+      public function getAnnunciOpzionati(){
         $opzionato="opzionato";
         return (Operazione::where('descrizione',$opzionato)->get());
     }
-   
-    //public function getAnnunciFiltroPrezzoMax($prezzomax){
-       //return $pp='ciao';
-        //return $totale->filter(function($ann)use ($prezzomax){
-        //return $ann->canoneaffitto<=$prezzomax;
-    //});
-    
-    //}
-         //public function getAnnunciFiltroPrezzoMin($prezzomin){
-        //$totale=Annuncio::all();
-        //return $totale->filter(function($ann)use ($prezzomin){
-           // return $ann->canoneaffitto>=$prezzomin;
-        //});
-    //}
-  public function getAnnunciLocati2($res){
+     public function getAnnunciLocati2($res){
         $disponibilita='0';
          return $res->filter(function($ann)use ($disponibilita){
           return (($ann->disponibilita==$disponibilita));

@@ -33,6 +33,9 @@ class Catalog {
         $annunci = Annuncio::paginate(2);
         return $annunci;
     }
+    public function getAnnunci2(){
+        return $annunci=Annuncio::all();
+    }
     
     public function getAnnunciSpaginati() {
         return Annuncio::all();
@@ -49,9 +52,14 @@ class Catalog {
         return Operazione::all();
     }
      public function getOperazioniFiltro($res) {
-        return $res->filter(function($op){
-           return $op->descrizione=='inserimento';
-    });}
+        return $res->filter(function($r){
+            return $r->descrizione=="inserimento";
+            });}
+  public function getOperazioniFiltro2($res,$utente) {
+        return $res->filter(function($t)use ($utente){
+            return $t->idutente==$utente;
+            });}
+    
   
     
     
@@ -266,8 +274,38 @@ class Catalog {
             return $ann->etamax>=$etamax;
             });}
   
-    }
     
-    
+    public function opzionati($operazioniins2,$ann){
+        $coll=new Collection;
+        $coll2= new Collection;
+    foreach($operazioniins2 as $o){
+             foreach($ann as $an){
+             if($o->idannuncio ==$an->idannuncio){
+                 $o->idannuncio;
+         $coll->add($an);}}}
+         $op2f=$this->getOperazioniOpziona();
+         foreach($coll as $c){
+             foreach($op2f as $op2fs){
+                 if($op2fs->idannuncio==$c->idannuncio){
+                     if(!($coll2->contains($c)))
+                    $coll2->add($c);
+                 }
+             }
+              
+         }
+         return $coll2;
+         }
+          public function showopzionatoda($idannuncio){
+          $res2= new Collection;
+        // echo($opp=$this->_catalogModel->getOperazioniOpziona());
+          
+         $res=$this->getOperazioniOpzionaId($idannuncio);
+         foreach($res as $r){
+         ($idutente=$r->idutente);
+         $res2->add($this->getutente($idutente));
+         }
+        return $res2;
+}
+             
 
-
+}

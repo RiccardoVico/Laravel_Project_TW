@@ -69,8 +69,7 @@ Route::post('/statistiche','AdminController@totaleannunci')
         ->name('statistiche');
 Route::get('/stats','AdminController@tot')
         ->name('stats');
-Route::get('/stats','AdminController@tot')
-        ->name('stats');
+
 //logoutmessaggiprofilo
 Auth::routes();
 
@@ -92,3 +91,4 @@ Route::view('/ins2','ins2')
 Route::get('/annunciopzionati/{userId}','PublicController@annunciopzionati')->name('annunciopzionati');
 
 Route::get('/opziona/{annuncio}', 'PublicController@opzionatoda')->name('opziona');
+Route::post('/prova}', 'adminController2@totaleannunci')->name('provas');
