@@ -57,6 +57,12 @@ Route::post('admininserimentofaq','AdminController@store')->name('insfaq');
 Route::view('/inseriscifaq','inseriscifaq')
         ->name('inseriscifaq');
 
+Route::get('/profilo/{idutente}','PublicController@showProfilo')
+        ->name('profilo')->middleware('can:isuserbyid,idutente');
+
+Route::post('/profilo/{idutente}', 'PublicController@modificaprofilo')
+        ->name('modifica_profilo')->middleware('can:isuserbyid,idutente');
+
 Route::get('/statistiche','AdminController@totaleannunci')
         ->name('statistiche');
 

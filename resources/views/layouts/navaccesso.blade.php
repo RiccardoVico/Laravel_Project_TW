@@ -21,7 +21,7 @@
                     <a href="{{ route('faq') }}" class="nav-link">Messaggi</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('faq') }}" class="nav-link">Profilo</a>
+                    <a href="{{ route('profilo', [Auth::user()->id]) }}" class="nav-link">Profilo</a>
                 </li>
                 @auth
                 <li><a href="" title="Esci dal sito" class="highlight" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>

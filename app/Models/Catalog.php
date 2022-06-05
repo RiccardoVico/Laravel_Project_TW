@@ -3,14 +3,17 @@
 /* 
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
- */namespace App\Models;
-use App\Models\Resources\users;
-use App\Models\Resources\faq;
-use App\Models\Resources\Annuncio;
-use App\Models\Resources\Operazione;
+ */
+namespace App\Models;
+
 use Carbon\Carbon;
 use Illuminate\Support\Arr;
+use App\Models\Resources\faq;
+use App\Models\Resources\utente;
+use App\Models\Resources\Annuncio;
 use Illuminate\Support\Collection;
+use App\Models\Resources\Operazione;
+
 class Catalog {
     protected $_res;
     public function getannuncio($name) {
@@ -19,7 +22,7 @@ class Catalog {
     }
      public function getutente($id) {
         
-        return users::where('id',$id)->get();
+        return utente::where('id',$id)->get();
     }
     public function getidannuncio($name){
          return Annuncio::where('nomeannuncio',$name)->value('idannuncio');
@@ -305,6 +308,10 @@ class Catalog {
          $res2->add($this->getutente($idutente));
          }
         return $res2;
+}
+
+public function getuserbyid($userId) {
+    return utente::where('id', $userId)->get()->first();
 }
              
 

@@ -5,8 +5,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 namespace  App\Models\Resources;
+
 use Illuminate\Database\Eloquent\Model;
-class users extends Model{
+
+class utente extends Model{
     protected $table='users';
     protected $primarykey='id';
     public $timestamp=false;

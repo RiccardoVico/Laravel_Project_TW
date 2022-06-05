@@ -5,13 +5,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 namespace App\Http\Controllers;
-use  App\Http\Controllers\Controller;
-use App\Models\Catalog;
 use App\Utente;
+use App\Models\Catalog;
 use Illuminate\Support\Arr;
-use Illuminate\Support\Collection;
 use App\Models\Resources\users;
 use App\Models\Resources\Annuncio;
+use Illuminate\Support\Collection;
+use  App\Http\Controllers\Controller;
+use App\Http\Requests\ProfiloRequest;
+
 class PublicController extends Controller {
 
     protected $_catalogModel;
@@ -73,6 +75,7 @@ class PublicController extends Controller {
                 ->with('annuncio', $annuncio)
                 ->with('idutente', $idutente);
     }
+
     public function annunciopzionati($userId){
         
         $res=$this->_catalogModel->getOperazioni();
@@ -103,19 +106,48 @@ class PublicController extends Controller {
              //  return redirect('annopzionati');
 
 
-}
-public function opzionatoda($idannuncio){
-    $annunci=$this->_catalogModel->showopzionatoda($idannuncio);
+    }
+
+    public function opzionatoda($idannuncio){
+        $annunci=$this->_catalogModel->showopzionatoda($idannuncio);
     
-    return view('prova4')
-       ->with('annunci', $annunci);
-         }
+        return view('prova4')
+            ->with('annunci', $annunci);
+    }
     
-      
+    public function showProfilo($userId) {
+        $user = $this->_catalogModel->getuserbyid($userId);
+        return view('profilo')
+                ->with('user', $user);
+    }
+
+    public function modificaprofilo($userId, ProfiloRequest $request) {
+        //echo(current($request->validated()));
+        $user = $this->_catalogModel->getuserbyid($userId);
+        
+        // $user->fill($request->validated());
+        $user->username=$request->username;
+        $user->nome=$request->nome;
+        $user->cognome=$request->cognome;
+        $user->mail=$request->mail;
+        $user->recapito=$request->recapito;
+        $user->via=$request->via;
+        $user->citta=$request->citta;
+        $user->numerocivico=$request->numerocivico;
+        $user->cap=$request->cap;
+        $user->provincia=$request->provincia;
+        $user->paese=$request->paese;
+        $user->cittainteresse=$request->cittainteresse;
+
+        $user->save();
+
+        return view('profilo')
+                ->with('user', $user);
+    }
       
      
         
 
 
-    }
+}
 

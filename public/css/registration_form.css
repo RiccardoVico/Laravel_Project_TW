@@ -74,7 +74,7 @@ form .user-details .input-box4{
 .user-details .input-box2 input:valid{
     border-color: #9b59b6;
 }
-form .gender-details .gender-title{
+/* form .gender-details .gender-title{
     font-size: 20px;
     font-weight: 500;
 }
@@ -102,10 +102,10 @@ form .gender-details .category{
 #dot-3:checked ~ .category label .three{
     border-color: #d9d9d9;
     background: #9b59b6;
-}
-form input[type="radio"]{
+} */
+/* form input[type="radio"]{
     display: none;
-}
+} */
 form .button{
     height: 45px;
     margin: 45px 0;
@@ -236,3 +236,116 @@ body .input-box2{
 }
 
 
+/* Inizio CSS Profilo Locatore e Locatario */
+
+.locatore_profilo,
+.locatario_profilo{
+    display: flex;
+    width: 75%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+}
+.profilo_container{
+    max-width: 1025px;
+    width: 100%;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    border-bottom-width: 2px;
+}
+.locatore_profilo .image_profilo,
+.locatario_profilo .image_profilo{
+    height: 74.5%;
+    width: 10%;
+    border-radius: 5px;
+}
+.image_profilo img{
+    height: 80px;
+    width: 80px;
+    margin-left: 25%;
+    margin-top: 20px;
+    border-radius: 50%;
+    background-color: red;
+}
+.options_buttons{
+    padding-top: 20px;
+    height: 74.5%;
+    width: 15%;
+    border-radius: 5px;
+    border-bottom-width: 2px;
+}
+.options_buttons button,
+.locatario_profilo.active form .salva_button{
+    height: 40px;
+    width: 100%;
+    margin-top: 15px;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 5px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+.profilo_container form .user-details_profilo{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 0 12px 0;
+}
+form .user-details_profilo .input-box,
+form .user-details_profilo .input-box2{
+    margin-bottom: 15px;
+    margin-left: 15px;
+    width: 300px;
+}
+.user-details_profilo .input-box .details,
+.user-details_profilo .input-box2 .details{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.user-details_profilo .input-box input,
+.user-details_profilo .input-box2 input{
+    pointer-events: none;
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.user-details_profilo.active .input-box input,
+.user-details_profilo.active .input-box2 input{
+    pointer-events: all;
+}
+
+.user-details_profilo .input-box input:focus,
+.user-details_profilo .input-box input:valid,
+.user-details_profilo .input-box2 input:focus,
+.user-details_profilo .input-box2 input:valid{
+    border-color: #9b59b6;
+}
+
+.locatario_profilo form .salva_button{
+    pointer-events: none;
+    opacity: 0;
+}
+
+.locatario_profilo.active form .salva_button{
+    pointer-events: all;
+    opacity: 1;
+}
+
+.locatario_profilo.active .options_buttons button.modifica_button{
+    pointer-events: none;
+    opacity: 0;
+}
