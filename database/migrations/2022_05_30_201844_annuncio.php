@@ -21,7 +21,7 @@ class Annuncio extends Migration
             $table->string('numerocivico', 5)->nullable();
             $table->string('citta', 20)->nullable();
             $table->boolean('disponibilita', 1)->default(1);
-            $table->timestamps('datacc')->nullable()->default(NULL);
+            $table->timestamp('datacc')->nullable()->default(NULL);
             $table->double('superficie')->nullable();
             $table->integer('postiletto')->nullable();
             $table->boolean('wifi')->nullable();

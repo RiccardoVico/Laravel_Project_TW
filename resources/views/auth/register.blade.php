@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="css/registration_form.css">
+        <link rel="stylesheet" href="{{ asset('css/registration_form.css') }}">
         
         <title>Registrazione</title>
 	</head>
@@ -26,97 +26,83 @@
 					</div>
 				</div>
             </div>
-			<form action="{{ route('register') }}" method="POST">
-                @csrf
-				
+			{{ Form::open(array('route' => 'register', 'class' => 'contact-form')) }}
+				@csrf
 				<div class="user-details">
 					<div class="input-box">
-						<span class="details">Username</span>
-						<input type="text" placeholder="Scegli uno username" name="username" required>
+						{{ Form::label('username', 'Username', ['class' => 'label-input']) }}
+                        {{ Form::text('username', '', ['class' => 'input','placeholder' => 'Inserisci uno username']) }}
 					</div>
 					<div class="input-box">
-						<span class="details">Nome</span>
-						<input type="text" placeholder="Inserisci il nome" name="nome" required>
+						{{ Form::label('nome', 'Nome', ['class' => 'label-input']) }}
+                        {{ Form::text('nome', '', ['class' => 'input','placeholder' => 'Inserisci un nome']) }}
 					</div>
 					<div class="input-box">
-						<span class="details">Cognome</span>
-						<input type="text" placeholder="Inserisci il cognome" name="cognome" required>
+						{{ Form::label('cognome', 'Cognome', ['class' => 'label-input']) }}
+                        {{ Form::text('cognome', '', ['class' => 'input','placeholder' => 'Inserisci un cognome']) }}
 					</div>
 					<div class="input-box">
-						<span class="details">Email</span>
-						<input type="text" placeholder="Inserisci l'indirizzo email" name="mail" required>
+						{{ Form::label('mail', 'Email', ['class' => 'label-input']) }}
+                        {{ Form::text('mail', '', ['class' => 'input','placeholder' => 'Inserisci un email']) }}
 					</div>
 					<div class="input-box">
-						<span class="details">Recapito</span>
-						<input type="text" placeholder="Inserisci un recapito telefonico" name="recapito" required>
+						{{ Form::label('recapito', 'Recapito', ['class' => 'label-input']) }}
+                        {{ Form::text('recapito', '', ['class' => 'input','placeholder' => 'Inserisci un recapito']) }}
 					</div>
 					<div class="input-box">
-						<span class="details">Via</span>
-						<input type="text" placeholder="Inserisci via di residenza" name="via" required>
+						{{ Form::label('eta', 'Eta', ['class' => 'label-input']) }}
+                        {{ Form::text('eta', '', ['class' => 'input','placeholder' => 'Inserisci la tua eta']) }}
+					</div>
+					<div class="input-box4">
+						{{ Form::label('genere', 'Genere', ['class' => 'label-input']) }}
+                        {{ Form::select('genere', ['M'=>'Maschio', 'F'=>'Femmina'], 'M', ['class' => 'input']) }}
 					</div>
 					<div class="input-box">
-						<span class="details">Città</span>
-						<input type="text" placeholder="Inserisci città residenza" name="citta" required>
+						{{ Form::label('via', 'Via', ['class' => 'label-input']) }}
+                        {{ Form::text('via', '', ['class' => 'input','placeholder' => 'Inserisci una via']) }}
 					</div>
 					<div class="input-box">
-						<span class="details">Numero Civico</span>
-						<input type="text" placeholder="Inserisci il numero civico" name="numerocivico" required>
+						{{ Form::label('citta', 'Citta', ['class' => 'label-input']) }}
+                        {{ Form::text('citta', '', ['class' => 'input','placeholder' => 'Inserisci una citta']) }}
 					</div>
 					<div class="input-box">
-						<span class="details">Cap</span>
-						<input type="text" placeholder="Inserisci il codice postale" name="cap" required>
+						{{ Form::label('numerocivico', 'Numero Civico', ['class' => 'label-input']) }}
+                        {{ Form::text('numerocivico', '', ['class' => 'input','placeholder' => 'Inserisci un numero civico']) }}
 					</div>
 					<div class="input-box">
-						<span class="details">Provincia</span>
-						<input type="text" placeholder="Inserisci provincia di residenza" name="provincia" required>
+						{{ Form::label('cap', 'Cap', ['class' => 'label-input']) }}
+                        {{ Form::text('cap', '', ['class' => 'input','placeholder' => 'Inserisci un cap']) }}
 					</div>
 					<div class="input-box">
-						<span class="details">Paese</span>
-						<input type="text" placeholder="Inserisci lo stato" name="paese" required>
+						{{ Form::label('provincia', 'Provincia', ['class' => 'label-input']) }}
+                        {{ Form::text('provincia', '', ['class' => 'input','placeholder' => 'Inserisci una provincia']) }}
 					</div>
 					<div class="input-box">
-						<span class="details">Password</span>
-						<input type="password" placeholder="Inserisci password" name="password" required>
+						{{ Form::label('paese', 'Paese', ['class' => 'label-input']) }}
+                        {{ Form::text('paese', '', ['class' => 'input','placeholder' => 'Inserisci un paese']) }}
 					</div>
 					<div class="input-box">
-						<span class="details">Confirm Password</span>
-						<input type="password" placeholder="Inserisci password" name="confirm password" required>
+						{{ Form::label('password', 'Password', ['class' => 'label-input']) }}
+                        {{ Form::text('password', '', ['class' => 'input','placeholder' => 'Inserisci una password']) }}
+					</div>
+					<div class="input-box">
+						{{ Form::label('confirm password', 'Confirm Password', ['class' => 'label-input']) }}
+                        {{ Form::text('confirm password', '', ['class' => 'input','placeholder' => 'Conferma Password']) }}
 					</div>
 					<div class="input-box2">
-						<span class="details">Città Interesse</span>
-						<input type="text" placeholder="Inserisci la città d'interesse" name="cittainteresse" nullable>
+						{{ Form::label('cittainteresse', 'Citta Interesse', ['class' => 'label-input']) }}
+                        {{ Form::text('cittainteresse', '', ['class' => 'input','placeholder' => 'Inserici citta interesse']) }}
 					</div>
 					<div class="input-box3">
-						<span class="details">Role</span>
-						<input type="text" value="" id="role" name="role">
+						{{ Form::label('role', 'Role', ['class' => 'label-input']) }}
+                        {{ Form::text('role', '', ['class' => 'input']) }}
 					</div>
 				</div>
-
-				<!--<div class="gender-details">
-					<input type="radio" name="gender" id="dot-1">
-					<input type="radio" name="gender" id="dot-2">
-					<input type="radio" name="gender" id="dot-3">
-					<span class="gender-title">Gender</span>
-					<div class="category">
-						<label for="dot-1">
-							<span class="dot one"></span>
-							<span class="gender">Male</span>
-						</label>
-						<label for="dot-2">
-							<span class="dot two"></span>
-							<span class="gender">Female</span>
-						</label>
-						<label for="dot-3">
-							<span class="dot three"></span>
-							<span class="gender">Prefer not to say</span>
-						</label>
-					</div>
-				</div>-->
 
 				<div class="button">
 					<input type="submit" value="Register">
 				</div>
-			</form>
+			{{ Form::close() }}
 		</div>
 		</div>
         

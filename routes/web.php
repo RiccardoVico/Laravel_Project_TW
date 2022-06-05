@@ -38,7 +38,7 @@ Route::get('register', 'Auth\RegisterController@showRegisterForm')
         ->name('register');
 
 Route::post('register', 'Auth\RegisterController@create')
-        ->name('register.store');
+        ->name('register_store');
 
 Route::get('/locatore', 'PublicController@showHomeLocatore')
         ->name('home_locatore')->middleware('can:isLocatore');
@@ -55,7 +55,7 @@ Route::get('/admin', 'PublicController@showHomeAdmin')
 Route::post('admininserimentofaq','AdminController@store')->name('insfaq');
 
 Route::view('/inseriscifaq','inseriscifaq')
-->name('inseriscifaq');
+        ->name('inseriscifaq');
 
 Route::get('/statistiche','AdminController@totaleannunci')
         ->name('statistiche');

@@ -5,14 +5,6 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-/*body{
-    display: flex;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    background: linear-gradient(135deg, #71b7e6, #9b59b6);
-} */
 .registration-box{
     margin-top: 65px;
     margin-left: auto;
@@ -26,13 +18,17 @@
     background: #fff;
     padding: 25px 30px;
     border-radius: 5px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
 }
-.registration_container .title{
+.registration_container .title,
+.profilo_container .title{
     font-size: 25px;
     font-weight: 500;
     position: relative;
 }
-.registration_container .title::before{
+.registration_container .title::before,
+.profilo_container .title::before{
     content: '';
     position: absolute;
     left: 0;
@@ -47,7 +43,8 @@
     margin: 20px 0 12px 0;
 }
 form .user-details .input-box,
-form .user-details .input-box2{
+form .user-details .input-box2,
+form .user-details .input-box4{
     margin-bottom: 15px;
     margin-left: 15px;
     width: 300px;
@@ -59,7 +56,8 @@ form .user-details .input-box2{
     margin-bottom: 5px;
 }
 .user-details .input-box input,
-.user-details .input-box2 input{
+.user-details .input-box2 input,
+.user-details .input-box4 select{
     height: 45px;
     width: 100%;
     outline: none;
@@ -105,9 +103,9 @@ form .gender-details .category{
     border-color: #d9d9d9;
     background: #9b59b6;
 }
-/* form input[type="radio"]{
+form input[type="radio"]{
     display: none;
-} */
+}
 form .button{
     height: 45px;
     margin: 45px 0;
@@ -150,13 +148,19 @@ form .button input:hover{
     margin-left: 5px;
 }
 
+.scelta .locatore{
+    position: relative;
+}
+
 body.active .input-box2{
     pointer-events: none;
     opacity: 0;
     transition: all 0.3s ease;
+    display: none;
 }
 
-.user-details .input-box3{
+.input-box3{
+    display: none;
     pointer-events: none;
     opacity: 0;
 }
