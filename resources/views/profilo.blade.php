@@ -5,6 +5,8 @@
 		<meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Gestione Profilo</title>
         
         <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
         <link rel="stylesheet" href="{{ asset('css/theme.css') }}">
@@ -58,6 +60,14 @@
                         <div class="input-box">
                             {{ Form::label('recapito', 'Recapito', ['class' => 'label-input']) }}
                             {{ Form::text('recapito', $user->recapito, ['class' => 'input','id' => 'recapito','placeholder' => 'Inserisci un recapito']) }}
+                        </div>
+                        <div class="input-box">
+                            {{ Form::label('eta', 'Eta', ['class' => 'label-input']) }}
+                            {{ Form::text('eta', $user->eta, ['class' => 'input','id' => 'eta','placeholder' => 'Inserisci la tua eta']) }}
+                        </div>
+                        <div class="input-box">
+                            {{ Form::label('genere', 'Genere', ['class' => 'label-input']) }}
+                            {{ Form::text('genere', $user->genere, ['class' => 'input','id' => 'genere','placeholder' => 'Inserisci il tuo genere(M o F)']) }}
                         </div>
                         <div class="input-box">
                             {{ Form::label('via', 'Via', ['class' => 'label-input']) }}

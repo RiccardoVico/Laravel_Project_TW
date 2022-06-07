@@ -50,10 +50,19 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            //'nome' => ['required', 'string', 'max:255'],
-           // 'cognome' => ['required', 'string', 'max:255'],//
-           // 'email' => ['required', 'string', 'email', 'max:255', 'unique:users','unique:utente'],//email validatore chiocciola, unica mail registrata se esiste non accetta
+            'nome' => ['required', 'string', 'max:20'],
+            'cognome' => ['required', 'string', 'max:20'],
+            'mail' => ['required', 'string', 'email', 'max:500', 'unique:users'],//email validatore chiocciola, unica mail registrata se esiste non accetta
             'username' => ['required', 'string', 'min:4', 'unique:users'],
+            'recapito' => ['required', 'string', 'max:20'],
+            'eta' => ['required', 'int', 'max:100'],
+            'via' => ['required', 'string', 'max:20'],
+            'citta' => ['required', 'string', 'max:20'],
+            'numerocivico' => ['required', 'int', 'max:10000'],
+            'cap' => ['required', 'int', 'max:100000'],
+            'paese' => ['required', 'string', 'max:20'],
+            'provincia' => ['required', 'string', 'max:20'],
+            'password' => ['required', 'string', 'max:500', 'same:password_confermation','required_with:password_confermation'],
            // 'username' => ['required', 'string', 'min:4', 'confirmed'],//campo soggetto a conferma altro campo della form gestito come campo per la verigfica correttezza della password automaticamente
         ]);
     }

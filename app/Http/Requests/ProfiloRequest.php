@@ -28,7 +28,6 @@ class ProfiloRequest extends FormRequest{
         "cap"=>'required',
         "provincia"=>'required',
         "paese"=>'required',
-        "cittainteresse"=>'required',
         ];
     }
 }

@@ -131,6 +131,8 @@ class PublicController extends Controller {
         $user->cognome=$request->cognome;
         $user->mail=$request->mail;
         $user->recapito=$request->recapito;
+        $user->eta=$request->eta;
+        $user->genere=$request->genere;
         $user->via=$request->via;
         $user->citta=$request->citta;
         $user->numerocivico=$request->numerocivico;
@@ -143,6 +145,10 @@ class PublicController extends Controller {
 
         return view('profilo')
                 ->with('user', $user);
+    }
+      
+    public function showMessaggistica() {
+        return view('messaggistica');
     }
       
      
