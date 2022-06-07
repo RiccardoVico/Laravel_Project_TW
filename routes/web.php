@@ -52,7 +52,7 @@ Route::get('/locatario', 'PublicController@showHomeLocatario')
 Route::get('/admin', 'PublicController@showHomeAdmin')
         ->name('home_admin')->middleware('can:isAdmin');
 
-Route::post('admininserimentofaq','AdminController@store')->name('insfaq');
+Route::post('admininserimentofaq','adminController@store')->name('insfaq');
 
 Route::view('/inseriscifaq','inseriscifaq')
         ->name('inseriscifaq');
@@ -94,7 +94,19 @@ Route::view('/okayfaq','okayfaq')
         ->name('okayfaq');
 Route::view('/ins2','ins2')
         ->name('ins2');
+Route::view('/okaymodfaq','okaymodfaq')
+        ->name('okaymodfaq');
+Route::view('/okayeliminafaq','okayeliminafaq')
+        ->name('okayeliminafaq');
 Route::get('/annunciopzionati/{userId}','PublicController@annunciopzionati')->name('annunciopzionati');
 
 Route::get('/opziona/{annuncio}', 'PublicController@opzionatoda')->name('opziona');
 Route::post('/prova}', 'adminController2@totaleannunci')->name('provas');
+Route::get('/eliminafaq/{idfaq}','adminController@eliminafaq')->name('eliminafaq');
+Route::get('/modificafaq/{idfaq}', 'adminController@showFaq')
+        ->name('modifica_faq');
+Route::view('/modfaq', 'modfaq')
+        ->name('modfaq');
+Route::post('/modfaq2/{idfaq}', 'adminController@modificaFaq')->name('modfaq2');
+Route::view('/modmod', 'modmod')
+        ->name('modmod');

@@ -17,6 +17,8 @@ class Faq extends Migration
         $table->text ('domanda');
         $table->text('risposta');
         $table->string('categoria');
+        $table->rememberToken();
+        $table->timestamps();
     });
         //
     }

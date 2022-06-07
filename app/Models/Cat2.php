@@ -9,6 +9,7 @@ use App\Models\Resources\faq;
 use App\Models\Resources\Annuncio;
 use App\Models\Resources\Operazione;
 use Carbon\Carbon;
+
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 
@@ -107,6 +108,26 @@ class Cat2{
                     
      });}
  
-                
+     public function elfaq($idfaq) { 
+       return $res=FAQ::where('idfaq',$idfaq)->delete();
+    }   
+    public function getfaqbyid($idfaq) { 
+      return $faq=FAQ::where('idfaq',$idfaq)->get();
+    }  
+     public function modfaq($idfaq,$domanda,$risposta,$categoria) { 
+        $faq=FAQ::where('idfaq',$idfaq)->get();
+        FAQ::where('idfaq',$idfaq)->delete();
+        
+       $f= new Faq();
+       $f->idfaq=$idfaq;
+       $f->domanda=$domanda;
+       $f->risposta=$risposta;
+       $f->categoria=$categoria;
+       $f->updated_at=now();
+       $f->created_at=
+       $f->save();
+        
+    }  
     
+
 }

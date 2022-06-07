@@ -17,7 +17,7 @@
 
     </head>
     <body>
-        <p>La faq inserita è stata registrata correttamente</p>  <div class="pass-link"><a href="{{ route('faq') }}"">Torna alle faq</a></div>
+        <p>La faq  è stata modificata correttamente</p>  <div class="pass-link"><a href="{{ route('faq') }}"">Torna alle faq</a></div>
         </main>
     </body>
 </html>

@@ -19,7 +19,7 @@
                 <div class="input-box">
 
                     {{ Form::label('domanda', 'domanda', ['class' => 'label-input']) }}
-                    {{ Form::text('domanda','', ['class' => 'input','id' => 'domanda']) }}
+                    {{ Form::textarea('domanda','', ['class' => 'input','id' => 'domanda']) }}
                     @if ($errors->first('domanda'))
                     <ul class="errors">
                         @foreach ($errors->get('domanda') as $message)
@@ -31,7 +31,7 @@
                 <div class="input-box">
 
                     {{ Form::label('risposta', 'rispostacompleta', ['class' => 'label-input']) }}
-                    {{ Form::text('risposta', '', ['class' => 'input','id' => 'risposta']) }}
+                    {{ Form::textarea('risposta', '', ['class' => 'input','id' => 'risposta']) }}
                     @if ($errors->first('risposta'))
                     <ul class="errors">
                         @foreach ($errors->get('risposta') as $message)
@@ -43,7 +43,7 @@
                 </div>
                 <div class="input-box">
                     {{ Form::label('categoria', 'rispostabreve', ['class' => 'label-input']) }}
-                    {{ Form::text('categoria', '', ['class' => 'input','id' => 'categoria']) }}
+                    {{ Form::textarea('categoria', '', ['class' => 'input','id' => 'categoria']) }}
                     @if ($errors->first('categoria'))
                     <ul class="errors">
                         @foreach ($errors->get('categoria') as $message)

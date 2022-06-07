@@ -11,6 +11,7 @@ class FAQ extends Model
     protected $fillable = [
         'idfaq','domanda','risposta','categoria'
     ];
+   
 
     public $timestamps = false;
 }

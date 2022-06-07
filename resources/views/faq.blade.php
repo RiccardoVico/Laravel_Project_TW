@@ -1,6 +1,6 @@
-@extends('layouts.public')
 
-@section('title', 'Chi Siamo')
+@extends('layouts.public')
+@section('title', 'Faq')
 
 @section('header')
 <div class="page-banner bg-img bg-img-parallax overlay-dark" style="background-image: url(images/prova1.jpg)"  >;
@@ -21,24 +21,36 @@
 @endsection
 
 @section('content')     
+
 <div class="page-section">
+    
     <div class="list-group w-75" style="margin-left: auto; margin-right: auto">
 
         @foreach ($products as $product)
         <a href="#shortExampleAnswer1collapse" data-toggle="collapse" aria-expanded="false"
            aria-controls="shortExampleAnswer1collapse" class="list-group-item list-group-item-action">
             <div class="d-flex w-100 justify-content-between">
+        
                 <h5 class="mb-1">{{$product->domanda}}</h5>
             </div>
             <p class="mb-1">
                 {{$product->categoria}}
             </p>
-            <small><u>Learn more</u></small>
+            <small><u>Learn more
+                </u></small>
+
+        
             <!-- Collapsed content -->
             <div class="collapse mt-3" id="shortExampleAnswer1collapse">
                 {{$product->risposta}}
             </div>
-        </a>
+               @if(Gate::allows('isAdmin'))
+                    <a href = "{{ route('eliminafaq', [$product->idfaq]) }}" > Elimina</a>
+                    <a href = "{{ route('modifica_faq', [$product->idfaq]) }}" > Modifica</a>
+                    @endif
+                     </a>
+
+            
         @endforeach
     </div>
 </div>

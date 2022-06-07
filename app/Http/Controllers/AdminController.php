@@ -39,8 +39,7 @@ class AdminController extends Controller {
         $faq->domanda = request('domanda');
         $faq->risposta = request('risposta');
         $faq->categoria=request('categoria');;
-        echo('ciao');
-        echo(request('categoria'));
+        
         $faq->save();
          return redirect('okayfaq/');                
     }
@@ -205,4 +204,32 @@ public function totaleannunci(){
         ->with('count5',$res5->count());
 }
 
-}}
+}
+    public function eliminafaq($idfaq) { 
+        $this->_adminModel->elfaq($idfaq);
+         return redirect('okayeliminafaq');
+    }
+     public function showFaq($idfaq) {
+        $faq = $this->_adminModel->getfaqbyid($idfaq);
+        
+       return view('modfaq')
+          ->with('faq', $faq);
+    }
+     public function modificaFaq($idfaq, newFFaq $request) {
+        //echo(current($request->validated()));
+      
+        $idfaq;
+        // $user->fill($request->validated());
+        $domanda=$request->domanda;
+        $risposta=$request->risposta;
+        $categoria=$request->categoria;
+         $prova=$this->_adminModel->modfaq($idfaq, $domanda, $risposta, $categoria);
+                return redirect('okaymodfaq/');
+
+        
+
+        
+
+        
+    }
+       }
