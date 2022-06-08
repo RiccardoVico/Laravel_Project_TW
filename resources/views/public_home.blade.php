@@ -60,7 +60,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-5 py-3">
-                <div class="subhead">Offerte in evidenza</div>
+                <div class="subhead">Ultime Offerte</div>
                 <h2 class="title-section"></h2>
             </div>
             <div class="col-md-6 py-3 text-md-right">
@@ -68,7 +68,7 @@
             </div>
         </div>
         <div class="row mt-3">
-            @include('layouts/catalogo')
+            @include('layouts/prova')
         </div>
     </div>
 </div>
@@ -122,15 +122,6 @@
                     <hr>
                     <p>Comunica con i possibili locatari</p>
                 </div>
-                <!--<div class="author">
-                  <div class="avatar">
-                    <img src="img/person/person_3.jpg" alt="">
-                  </div>
-                  <div class="d-inline-block ml-2">
-                    <div class="author-name">May Halloway</div>
-                    <div class="author-info">CEO - Mosh Elite Ltd.</div>
-                  </div>
-                </div>-->
             </div>
 
         </div> <!-- .row -->

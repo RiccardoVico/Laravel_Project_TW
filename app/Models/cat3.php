@@ -4,13 +4,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */namespace App\Models;
-use App\Models\Resources\utente;
-use App\Models\Resources\faq;
+use App\Models\Resources\Faq;
 use App\Models\Resources\Annuncio;
 use App\Models\Resources\Operazione;
 use Carbon\Carbon;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Collection;
 
 
 class cat3{

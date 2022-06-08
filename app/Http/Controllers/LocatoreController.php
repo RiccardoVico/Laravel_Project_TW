@@ -1,109 +1,234 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Operazione;
-use App\Annuncio;
-use App\Foto;
-use App\Models\Catalog;
+
+use App\Models\Resources\Operazione;
+use App\Models\Resources\Annuncio;
+use App\Models\Resources\Foto;
+use App\Models\Locatore;
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use App\Http\Requests\AnnRequest;
 use Carbon\Carbon;
-use Imagick;
-class LocatoreController extends Controller
-{
-    function index(){
-        return view('/register');
-    }
-    protected $_catalogModel;
+
+class LocatoreController extends Controller {
+
+    protected $_locatoreModel;
 
     public function __construct() {
-        $this->_catalogModel = new Catalog();
+        $this->middleware('can:isLocatore');
+        $this->_locatoreModel = new Locatore();
     }
     
+    function index() {
+        $annunci = $this->_locatoreModel->getAnnunciPaginati(2);
+        $foto = $this->_locatoreModel->getFoto();
+        return view('locatore_home')
+                        ->with('annunci', $annunci)
+                        ->with('foto', $foto);
+    }
+    
+    public function gestisciOfferte($userId, $opzionati) {
+        $operazioni = $this->_locatoreModel->getOperazioni()->where('idutente', $userId);
+        $operazioni = $this->_locatoreModel->getOperazioniInserimentoFiltro($operazioni);
+        $annunci = $this->_locatoreModel->getAnnunciPaginatiById($operazioni->pluck('idannuncio')->toArray(), 2);
+        if($opzionati) {
+            $operazioni = $this->_locatoreModel->getOperazioni()->whereIn('idannuncio', $operazioni->pluck('idannuncio')->toArray());
+            $operazioni = $operazioni->where('descrizione', "opzionamento");
+            $annunci = $this->_locatoreModel->getAnnunciPaginatiById($operazioni->pluck('idannuncio')->toArray(), 2);
+        }
+        $foto = $this->_locatoreModel->getFoto();
+        return view('gestisci_offerte')
+                        ->with('annunci', $annunci)
+                        ->with('opzionati', $opzionati)
+                        ->with('foto', $foto);
+    }
 
-    public function inserisciannuncio(AnnRequest $request) { 
-      $utente = new Annuncio();
-               if ($request->hasFile('image')) {
+    public function inserisciAnnuncio() {
+        return view('inserisci_annuncio');
+    }
+    
+    public function storeAnnuncio(AnnRequest $request) {
+        $annuncio = new Annuncio();
+        if ($request->hasFile('image')) {
             $image = $request->file('image');
-            $imageor = $image->getClientOriginalName();
-            $extension=$image->getClientOriginalExtension();
-            $imageName=$imageor.request('nomeannuncio').'.'.$extension;
+            $imageName = $image->getClientOriginalName();
         } else {
             $imageName = NULL;
         }
         // $utente->image = $imageName;
-         $utente->fill($request->validated());
-       if (!is_null($imageName)) {
-            $image->StoreAs('\images\annunci', $imageName);
-            
-
-        };
-
+        if (!is_null($imageName)) {
+            $destinationPath = public_path() . '/images/annunci';
+            $image->move($destinationPath, $imageName);
+        }
+        $annuncio->nomeannuncio = $request->nomeannuncio;
+        $annuncio->canoneaffitto = $request->canoneaffitto;
+        $annuncio->cap = $request->cap;
+        $annuncio->numerocivico = $request->numerocivico;
+        $annuncio->citta = $request->citta;
+        $annuncio->datacc = null;
+        $annuncio->superficie = $request->superficie;
+        $annuncio->postiletto = $request->postiletto;
+        $annuncio->wifi = $request->wifi;
+        $annuncio->climatizzatore = $request->climatizzatore;
+        $annuncio->etamin = $request->etamin;
+        $annuncio->etamax = $request->etamax;
+        $annuncio->genere = $request->genere;
+        $annuncio->tipologia = $request->tipologia;
+        $annuncio->descrizione = $request->descrizione;
+        $annuncio->utenze = $request->utenze;
+        $annuncio->via = $request->via;
+        $annuncio->numerototalicamere = $request->numerototalicamere;
+        $prova = Carbon::parse(now());
+        $mydatetime = $prova->format('Y-m-d 00:00:00');
+        $annuncio->created_at = $mydatetime;
+        $annuncio->updated_at = $mydatetime;
+        $annuncio->in_at = $request->in_at;
+        $annuncio->out_at = $request->out_at;
+        $annuncio->balcone = $request->balcone;
+        if($annuncio->tipologia == 1) { // posto letto
+            $annuncio->numeroletticamera = $request->numeroletticamera;
+            $annuncio->angolostudio = $request->angolostudio;
+            $annuncio->tipo_stanza = $request->tipo_stanza;
+            $annuncio->numerototalicamere = -1;
+            $annuncio->lavastov = -1;
+            $annuncio->lavatrice = -1;
+            $annuncio->cucina = -1;
+            $annuncio->localericrativo = -1;
+            $annuncio->parcheggio = -1;
+        }
+        if($annuncio->tipologia == 0) { // appartamento
+            $annuncio->numeroletticamera = -1;
+            $annuncio->angolostudio = -1;
+            $annuncio->tipo_stanza = -1;
+            $annuncio->lavastov = $request->lavastov;
+            $annuncio->lavatrice = $request->lavatrice;
+            $annuncio->cucina = $request->cucina;
+            $annuncio->localericrativo = $request->localericreativo;
+            $annuncio->parcheggio = $request->parcheggio;
+        }
         
-        $utente->nomeannuncio = request('nomeannuncio');
-        $utente->canoneaffitto = request('canoneaffitto');
-        $utente->cap = request('cap');
-        $utente->numerocivico = request('numerocivico');
-        $utente->citta = request('citta');
-        $utente->datacc = request('datacc');
-        $utente->superficie = request('superificie');
-        $utente->postiletto = request('postiletto');
-        $utente->wifi = request('wifi');
-        $utente->angolostudio = request('angolostudio');
-        $utente->climatizzatore = request('climatizzatore');
-        $utente->etamin = request('etamin');
-        $utente->etamax = request('etamax');
-        $utente->tipologia = request('tipologia');
-        $utente->descrizione = request('descrizione');
-        $utente->utenze = request('utenze');
-        $utente->via = request('via');
-        $prova=Carbon::parse(now());
-        $mydatetime=$prova->format('Y-m-d 00:00:00');
-        $utente->created_at=$mydatetime;
-        $utente->updated_at=$mydatetime;
-        $utente->in_at=request('in_at');
-        $utente->out_at=request('out_at');
-        $nome=request('nomeannuncio');
-        $utente->lavastov = request('lavastov');
-        $utente->lavatrice=request('lavatrice');
-        $utente->tipo_stanza=request('tipostanza');
-        $utente->numeroletticamera=request('numeroletticamera');
-        $utente->numerototalicamere=request('numerototalicamere');
-        $utente->cucina=request('cucina');
-        $utente->localericrativo=request('localericrativo');
-        $utente->balcone=request('balcone');
-        $utente->parcheggio=request('parcheggio');
-        $utente->fill($request->validated());
-        $utente->save();
-       
-         return redirect('storagein/'.$nome.'/'. $imageName);
-
         
-    }
-    public function inserimentoperazione(){
-       $utente2=new Operazione();
-       $imagename=request('imagename');
-       $id=$this->_catalogModel->getidannuncio(request('nome'));
-       $utente2->descrizione='inserimento';
-       $prova=Carbon::parse(now());
-       $mydatetime=$prova->format('Y-m-d 00:00:00');
-       $utente2->data=$mydatetime;
-       $utente2->idutente=auth()->user()->id;
-       $utente2->idannuncio=$id;
-       $utente2->save();
-       return redirect('salvafoto/'.$id.'/'.$imagename);
-    }
-     public function salvafoto(){
-       $foto=new Foto();
-       $foto->descrizione=request('imagename');
-       request('id');
-       $foto->idannuncio=request('id');
-      
-       $foto->save();
-  
-       return redirect('okay/');
+        $annuncio->save();
+        
+        $this->inserimentoOperazione($request);
+        $this->salvaFoto($request, $imageName);
+
+        return redirect()->action('LocatoreController@index');
     }
     
+    public function modificaAnnuncio($annuncioId) {
+        $annuncio = $this->_locatoreModel->getAnnuncioById($annuncioId)->first();
+        return view('modifica_annuncio')
+                        ->with('annuncio', $annuncio);        
+    }
+    
+    public function salvaModificheAnnuncio(AnnRequest $request, $annuncioId) {
+        $annuncio = $this->_locatoreModel->getAnnuncioById($annuncioId)->first();
+//        if ($request->hasFile('image')) {
+//            $image = $request->file('image');
+//            $imageName = $image->getClientOriginalName();
+//        } else {
+//            $imageName = NULL;
+//        }
+//        // $utente->image = $imageName;
+//        if (!is_null($imageName)) {
+//            $destinationPath = public_path() . '/images/annunci';
+//            $image->move($destinationPath, $imageName);
+//        }
+        $annuncio->nomeannuncio = $request->nomeannuncio;
+        $annuncio->canoneaffitto = $request->canoneaffitto;
+        $annuncio->cap = $request->cap;
+        $annuncio->numerocivico = $request->numerocivico;
+        $annuncio->citta = $request->citta;
+        $annuncio->superficie = $request->superficie;
+        $annuncio->postiletto = $request->postiletto;
+        $annuncio->wifi = $request->wifi;
+        $annuncio->climatizzatore = $request->climatizzatore;
+        $annuncio->etamin = $request->etamin;
+        $annuncio->etamax = $request->etamax;
+        $annuncio->genere = $request->genere;
+        $annuncio->tipologia = $request->tipologia;
+        $annuncio->descrizione = $request->descrizione;
+        $annuncio->utenze = $request->utenze;
+        $annuncio->via = $request->via;
+        $annuncio->numerototalicamere = $request->numerototalicamere;
+        $time = strtotime($request->in_at);
+        $newformat = date('Y-m-d 00:00:00',$time);
+        $annuncio->in_at = $newformat;
+        $time2 = strtotime($request->out_at);
+        $newformat2 = date('Y-m-d 00:00:00',$time2);
+        $annuncio->out_at = $newformat2;
+        $annuncio->balcone = $request->balcone;
+        if($annuncio->tipologia == 1) { // posto letto
+            $annuncio->numeroletticamera = $request->numeroletticamera;
+            $annuncio->angolostudio = $request->angolostudio;
+            $annuncio->tipo_stanza = $request->tipo_stanza;
+            $annuncio->numerototalicamere = -1;
+            $annuncio->lavastov = -1;
+            $annuncio->lavatrice = -1;
+            $annuncio->cucina = -1;
+            $annuncio->localericrativo = -1;
+            $annuncio->parcheggio = -1;
+        }
+        if($annuncio->tipologia == 0) { // appartamento
+            $annuncio->numeroletticamera = -1;
+            $annuncio->angolostudio = -1;
+            $annuncio->tipo_stanza = -1;
+            $annuncio->lavastov = $request->lavastov;
+            $annuncio->lavatrice = $request->lavatrice;
+            $annuncio->cucina = $request->cucina;
+            $annuncio->localericrativo = $request->localericreativo;
+            $annuncio->parcheggio = $request->parcheggio;
+        }
+        
+        $annuncio->save();
+//        $this->salvaFoto($request, $imageName);
+
+//        return view('modifica_annuncio')
+//                        ->with('annuncio', $annuncio); 
+        return redirect()->route('annuncio', ['annuncio' => $annuncioId]);
+    }
+
+    public function inserimentoOperazione($request) {
+        $operazione = new Operazione();
+        $operazione->idannuncio = $this->_locatoreModel->getIdAnnuncio($request->nomeannuncio);
+        $operazione->descrizione = 'inserimento';
+        $data = Carbon::parse(now());
+        $mydatetime = $data->format('Y-m-d 00:00:00');
+        $operazione->data = $mydatetime;
+        $operazione->idutente = auth()->user()->id;
+        $operazione->save();
+    }
+
+    public function salvaFoto($request, $imageName) {
+        $foto = new Foto();
+        if(!is_null($imageName)) { 
+            $foto->descrizione = $imageName;
+        } else {
+            $foto->descrizione = "default";
+        }
+        $foto->idutente = auth()->user()->id;
+        $foto->idannuncio = $this->_locatoreModel->getIdAnnuncio($request->nomeannuncio);
+
+        $foto->save();
+    }
+    
+    public function eliminaAnnuncio($idAnnuncio) {
+        $this->_locatoreModel->deleteFotoByIdAnnuncio($idAnnuncio); 
+        $this->_locatoreModel->deleteOperazioniByIdAnnuncio($idAnnuncio);   
+        $this->_locatoreModel->deleteAnnuncioById($idAnnuncio);           
+        return redirect()->action('LocatoreController@index');       
+    }
+    
+    public function assegnaAnnuncio($idAnnuncio) {
+        $annuncio = $this->_locatoreModel->getAnnuncioById($idAnnuncio)->first();
+        if($annuncio->disponibilita == 1) {
+            $annuncio->disponibilita = 0;
+        } else if($annuncio->disponibilita == 0) {
+            $annuncio->disponibilita = 1;
+        }
+        $annuncio->save();
+        return redirect()->route('annuncio', ['annuncio' => $idAnnuncio]);    
+    }
 
 }

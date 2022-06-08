@@ -1,7 +1,5 @@
-
     
-    
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
 
@@ -18,6 +16,6 @@
     </head>
     <body>
         <p>La faq  è stata eliminata correttamente</p>  <div class="pass-link"><a href="{{ route('faq') }}"">Torna alle faq</a></div>
-        </main>
-    </body>
+    </main>
+</body>
 </html>

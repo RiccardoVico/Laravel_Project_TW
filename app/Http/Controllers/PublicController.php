@@ -1,18 +1,16 @@
 <?php
 
-/* 
+/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
+
 namespace App\Http\Controllers;
 
-use App\Utente;
-use App\Models\Catalog;
-use Illuminate\Support\Arr;
-use App\Models\Resources\users;
-use App\Models\Resources\Annuncio;
+use App\Http\Controllers\Controller;
+use App\Models\Public_;
 use Illuminate\Support\Collection;
-use  App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ProfiloRequest;
 use App\Http\Requests\MessaggioRequest;
 
@@ -21,100 +19,63 @@ class PublicController extends Controller {
     protected $_catalogModel;
 
     public function __construct() {
-        $this->_catalogModel = new Catalog();
+        $this->_catalogModel = new Public_();
     }
-    
+
     public function showHome() {
-        $annunci = $this->_catalogModel->getAnnunci();
+        $annunci = $this->_catalogModel->getUltimiAnnunci(3);
+        $foto = $this->_catalogModel->getFoto();
         return view('public_home')
-                        ->with('annunci', $annunci);
+                        ->with('annunci', $annunci)
+                        ->with('foto', $foto);
     }
 
-    public function show() {
-        $annunci = $this->_catalogModel->getAnnunci();
+    public function showCatalogo() {
+        $annunci = $this->_catalogModel->getAnnunciPaginati(3);
+        $foto = $this->_catalogModel->getFoto();
         return view('catalogo')
-                        ->with('annunci', $annunci);
+                        ->with('annunci', $annunci)
+                        ->with('foto', $foto);
     }
 
-    public function showfaq() {
-        $res = $this->_catalogModel->getfaq();
+    public function showFaq() {
+        $res = $this->_catalogModel->getFaq();
         return view('faq')
                         ->with('products', $res);
     }
 
-    public function showHomeLocatore() {
-        $annunci = $this->_catalogModel->getannunci();
-        return view('locatore_home')
-                        ->with('annunci', $annunci);
-    }
-
-    public function showGestisciOfferte($userId) {
-       $operazioni = $this->_catalogModel->getOperazioni()->where('idutente', $userId);
-       $oo=$this->_catalogModel->getOperazioniFiltro($operazioni);
-       $annunci = $this->_catalogModel->getAnnunciById($oo->pluck('idannuncio')->toArray());
-       return view('gestisci_offerte')
-       ->with('annunci', $annunci);
-    }
-
-    public function showHomeLocatario() {
-        $annunci = $this->_catalogModel->getannunci();
-        return view('locatario_home')
-                        ->with('annunci', $annunci);
-    }
-    
-    public function showHomeAdmin() {
-        $annunci = $this->_catalogModel->getannunci();
-        return view('admin')
-                        ->with('annunci', $annunci);
-    }
-    
     public function showAnnuncio($annuncioId) {
-        $annunci = $this->_catalogModel->getAnnunciSpaginati();
+        $annunci = $this->_catalogModel->getAnnunci();
         $annuncio = $annunci->where('idannuncio', $annuncioId)->first();
         $operazioni = $this->_catalogModel->getOperazioni();
         $idutente = $operazioni->where('idannuncio', $annuncioId)->first()->idutente;
+        $foto = $this->_catalogModel->getFotoByIdAnnuncio($annuncioId)->first();
+        $opzionato = $this->_catalogModel->getOpzionatoAnnuncio($annuncioId, Auth::id());
         return view('annuncio')
-                ->with('annuncio', $annuncio)
-                ->with('idutente', $idutente);
+                        ->with('annuncio', $annuncio)
+                        ->with('idutente', $idutente)
+                        ->with('foto', $foto)
+                        ->with('opzionato', $opzionato);
     }
-
-    public function annunciopzionati($userId){
-        
-        $res=$this->_catalogModel->getOperazioni();
-        $operazioniins1= $this->_catalogModel->getOperazioniFiltro($res);
-        $operazioniins2=$operazioniins2=$this->_catalogModel->getOperazioniFiltro2($operazioniins1, $userId);
-        $ann=$this->_catalogModel->getAnnunci2();
-        $coll2=$this->_catalogModel->opzionati($operazioniins2, $ann);
-   
-         
-             
-         
-         
-        
-        //(($opp=$this->_catalogModel->getOperazioniOpziona()));
-        
-       // ($tt=$this->_catalogModel-> getAnnunciOpzionati($coll,$opp));
-        //foreach($opp as $op){
-          //  echo($op->idannuncio);
-          //  echo($op->idutente);
-        //}
-      
-
-   
-       return view('prova3')
-       ->with('annunci', $coll2);
-        
-        
-             //  return redirect('annopzionati');
-
-
-    }
-
-    public function opzionatoda($idannuncio){
-        $annunci=$this->_catalogModel->showopzionatoda($idannuncio);
     
-        return view('prova4')
-            ->with('annunci', $annunci);
+    public function opzionaAnnuncio($annuncioId) {
+        $opzionato = $this->_catalogModel->getOpzionatoAnnuncio($annuncioId, Auth::id());
+        if(!$opzionato) {
+            $this->_catalogModel->addOperazione($annuncioId, Auth::id(), "opzionamento");           
+        } else {
+            $this->_catalogModel->deleteOperazione($annuncioId, Auth::id(), "opzionamento");
+        }
+        return redirect()->action('PublicController@showAnnuncio', $annuncioId);       
+    }
+
+    public function richiedentiAnnuncio($idannuncio) {
+        $annuncio = $this->_catalogModel->getAnnuncioById($idannuncio)->first();
+        $operazioni = $this->_catalogModel->getOperazioni()->where('idannuncio', $idannuncio);
+        $operazioni = $operazioni->where('descrizione', "opzionamento");
+        $utenti = $this->_catalogModel->getUtenti()->whereIn('id', $operazioni->pluck('idutente')->toArray());  
+        return view('richiedenti')
+                        ->with('annuncio', $annuncio)
+                        ->with('utenti', $utenti);
     }
     
     public function showProfilo($userId) {
@@ -148,8 +109,8 @@ class PublicController extends Controller {
         return view('profilo')
                 ->with('user', $user);
     }
-      
-    public function showMessaggistica($userId, $userId2=0) {
+    
+    public function showMessaggistica($userId, $userId2 = 0) {
         // echo($this->_catalogModel->getMessaggiByUserId($userId));
         $idutenti = $this->_catalogModel->getMessaggiByUserId($userId)->pluck('idutente1')->toArray();
         $idutenti = array_merge($idutenti, $this->_catalogModel->getMessaggiByUserId($userId)->pluck('idutente2')->toArray());
@@ -158,32 +119,29 @@ class PublicController extends Controller {
         if (($key = array_search($userId, $idutenti)) !== false) {
             unset($idutenti[$key]);
         }
-        $utenti = $this->_catalogModel->getutenti()->whereIn('id', $idutenti);
+        $utenti = $this->_catalogModel->getUtenti()->whereIn('id', $idutenti);
         // echo($utenti);
-        if($userId2 != 0){
+        if ($userId2 != 0) {
             $destinatario = $this->_catalogModel->getuserbyid($userId2);
             $messaggi = $this->_catalogModel->getMessaggiByTwoUsers($userId, $userId2);
             // echo($messaggi);
-            $messaggi = $messaggi->sortBy(function ($obj, $key) { return strtotime($obj->data); });
+            $messaggi = $messaggi->sortBy(function ($obj, $key) {
+                return strtotime($obj->data);
+            });
             // echo($messaggi);
             return view('messaggistica')
-                ->with('utenti', $utenti)
-                ->with('messaggi', $messaggi)
-                ->with('destinatario', $destinatario);
+                            ->with('utenti', $utenti)
+                            ->with('messaggi', $messaggi)
+                            ->with('destinatario', $destinatario);
         }
-        
+
         return view('messaggistica')
-                ->with('utenti', $utenti);
+                        ->with('utenti', $utenti);
     }
 
-    public function createMessaggio($userId, $userId2, MessaggioRequest $request){
+    public function createMessaggio($userId, $userId2, MessaggioRequest $request) {
         $this->_catalogModel->createMessaggio($userId, $userId2, $request);
-        return redirect()->route('messaggistica', ['idutente'=>$userId, 'idutente2'=>$userId2]);
+        return redirect()->route('messaggistica', ['idutente' => $userId, 'idutente2' => $userId2]);
     }
-      
-     
-        
-
 
 }
-

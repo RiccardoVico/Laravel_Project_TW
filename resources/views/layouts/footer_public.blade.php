@@ -12,9 +12,9 @@
       <div class="col-lg-3 py-3">
         <h5>Links</h5>
         <ul class="footer-menu">
-          <li><a href="faq">FAQ</a></li>
-          <li><a href="images/trattamento.txt">Termini e condizioni d'utilizzo</a></li>
-          <li><a href="images/privacy.pdf">Privacy policy dati</a></li>
+          <li><a href="{{ route('faq') }}">Faq</a></li>
+          <li><a href="{{ asset('images/trattamento.txt') }}">Termini e condizioni d'utilizzo</a></li>
+          <li><a href="{{ asset('images/privacy.pdf') }}">Privacy policy dati</a></li>
         </ul>
       </div>
     </div>

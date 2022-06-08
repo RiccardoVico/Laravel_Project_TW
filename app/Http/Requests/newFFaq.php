@@ -11,6 +11,7 @@ use Illuminate\Validation\Rule;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Contracts\Validation\Validator;
 use Symfony\Component\HttpFoundation\Response;
+
 class newFFaq extends FormRequest{
     public function authorize(){
         return true;
@@ -23,9 +24,9 @@ class newFFaq extends FormRequest{
         'categoria'=>'required|max:100'
           ];
     }
-     protected function failedValidation(Validator $validator)
+    
+    protected function failedValidation(Validator $validator)
     {
         throw new HttpResponseException(response($validator->errors(), Response::HTTP_UNPROCESSABLE_ENTITY));
     }
-   
 }

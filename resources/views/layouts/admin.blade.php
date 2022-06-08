@@ -19,7 +19,7 @@
 
         <header>
             <div id="menu">
-               
+                @include('layouts/navadmin')
             </div>
 
             <div class="page-banner bg-img bg-img-parallax overlay-dark" style="background-image: url(images/stats.jpg)"  >;
@@ -30,37 +30,23 @@
                                 <ol class="breadcrumb breadcrumb-dark bg-transparent justify-content-center py-0">
                                     <li class="breadcrumb-item"><a href="../public">HomeAdmin</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">Statistiche</li>
-                                  
+
                                 </ol>
-                                 <h1 class="fg-white text-center">Statistiche</h1>
+                                <h1 class="fg-white text-center">Statistiche</h1>
                             </nav>
-                            
+
                         </div>
                     </div>
                 </div>
             </div> <!-- .page-banner -->
         </header>
-
-      
-            
-                       
-
-  <!--<select name="tipo">
-      <option value=''></option>
-  <option value='0'>appartamento</option>
-  <option value='1'>posto letto</option>
-  </select><br>
-  Periodo temporale<br>
-  <input type="date" name="mydatetime" min><span>DataInizio</span>
-  <input type="date" name="mydatetime2" min><span>DataFine</span>
-  <button type="submit">Filtra</button>
-  -->
- 
-                
-        
-
-
- 
+        <main>
+            @yield('content')
+        </main>
+        <footer class="page-footer">
+            @include('layouts/footer_public')
+        </footer>
+    </body>
 </html>
 
 

@@ -1,5 +1,4 @@
 @isset($annunci)
-<?php echo($annunci);?>
 @foreach ($annunci as $annuncio)
 <div class="container py-3">
     <div class="row justify-content-center mb-3">
@@ -18,7 +17,6 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-6 col-xl-6">
-                            <?php echo($annuncio->nomeannuncio);?>
                             <h5>{{ $annuncio->nomeannuncio }}</h5>
                             <div class="d-flex flex-row">
                                 <div class="text-danger mb-1 me-2">

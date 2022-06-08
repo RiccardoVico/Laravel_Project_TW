@@ -8,12 +8,17 @@
                     <div class="row">
                         <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
                             <div class="bg-image hover-zoom ripple rounded ripple-surface">
-                                <img src="{{ asset('images/slide1.jpg') }}" class="w-100" />
-                                <a href="#!">
-                                    <div class="hover-overlay">
-                                        <div class="mask" style="background-color: rgba(253, 253, 253, 0.15);"></div>
-                                    </div>
-                                </a>
+                                @isset($foto)
+                                    @foreach ($foto as $foto_)
+                                        @if($foto_->idannuncio == $annuncio->idannuncio)
+                                            @if($foto_->descrizione != "default")
+                                            <img src="{{ asset('images/annunci/' . $foto_->descrizione) }}" class="w-100" />
+                                            @else
+                                            <img src="{{ asset('images/annunci/no-image.png') }}" class="w-100" /> 
+                                            @endif
+                                        @endif
+                                    @endforeach
+                                @endisset()
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-6 col-xl-6">
@@ -35,10 +40,13 @@
                             <div class="d-flex flex-row align-items-center mb-1">
                                 <h4 class="mb-1 me-1">Canone: €{{ $annuncio->canoneaffitto }}</h4>
                             </div>
+                            @if($annuncio->disponibilita != 0)
                             <h6 class="text-success">Disponibile</h6>
+                            @else
+                            <h6 class="text-danger">Assegnato</h6>
+                            @endif
                             <div class="d-flex flex-column mt-4">
-                                <a href = "{{ route('annuncio', [$annuncio->idannuncio]) }}" class="btn btn-primary btn-sm" type="button">Apri</a><br><br>
-                                 
+                                <a href = "{{ route('annuncio', [$annuncio->idannuncio]) }}" class="btn btn-primary btn-sm" type="button">Apri</a>
                             </div>
                         </div>
                     </div>
@@ -48,5 +56,4 @@
     </div>
 </div>
 @endforeach
-
 @endisset()

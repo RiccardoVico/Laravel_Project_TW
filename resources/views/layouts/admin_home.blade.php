@@ -54,30 +54,7 @@
                     </div>
                 </div>
             </div>
-        </header>
-
-
-        <main>
-            <div class="page-section">
-                <div class="container">
-                    <div class="col text-center pb-3">
-                        <h1>Catalogo completo annunci disponibili</h1>
-                    </div>
-                    @include('layouts/catalogo')
-                </div>
-            </div>
-        </main>
-
-        <!-- end #content -->
-        <footer class="page-footer">
-            @include('layouts/footer_public')
-        </footer>
-        <!-- end #footer -->
-
-        <script src="js/jquery-3.5.1.min.js"></script>
-        <script src="js/bootstrap.bundle.min.js"></script>
-        <script src="js/owl-carousel/owl.carousel.min.js"></script>
-        <script src="js/theme.js"></script>
-
+        </header> 
     </body>
 </html>
+

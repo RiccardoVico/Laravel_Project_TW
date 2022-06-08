@@ -13,7 +13,7 @@
                     <h1 class="mb-4">Benvenuto</h1>
                     <h5 class="mb-4">Fai clic su "Gestisci le tue offerte" per inserire nuovi annunci 
                         o modificare quelli già inseriti</h5>
-                    <a href = "{{ route('gestisci_offerte', [Auth::user()->id]) }}" class="btn btn-outline-light">Gestisci le tue offerte</a>
+                    <a href = "{{ route('gestisci_offerte', [Auth::user()->id, 0]) }}" class="btn btn-outline-light">Gestisci le tue offerte</a>
                 </div>
             </div>
         </div>

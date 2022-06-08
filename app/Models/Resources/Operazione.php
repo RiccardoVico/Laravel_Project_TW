@@ -8,7 +8,14 @@ namespace  App\Models\Resources;
 use Illuminate\Database\Eloquent\Model;
 
 class Operazione extends Model {
+    
     protected $table='operazione';
-    protected $primarykey='idoperazione';
-    public $timestamp=false;
+    
+    protected $primaryKey='idoperazione';
+    
+    protected $fillable = [
+        'idoperazione','data','','descrizione','username','idannuncio',
+    ];
+    
+    public $timestamps = false;
 }
