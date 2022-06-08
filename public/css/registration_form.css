@@ -47,7 +47,7 @@ form .user-details .input-box2,
 form .user-details .input-box4{
     margin-bottom: 15px;
     margin-left: 15px;
-    width: 300px;
+    width: 100%;
 }
 .user-details .input-box .details,
 .user-details .input-box2 .details{
@@ -340,7 +340,6 @@ form .campi_univoci{
 
 /* Inizio CSS Profilo Locatore e Locatario */
 
-.locatore_profilo,
 .locatario_profilo{
     display: flex;
     width: 75%;
@@ -352,27 +351,27 @@ form .campi_univoci{
     border: 1px solid #ccc;
 }
 .profilo_container{
-    max-width: 1025px;
+    max-width: 1250px;
     width: 100%;
     background: #fff;
     padding: 25px 30px;
     border-radius: 5px;
     border-bottom-width: 2px;
 }
-.locatore_profilo .image_profilo,
+
 .locatario_profilo .image_profilo{
     height: 74.5%;
     width: 10%;
     border-radius: 5px;
 }
-.image_profilo img{
+/* .image_profilo img{
     height: 80px;
     width: 80px;
     margin-left: 25%;
     margin-top: 20px;
     border-radius: 50%;
     background-color: red;
-}
+} */
 .options_buttons{
     padding-top: 20px;
     height: 74.5%;
@@ -393,7 +392,9 @@ form .campi_univoci{
     border-radius: 5px;
     background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
-
+.options_buttons{
+    margin-right: 20px;
+}
 .profilo_container form .user-details_profilo{
     display: flex;
     flex-wrap: wrap;
@@ -403,7 +404,7 @@ form .user-details_profilo .input-box,
 form .user-details_profilo .input-box2{
     margin-bottom: 15px;
     margin-left: 15px;
-    width: 300px;
+    width: 30%;
 }
 .user-details_profilo .input-box .details,
 .user-details_profilo .input-box2 .details{
@@ -430,12 +431,12 @@ form .user-details_profilo .input-box2{
     pointer-events: all;
 }
 
-.user-details_profilo .input-box input:focus,
+/* .user-details_profilo .input-box input:focus,
 .user-details_profilo .input-box input:valid,
 .user-details_profilo .input-box2 input:focus,
 .user-details_profilo .input-box2 input:valid{
     border-color: #9b59b6;
-}
+} */
 
 .locatario_profilo form .salva_button{
     pointer-events: none;

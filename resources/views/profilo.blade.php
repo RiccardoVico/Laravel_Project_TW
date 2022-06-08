@@ -25,9 +25,9 @@
         <main>
             <div class="page-section">
                 <div class="locatario_profilo">
-                    <div class="image_profilo">
+                    {{-- <div class="image_profilo">
                         <img src="">
-                    </div>
+                    </div> --}}
                     <div class="registration_container_box">
                         <div class="profilo_container">
                             <div class="title">Gestione Profilo</div>
