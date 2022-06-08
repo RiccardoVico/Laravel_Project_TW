@@ -467,7 +467,7 @@ form .user-details_profilo .input-box2{
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 10%);
 }
 .chat-app .people-list {
-    width: 280px;
+    width: 230px;
     position: absolute;
     left: 0;
     top: 0;
@@ -476,7 +476,7 @@ form .user-details_profilo .input-box2{
 }
 
 .chat-app .chat {
-    margin-left: 280px;
+    margin-left: 230px;
     border-left: 1px solid #eaeaea
 }
 
@@ -487,7 +487,7 @@ form .user-details_profilo .input-box2{
     transition: .5s;
     overflow-y: scroll;
     scroll-behavior: smooth;
-    height: 810px;
+    height: 100%;
 }
 
 .people-list .chat-list li {
@@ -519,7 +519,7 @@ form .user-details_profilo .input-box2{
     border-radius: 50%
 }
 
-.people-list .about {
+/* .people-list .about {
     float: left;
     padding-left: 8px
 }
@@ -527,7 +527,7 @@ form .user-details_profilo .input-box2{
 .people-list .status {
     color: #999;
     font-size: 13px
-}
+} */
 
 .chat .chat-header {
     padding: 15px 20px;
@@ -551,6 +551,17 @@ form .user-details_profilo .input-box2{
     overflow-y: scroll;
     scroll-behavior: smooth;
     height: 650px;
+}
+
+.chat-history .place_holder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.place_holder span{
+    font-size: 25px;
 }
 
 .chat .chat-history ul {
@@ -636,7 +647,7 @@ form .user-details_profilo .input-box2{
     padding: 20px
 }
 
-.online,
+/* .online,
 .offline,
 .me {
     margin-right: 2px;
@@ -650,7 +661,7 @@ form .user-details_profilo .input-box2{
 
 .offline {
     color: #e47297
-}
+} */
 
 .me {
     color: #1d8ecd
@@ -659,6 +670,10 @@ form .user-details_profilo .input-box2{
 .float-right {
     float: right
 }
+
+/* form .text_chat{
+    width: 100%;
+} */
 
 .clearfix:after {
     visibility: hidden;

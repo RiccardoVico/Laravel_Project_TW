@@ -57,8 +57,11 @@ Route::post('admininserimentofaq','adminController@store')->name('insfaq');
 Route::view('/inseriscifaq','inseriscifaq')
         ->name('inseriscifaq');
 
-Route::get('messaggistica', 'PublicController@showMessaggistica')
+Route::get('messaggistica/{idutente}/{idutente2?}', 'PublicController@showMessaggistica')
         ->name('messaggistica');
+
+Route::post('messaggistica/{idutente}/{idutente2?}', 'PublicController@createMessaggio')
+        ->name('messaggistica_store');
 
 Route::get('/profilo/{idutente}','PublicController@showProfilo')
         ->name('profilo')->middleware('can:isuserbyid,idutente');

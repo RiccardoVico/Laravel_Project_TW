@@ -18,7 +18,7 @@
                     <a href="{{ route('faq') }}" class="nav-link">FAQ</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('messaggistica') }}" class="nav-link">Messaggi</a>
+                    <a href="{{ route('messaggistica', [Auth::user()->id]) }}" class="nav-link">Messaggi</a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('profilo', [Auth::user()->id]) }}" class="nav-link">Profilo</a>

@@ -15,14 +15,14 @@ class Messaggio extends Migration
     {
         Schema::create('messaggio',function(Blueprint $table)
         {
-            $table->integer('idmessaggio')->index();
-            $table->string('username1',20);
-            $table->string('username2',20);
+            $table->bigIncrements('idmessaggio')->index();
+            $table->bigInteger('idutente1')->unsigned();
+            $table->bigInteger('idutente2')->unsigned();
             $table->text('testo');
-            $table->date('data');
-            $table->BigIncrements('idannuncio');
-            $table->foreign('username1')->references('username')->on('users');
-            $table->foreign('username2')->references('username')->on('users');
+            $table->datetime('data');
+            $table->BigInteger('idannuncio')->unsigned();
+            $table->foreign('idutente1')->references('id')->on('users');
+            $table->foreign('idutente2')->references('id')->on('users');
             $table->foreign('idannuncio')->references('idannuncio')->on('annuncio');
             
         });

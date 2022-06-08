@@ -12,18 +12,25 @@ use App\Models\Resources\faq;
 use App\Models\Resources\utente;
 use App\Models\Resources\Annuncio;
 use Illuminate\Support\Collection;
+use App\Models\Resources\Messaggio;
 use App\Models\Resources\Operazione;
 
 class Catalog {
     protected $_res;
+    
     public function getannuncio($name) {
         
         return Annuncio::where('nomeannuncio',$name)->get();
     }
-     public function getutente($id) {
-        
+
+    public function getutente($id) {    
         return utente::where('id',$id)->get();
     }
+
+    public function getutenti() {
+        return utente::all();
+    }
+
     public function getidannuncio($name){
          return Annuncio::where('nomeannuncio',$name)->value('idannuncio');
     }
@@ -312,6 +319,44 @@ class Catalog {
 
 public function getuserbyid($userId) {
     return utente::where('id', $userId)->get()->first();
+}
+
+public function getMessaggi(){
+    return Messaggio::all();
+}
+
+public function getMessaggiInviatiByUserId($userId){
+    return Messaggio::where('idutente1', $userId)->get();
+}
+
+public function getMessaggiRicevutiByUserId($userId){
+    return Messaggio::where('idutente2', $userId)->get();
+}
+
+public function getMessaggiByTwoUsers($userId, $userId2){
+    $messaggi = Messaggio::where('idutente1', $userId)->get()->where('idutente2', $userId2);
+    $messaggi2 = Messaggio::where('idutente1', $userId2)->get()->where('idutente2', $userId);
+    return $messaggi->merge($messaggi2);
+}
+
+public function getMessaggiByUserId($userId){
+    $messaggi = Messaggio::where('idutente1', $userId)->get();
+    return $messaggi->merge(Messaggio::where('idutente2', $userId)->get());
+}
+
+// public function getuserbyid($userId) {
+//     return utente::where('id', $userId)->get()->first();
+// }
+
+public function createMessaggio($userId, $userId2, $request){
+    $messaggio = new Messaggio;
+    $messaggio -> idutente1 = $userId;
+    $messaggio -> idutente2 = $userId2;
+    $messaggio -> testo = $request->testo;
+    $messaggio -> data =Carbon::parse(now())->format('Y-m-d H:i:s');
+    $messaggio -> idannuncio = 1;
+
+    $messaggio->save();
 }
              
 

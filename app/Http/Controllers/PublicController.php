@@ -5,6 +5,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 namespace App\Http\Controllers;
+
 use App\Utente;
 use App\Models\Catalog;
 use Illuminate\Support\Arr;
@@ -13,6 +14,7 @@ use App\Models\Resources\Annuncio;
 use Illuminate\Support\Collection;
 use  App\Http\Controllers\Controller;
 use App\Http\Requests\ProfiloRequest;
+use App\Http\Requests\MessaggioRequest;
 
 class PublicController extends Controller {
 
@@ -147,8 +149,36 @@ class PublicController extends Controller {
                 ->with('user', $user);
     }
       
-    public function showMessaggistica() {
-        return view('messaggistica');
+    public function showMessaggistica($userId, $userId2=0) {
+        // echo($this->_catalogModel->getMessaggiByUserId($userId));
+        $idutenti = $this->_catalogModel->getMessaggiByUserId($userId)->pluck('idutente1')->toArray();
+        $idutenti = array_merge($idutenti, $this->_catalogModel->getMessaggiByUserId($userId)->pluck('idutente2')->toArray());
+        $idutenti = collect($idutenti)->unique()->toArray();
+        // echo(implode(',' , $utenti));
+        if (($key = array_search($userId, $idutenti)) !== false) {
+            unset($idutenti[$key]);
+        }
+        $utenti = $this->_catalogModel->getutenti()->whereIn('id', $idutenti);
+        // echo($utenti);
+        if($userId2 != 0){
+            $destinatario = $this->_catalogModel->getuserbyid($userId2);
+            $messaggi = $this->_catalogModel->getMessaggiByTwoUsers($userId, $userId2);
+            // echo($messaggi);
+            $messaggi = $messaggi->sortBy(function ($obj, $key) { return strtotime($obj->data); });
+            // echo($messaggi);
+            return view('messaggistica')
+                ->with('utenti', $utenti)
+                ->with('messaggi', $messaggi)
+                ->with('destinatario', $destinatario);
+        }
+        
+        return view('messaggistica')
+                ->with('utenti', $utenti);
+    }
+
+    public function createMessaggio($userId, $userId2, MessaggioRequest $request){
+        $this->_catalogModel->createMessaggio($userId, $userId2, $request);
+        return redirect()->route('messaggistica', ['idutente'=>$userId, 'idutente2'=>$userId2]);
     }
       
      
