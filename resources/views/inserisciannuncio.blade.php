@@ -21,28 +21,70 @@
                                     <div class="input-box">
 						
 						{{ Form::label('nomeannuncio', 'nomeannuncio', ['class' => 'label-input']) }}
-                                                 {{ Form::text('nomeannuncio','', ['class' => 'input','id' => 'nomeannuncio']) }}
+                                                {{ Form::text('nomeannuncio','', ['class' => 'input','id' => 'nomeannuncio']) }}
 					</div>
+                                    
+                                                @if ($errors->first('nomeannuncio'))
+                                                    <ul class="errors">
+                                                 @foreach ($errors->get('nomeannuncio') as $message)
+                                                     <li>{{ $message }}</li>
+                                                 @endforeach
+                                                    </ul>
+                                                @endif
+                           
                                      <div class="input-box">
 						
 						{{ Form::label('canoneaffitto', 'canoneaffitto', ['class' => 'label-input']) }}
                                                  {{ Form::text('canoneaffitto','', ['class' => 'input','id' => 'canoneaffitto']) }}
+                                                 @if ($errors->first('canoneaffitto'))
+                                                    <ul class="errors">
+                                                 @foreach ($errors->get('canoneaffitto') as $message)
+                                                     <li>{{ $message }}</li>
+                                                 @endforeach
+                                                    </ul>
+                                                @endif
 					</div>
+                                                
+
 					<div class="input-box">
 						
 						{{ Form::label('cap', 'cap', ['class' => 'label-input']) }}
                                                  {{ Form::text('cap','', ['class' => 'input','id' => 'cap']) }}
+                                                 @if ($errors->first('cap'))
+                                                    <ul class="errors">
+                                                 @foreach ($errors->get('cap') as $message)
+                                                     <li>{{ $message }}</li>
+                                                 @endforeach
+                                                    </ul>
+                                                @endif
 					</div>
+                                                
                                     <div class="input-box">
 						
 						{{ Form::label('numerocivico', 'numerocivico', ['class' => 'label-input']) }}
-                                                 {{ Form::text('numerocivico','', ['class' => 'input','id' => 'numerocivico']) }}
+                                                {{ Form::text('numerocivico','', ['class' => 'input','id' => 'numerocivico']) }}
+                                                 @if ($errors->first('numerocivico'))
+                                                    <ul class="errors">
+                                                 @foreach ($errors->get('numerocivico') as $message)
+                                                     <li>{{ $message }}</li>
+                                                 @endforeach
+                                                    </ul>
+                                                @endif
 					</div>
+                                               
 					<div class="input-box">
 						
 						{{ Form::label('citta', 'citta', ['class' => 'label-input']) }}
                                                  {{ Form::text('citta','', ['class' => 'input','id' => 'citta']) }}
+                                                 @if ($errors->first('citta'))
+                                                    <ul class="errors">
+                                                 @foreach ($errors->get('citta') as $message)
+                                                     <li>{{ $message }}</li>
+                                                 @endforeach
+                                                    </ul>
+                                                @endif
 					</div>
+                                                
                                     <div class="input-box">
 						
                                                 {{ Form::label('wifi', 'wifi presente', ['class' => 'label-input']) }}

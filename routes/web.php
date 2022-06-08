@@ -113,3 +113,4 @@ Route::view('/modfaq', 'modfaq')
 Route::post('/modfaq2/{idfaq}', 'adminController@modificaFaq')->name('modfaq2');
 Route::view('/modmod', 'modmod')
         ->name('modmod');
+Route::view('/prova2/{$annunci}','prova2')->name('prova2');

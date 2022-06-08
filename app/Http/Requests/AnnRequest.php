@@ -5,10 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-// Aggiunti per response JSON
-use Illuminate\Http\Exceptions\HttpResponseException;
-use Illuminate\Contracts\Validation\Validator;
-use Symfony\Component\HttpFoundation\Response;
+
 
 class AnnRequest extends FormRequest {
 
@@ -30,8 +27,24 @@ class AnnRequest extends FormRequest {
      */
     public function rules() {
         return [
-           
-            'image' => 'file|mimes:jpeg,png|max:1024',
+            'nomeannuncio' =>'required|unique:annuncio,nomeannuncio',
+            'image' => 'required|file|mimes:jpeg,png|max:1024',
+            'canoneaffitto' =>'required|numeric|min:0',
+            'cap' =>'required',
+            'numerocivico' =>'required',
+            'citta' =>'required',
+            'superficie'=>'required|numeric|min:0',
+            'postilettototali' =>'required|numeric|min:0',
+            'etamin' =>'required|numeric|min:0',
+            'etamax' =>'required|numeric|min:0',
+            'descrizione' =>'required',
+            'utenze' =>'required',
+            'via' =>'required',
+            'in_at' =>'required',
+            'out_at' =>'required',
+            'numeroletticamera' =>'nullable|numeric|min:0',
+            'numerototalecamere' =>'nullable|numeric|min:0',
+            
          
         ];
     }
@@ -39,9 +52,6 @@ class AnnRequest extends FormRequest {
     /**
      * Override: response in formato JSON
     */
-    protected function failedValidation(Validator $validator)
-    {
-        throw new HttpResponseException(response($validator->errors(), Response::HTTP_UNPROCESSABLE_ENTITY));
-    }
+   
 
 }

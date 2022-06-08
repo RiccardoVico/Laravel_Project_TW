@@ -2,7 +2,6 @@
 @extends('layouts.locatario')
 
 @section('title', 'Home')
-
 @section('header')
 <div class="page-banner home-banner mb-5">
     <div class="slider-wrapper">
@@ -53,7 +52,7 @@
             <div class="page-section">
                 <div class="container_filtri">
                     <div class="col text-center pb-3">
-                        {{ Form::open(array('route' => 'filtraggio1', 'class' => 'contact-form')) }}
+                        {{ Form::open(array('route' => 'filtraggio1','id' => 'filtraggio1', 'class' => 'contact-form')) }}
                         <h3>Applica filtri</h3>
                         {{ Form::label('tipo_annuncio', 'Appartamento', ['class' => 'label-input']) }}
                         {{ Form::radio('tipo_annuncio', '0', ['class' => 'input','id' => 'tipo_annuncio']) }}

@@ -39,9 +39,8 @@ class AdminController extends Controller {
         $faq->domanda = request('domanda');
         $faq->risposta = request('risposta');
         $faq->categoria=request('categoria');;
-        
         $faq->save();
-         return redirect('okayfaq/');                
+        return response()->json(['redirect' => route('okayfaq')]);                
     }
     
 /*public function totaleannunci(){

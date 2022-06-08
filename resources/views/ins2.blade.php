@@ -62,48 +62,136 @@
                          <br>
                         {{ Form::label('nomeannuncio', 'nomeannuncio', ['class' => 'label-input']) }}
                         {{ Form::text('nomeannuncio','', ['class' => 'input','id' => 'nomeannuncio']) }}
+                        @if ($errors->first('nomeannuncio'))
+                            <ul class="errors">
+                            @foreach ($errors->get('nomeannuncio') as $message)
+                              <li>{{ $message }}</li>
+                            @endforeach
+                            </ul>
+                        @endif
                         {{ Form::label('canoneaffitto', 'canoneaffitto', ['class' => 'label-input']) }}
                         {{ Form::text('canoneaffitto','', ['class' => 'input','id' => 'canoneaffitto']) }}
-                        
+                        @if ($errors->first('canoneaffitto'))
+                            <ul class="errors">
+                            @foreach ($errors->get('canoneaffitto') as $message)
+                               <li>{{ $message }}</li>
+                            @endforeach
+                            </ul>
+                        @endif
                         {{ Form::label('cap', 'cap', ['class' => 'label-input']) }}
-                                                 {{ Form::text('cap','', ['class' => 'input','id' => 'cap']) }}
+                        {{ Form::text('cap','', ['class' => 'input','id' => 'cap']) }}
+                        @if ($errors->first('cap'))
+                            <ul class="errors">
+                            @foreach ($errors->get('cap') as $message)
+                               <li>{{ $message }}</li>
+                            @endforeach
+                            </ul>
+                        @endif
 						
-						{{ Form::label('numerocivico', 'numerocivico', ['class' => 'label-input']) }}
-                                                 {{ Form::text('numerocivico','', ['class' => 'input','id' => 'numerocivico']) }}
+			{{ Form::label('numerocivico', 'numerocivico', ['class' => 'label-input']) }}
+                        {{ Form::text('numerocivico','', ['class' => 'input','id' => 'numerocivico']) }}
+                        @if ($errors->first('numerocivico'))
+                            <ul class="errors">
+                            @foreach ($errors->get('numerocivico') as $message)
+                               <li>{{ $message }}</li>
+                            @endforeach
+                            </ul>
+                        @endif
 						
-						{{ Form::label('citta', 'citta', ['class' => 'label-input']) }}
-                                                 {{ Form::text('citta','', ['class' => 'input','id' => 'citta']) }}
+	                {{ Form::label('citta', 'citta', ['class' => 'label-input']) }}
+                        {{ Form::text('citta','', ['class' => 'input','id' => 'citta']) }}
+                         @if ($errors->first('citta'))
+                            <ul class="errors">
+                            @foreach ($errors->get('citta') as $message)
+                               <li>{{ $message }}</li>
+                            @endforeach
+                            </ul>
+                        @endif
                           
                         {{ Form::label('superficie', 'superficie', ['class' => 'label-input']) }}
-                        {{ Form::text('superifice','', ['class' => 'input','id' => 'superificie']) }}
+                        {{ Form::text('superifice','', ['class' => 'input','id' => 'superficie']) }}
+                         @if ($errors->first('superficie'))
+                            <ul class="errors">
+                            @foreach ($errors->get('superficie') as $message)
+                               <li>{{ $message }}</li>
+                            @endforeach
+                            </ul>
+                        @endif
                         {{ Form::label('postilettototali', 'postilettototali', ['class' => 'label-input']) }}
                         {{ Form::text('postilettototali','', ['class' => 'input','id' => 'postilettototali']) }}
-                        
-                                                {{ Form::label('etamin', 'etamin', ['class' => 'label-input']) }}
-                                                 {{ Form::number('etamin','', ['class' => 'input','id' => 'etamin']) }}
+                         @if ($errors->first('postilettototali'))
+                            <ul class="errors">
+                            @foreach ($errors->get('postilettototali') as $message)
+                               <li>{{ $message }}</li>
+                            @endforeach
+                            </ul>
+                        @endif
+                        {{ Form::label('etamin', 'etamin', ['class' => 'label-input']) }}
+                        {{ Form::number('etamin','', ['class' => 'input','id' => 'etamin']) }}
+                         @if ($errors->first('etamin'))
+                            <ul class="errors">
+                            @foreach ($errors->get('etamin') as $message)
+                               <li>{{ $message }}</li>
+                            @endforeach
+                            </ul>
+                        @endif
 					
-						{{ Form::label('etamax', 'etamax', ['class' => 'label-input']) }}
-                                                 {{ Form::number('etamax','', ['class' => 'input','id' => 'etamax']) }}
+		        {{ Form::label('etamax', 'etamax', ['class' => 'label-input']) }}
+                        {{ Form::number('etamax','', ['class' => 'input','id' => 'etamax']) }}
+                         @if ($errors->first('etamax'))
+                            <ul class="errors">
+                            @foreach ($errors->get('etamax') as $message)
+                               <li>{{ $message }}</li>
+                            @endforeach
+                            </ul>
+                        @endif
                                                  	
-                                                 {{ Form::label('descrizione', 'descrizione', ['class' => 'label-input']) }}
-                                                 {{ Form::text('descrizione','', ['class' => 'input','id' => 'descrizione']) }}
-					
-                                    
-						
-                                                  {{ Form::label('utenze', 'utenze', ['class' => 'label-input']) }}
-                                                 {{ Form::text('utenze','', ['class' => 'input','id' => 'utenze']) }}
-					
-					
-                                                {{ Form::label('via', 'via', ['class' => 'label-input']) }}
-                                                 {{ Form::text('via','', ['class' => 'input','id' => 'via']) }}
-				
-                                                  {{ Form::label('in_at', 'in_at', ['class' => 'label-input']) }}
-                                                 {{ Form::date('in_at','', ['class' => 'input','id' => 'in_at']) }}
-					
-						
-                                                  {{ Form::label('out_at', 'out_at', ['class' => 'label-input']) }}
-                                                 {{ Form::date('out_at','', ['class' => 'input','id' => 'out_at']) }}
-					          {{ Form::label('wifi', 'wifi  non presente', ['class' => 'label-input']) }}
+                        {{ Form::label('descrizione', 'descrizione', ['class' => 'label-input']) }}
+                        {{ Form::text('descrizione','', ['class' => 'input','id' => 'descrizione']) }}
+                         @if ($errors->first('descrizione'))
+                            <ul class="errors">
+                            @foreach ($errors->get('descrizione') as $message)
+                               <li>{{ $message }}</li>
+                            @endforeach
+                            </ul>
+                        @endif
+		       {{ Form::label('utenze', 'utenze', ['class' => 'label-input']) }}
+                       {{ Form::text('utenze','', ['class' => 'input','id' => 'utenze']) }}
+                        @if ($errors->first('utenze'))
+                            <ul class="errors">
+                            @foreach ($errors->get('utenze') as $message)
+                               <li>{{ $message }}</li>
+                            @endforeach
+                            </ul>
+                        @endif
+			{{ Form::label('via', 'via', ['class' => 'label-input']) }}
+                        {{ Form::text('via','', ['class' => 'input','id' => 'via']) }}
+                         @if ($errors->first('via'))
+                            <ul class="errors">
+                            @foreach ($errors->get('via') as $message)
+                               <li>{{ $message }}</li>
+                            @endforeach
+                            </ul>
+                        @endif
+		       {{ Form::label('in_at', 'in_at', ['class' => 'label-input']) }}
+                       {{ Form::date('in_at','', ['class' => 'input','id' => 'in_at']) }}
+                        @if ($errors->first('in_at'))
+                            <ul class="errors">
+                            @foreach ($errors->get('in_at') as $message)
+                               <li>{{ $message }}</li>
+                            @endforeach
+                            </ul>
+                        @endif
+		       {{ Form::label('out_at', 'out_at', ['class' => 'label-input']) }}
+                       {{ Form::date('out_at','', ['class' => 'input','id' => 'out_at']) }}
+                        @if ($errors->first('out_at'))
+                            <ul class="errors">
+                            @foreach ($errors->get('out_at') as $message)
+                               <li>{{ $message }}</li>
+                            @endforeach
+                            </ul>
+                        @endif
+					        {{ Form::label('wifi', 'wifi  non presente', ['class' => 'label-input']) }}
                                                 {{ Form::radio('wifi', '0', ['class' => 'input','id' => 'wifi']) }}
                                                 {{ Form::label('wifi', 'wifi  presente', ['class' => 'label-input']) }}
                                                 {{ Form::radio('wifi', '0', ['class' => 'input','id' => 'wifi']) }}
@@ -115,8 +203,16 @@
                                                 {{ Form::radio('balcone', '1', ['class' => 'input','id' => 'balcone']) }}
                                                 {{ Form::label('balcone', ' balcone non presente', ['class' => 'label-input']) }}
                                                 {{ Form::radio('balcone', '0', ['class' => 'input','id' => 'balcone']) }}
-                                                 {{ Form::label('image', 'image', ['class' => 'label-input']) }}
-                                                 {{ Form::file('image', ['class' => 'input', 'id' => 'image']) }}
+                                                <br>
+                                                {{ Form::label('image', 'image', ['class' => 'label-input']) }}
+                                                {{ Form::file('image', ['class' => 'input', 'id' => 'image']) }}
+                                                  @if ($errors->first('image'))
+                                                   <ul class="errors">
+                                                   @foreach ($errors->get('image') as $message)
+                                                    <li>{{ $message }}</li>
+                                                   @endforeach
+                                                   </ul>
+                                                 @endif
                                                 
                                     
    
@@ -134,6 +230,13 @@
                                                 {{ Form::radio('tipo_stanza', '1', ['class' => 'input','id' => 'tipo_stanza']) }}
                                                 {{ Form::label('numeroletticamera', 'numeroletticamera', ['class' => 'label-input']) }}
                                                 {{ Form::number('numeroletticamera', '', ['class' => 'input','id' => 'numeroletticamera']) }}
+                                                 @if ($errors->first('numeroletticamera'))
+                                                  <ul class="errors">
+                                                   @foreach ($errors->get('numeroletticamera') as $message)
+                                                    <li>{{ $message }}</li>
+                                                   @endforeach
+                                                  </ul>
+                                                 @endif
                              <br>
                              
                           <!--      <input type="text" name=""><label>Metri Quadri</label>-->
@@ -144,7 +247,15 @@
                                                
                                                  
                                                 {{ Form::label('numerototalecamere', ' numerototalecamere', ['class' => 'label-input']) }}
-                                                {{ Form::number('numerototalecamere', '', ['class' => 'input','id' => 'numerototalecamere']) }}<br>
+                                                {{ Form::number('numerototalecamere', '', ['class' => 'input','id' => 'numerototalecamere']) }}
+                                                 @if ($errors->first('numerototalecamere'))
+                                                  <ul class="errors">
+                                                  @foreach ($errors->get('numerototalecamere') as $message)
+                                                   <li>{{ $message }}</li>
+                                                  @endforeach
+                                                  </ul>
+                                                 @endif
+                                                <br>
                                                 {{ Form::label('cucina', ' cucina presente', ['class' => 'label-input']) }}
                                                 {{ Form::radio('cucina ', '1', ['class' => 'input','id' => 'cucina']) }}
                                                 {{ Form::label('cucina', ' cucina non presente', ['class' => 'label-input']) }}
@@ -185,5 +296,3 @@
 </div></div></div>
     
    @endsection
-
-

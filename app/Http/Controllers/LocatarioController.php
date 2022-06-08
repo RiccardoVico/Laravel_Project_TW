@@ -199,7 +199,8 @@ class locatarioController extends Controller {
        }
        
          return view('prova2')
-        ->with('annunci',$res2);}
+         ->with('annunci',$res2);
+           }
       //  public function showfiltroPeriodo(){
        // $prova=request('periodo');
        // $res=$this->_catalogModel->getAnnunciFiltroPrezzoMin($prova);

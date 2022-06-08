@@ -7,6 +7,7 @@
 namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
+
 class newF extends FormRequest{
     public function authorize(){
         return true;
@@ -24,4 +25,5 @@ class newF extends FormRequest{
         'etamax'=>'nullable|numeric|min:0;'
           ];
     }
+   
 }
