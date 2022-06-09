@@ -35,7 +35,7 @@ Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout')
         ->name('logout');
 
-Route::get('register', 'Auth\RegisterController@showRegisterForm')
+Route::get('register', 'Auth\RegisterController@showRegistrationForm')
         ->name('register');
 
 Route::post('register', 'Auth\RegisterController@create')
