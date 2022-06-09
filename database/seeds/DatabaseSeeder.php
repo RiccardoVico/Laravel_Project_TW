@@ -46,7 +46,7 @@ class DatabaseSeeder extends Seeder {
         DB::table('operazione')->insert([
             ['data' => Carbon::parse('2000-01-01'), 'descrizione' => 'inserimento', 'idutente' => '3', 'idannuncio' => '1'],
             ['data' => Carbon::parse('2000-01-01'), 'descrizione' => 'inserimento', 'idutente' => '3', 'idannuncio' => '2'],
-            ['data' => Carbon::parse('2000-01-01'), 'descrizione' => 'inserimento', 'idutente' => '4', 'idannuncio' => '3']
+            ['data' => Carbon::parse('2000-01-01'), 'descrizione' => 'inserimento', 'idutente' => '5', 'idannuncio' => '3']
         ]);
 
         DB::table('foto')->insert([
@@ -59,7 +59,7 @@ class DatabaseSeeder extends Seeder {
             ['idutente1' => '1', 'idutente2' => '3', 'testo' => 'Ciao, sono interessanto a annuncio', 'data' => '2022-06-02 00:00:01'],
             ['idutente1' => '3', 'idutente2' => '1', 'testo' => 'Ciao, bello disponibile annuncio e?', 'data' => '2022-06-02 00:00:02'],
             ['idutente1' => '1', 'idutente2' => '3', 'testo' => 'io volere annuncio', 'data' => '2022-06-02 00:00:03'],
-            ['idutente1' => '1', 'idutente2' => '4', 'testo' => 'Ciao Pipooooooo', 'data' => '2022-06-02 00:00:03']
+            ['idutente1' => '1', 'idutente2' => '5', 'testo' => 'Ciao Pipooooooo', 'data' => '2022-06-02 00:00:03']
         ]);
     }
 
