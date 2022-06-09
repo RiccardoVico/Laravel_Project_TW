@@ -26,11 +26,11 @@ class AnnRequest extends FormRequest {
     public function rules() {
         return [
             'nomeannuncio' => 'required|max:25',
-            'canoneaffitto' => 'required',
-            'cap' => 'required',
-            'numerocivico' => 'required',
+            'canoneaffitto' => 'required|integer',
+            'cap' => 'required|integer',
+            'numerocivico' => 'required|integer',
             'citta' => 'required',
-            'superficie' => 'required',
+            'superficie' => 'required|integer',
             'postiletto' => 'required',
             'wifi' => 'required',
             'angolostudio' => 'required',

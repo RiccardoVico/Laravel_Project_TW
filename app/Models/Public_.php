@@ -181,7 +181,6 @@ class Public_ {
         $messaggio->idutente2 = $userId2;
         $messaggio->testo = $request->testo;
         $messaggio->data = Carbon::parse(now())->format('Y-m-d H:i:s');
-        $messaggio->idannuncio = 1;
 
         $messaggio->save();
     }

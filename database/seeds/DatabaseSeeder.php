@@ -51,10 +51,10 @@ class DatabaseSeeder extends Seeder {
         ]);
 
         DB::table('messaggio')->insert([
-            ['idutente1' => '1', 'idutente2' => '3', 'testo' => 'Ciao, sono interessanto a annuncio', 'data' => '2022-06-02 00:00:01', 'idannuncio' => '1'],
-            ['idutente1' => '3', 'idutente2' => '1', 'testo' => 'Ciao, bello disponibile annuncio e?', 'data' => '2022-06-02 00:00:02', 'idannuncio' => '1'],
-            ['idutente1' => '1', 'idutente2' => '3', 'testo' => 'io volere annuncio', 'data' => '2022-06-02 00:00:03', 'idannuncio' => '1'],
-            ['idutente1' => '1', 'idutente2' => '4', 'testo' => 'Ciao Pipooooooo', 'data' => '2022-06-02 00:00:03', 'idannuncio' => '3']
+            ['idutente1' => '1', 'idutente2' => '3', 'testo' => 'Ciao, sono interessanto a annuncio', 'data' => '2022-06-02 00:00:01'],
+            ['idutente1' => '3', 'idutente2' => '1', 'testo' => 'Ciao, bello disponibile annuncio e?', 'data' => '2022-06-02 00:00:02'],
+            ['idutente1' => '1', 'idutente2' => '3', 'testo' => 'io volere annuncio', 'data' => '2022-06-02 00:00:03'],
+            ['idutente1' => '1', 'idutente2' => '4', 'testo' => 'Ciao Pipooooooo', 'data' => '2022-06-02 00:00:03']
         ]);
     }
 

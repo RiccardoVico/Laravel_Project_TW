@@ -20,10 +20,8 @@ class Messaggio extends Migration
             $table->bigInteger('idutente2')->unsigned();
             $table->text('testo');
             $table->datetime('data');
-            $table->BigInteger('idannuncio')->unsigned();
             $table->foreign('idutente1')->references('id')->on('users');
             $table->foreign('idutente2')->references('id')->on('users');
-            $table->foreign('idannuncio')->references('idannuncio')->on('annuncio');
             
         });
     }

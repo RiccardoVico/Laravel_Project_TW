@@ -9,6 +9,7 @@ use App\Models\Locatore;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AnnRequest;
 use Carbon\Carbon;
+use Illuminate\Support\Str;
 
 class LocatoreController extends Controller {
 
@@ -51,11 +52,11 @@ class LocatoreController extends Controller {
         $annuncio = new Annuncio();
         if ($request->hasFile('image')) {
             $image = $request->file('image');
-            $imageName = $image->getClientOriginalName();
+            $extension = $request->file('image')->getClientOriginalExtension();
+            $imageName = auth()->user()->id.Str::random(10).'.'.$extension;
         } else {
             $imageName = NULL;
         }
-        // $utente->image = $imageName;
         if (!is_null($imageName)) {
             $destinationPath = public_path() . '/images/annunci';
             $image->move($destinationPath, $imageName);
@@ -124,17 +125,6 @@ class LocatoreController extends Controller {
     
     public function salvaModificheAnnuncio(AnnRequest $request, $annuncioId) {
         $annuncio = $this->_locatoreModel->getAnnuncioById($annuncioId)->first();
-//        if ($request->hasFile('image')) {
-//            $image = $request->file('image');
-//            $imageName = $image->getClientOriginalName();
-//        } else {
-//            $imageName = NULL;
-//        }
-//        // $utente->image = $imageName;
-//        if (!is_null($imageName)) {
-//            $destinationPath = public_path() . '/images/annunci';
-//            $image->move($destinationPath, $imageName);
-//        }
         $annuncio->nomeannuncio = $request->nomeannuncio;
         $annuncio->canoneaffitto = $request->canoneaffitto;
         $annuncio->cap = $request->cap;
@@ -182,10 +172,17 @@ class LocatoreController extends Controller {
         }
         
         $annuncio->save();
-//        $this->salvaFoto($request, $imageName);
+        
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $extension = $request->file('image')->getClientOriginalExtension();
+            $imageName = auth()->user()->id.Str::random(10).'.'.$extension;
+            $destinationPath = public_path() . '/images/annunci';
+            $image->move($destinationPath, $imageName);
+            $this->_locatoreModel->deleteFotoByIdAnnuncio($annuncioId);
+            $this->salvaFoto($request, $imageName);
+        }
 
-//        return view('modifica_annuncio')
-//                        ->with('annuncio', $annuncio); 
         return redirect()->route('annuncio', ['annuncio' => $annuncioId]);
     }
 
