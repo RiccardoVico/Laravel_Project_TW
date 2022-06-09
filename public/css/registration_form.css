@@ -47,7 +47,7 @@ form .user-details .input-box2,
 form .user-details .input-box4{
     margin-bottom: 15px;
     margin-left: 15px;
-    width: 100%;
+    width: 300px;
 }
 .user-details .input-box .details,
 .user-details .input-box2 .details{
@@ -729,4 +729,117 @@ form .user-details_profilo .input-box2{
         height: calc(100vh - 350px);
         overflow-x: auto
     }
+}
+
+
+/* ----  CSS Inserisci Profilo  ---- */
+
+form .annuncio-details .input-box,
+form .annuncio-details .input-box5,
+form .annuncio-details .input-box7,
+form .annuncio-details .input-box_scelta{
+    margin-bottom: 15px;
+    margin-left: 15px;
+    width: 350px;
+}
+.annuncio-details .input-box .details,
+.annuncio-details .input-box5 .details{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.annuncio-details .input-box_scelta{
+    margin-top: 5px;
+}
+.annuncio-details .input-box_scelta .tipologia_inserimento_annuncio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.input-box_scelta .tipologia_inserimento_annuncio label{
+    margin-left: 20px;
+    margin-right: 5px;
+}
+.annuncio-details .input-box input,
+.annuncio-details .input-box5 input,
+.annuncio-details .input-box7 input{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+.annuncio-details .input-box5{
+    opacity: 0;
+    pointer-events: none;
+    display: none;
+}
+.annuncio-details.active .input-box5{
+    opacity: 1;
+    pointer-events: all;
+    display: block;  
+}
+.annuncio-details.active .input-box7{
+    opacity: 0;
+    pointer-events: none;
+    display: none;
+}
+.annuncio-details .input-box6{
+    display: none;
+}
+
+
+/* ----  CSS FAQ  ---- */
+.faq_container{
+    max-width: 1100px;
+    width: 100%;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+}
+.faq_container .title{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+.faq_container .title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+.faq_container form .faq-details{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 0 12px 0;
+}
+form .faq-details .input-box_faq{
+    margin-bottom: 15px;
+    margin-left: 15px;
+    width: 300px;
+}
+form .faq-details .input-box_faq .details{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+form .faq-details .input-box_faq textarea{
+    height: 200px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
 }

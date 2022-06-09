@@ -8,7 +8,7 @@
     <div class="container">
         <div class="h3">InserisciAnnuncio</div>
         {{ Form::open(array('route' => 'store_annuncio', 'id' => 'add_annuncio', 'files' => true, 'class' => 'contact-form')) }}
-        <div class="user-details">
+        <div class="annuncio-details">
             <div class="form-row">
                 <div class="input-box">
                     {{ Form::label('nomeannuncio', 'Nome Annuncio', ['class' => 'label-input']) }}
@@ -34,9 +34,15 @@
                     @endif
                 </div>
 
-                <div class="input-box">
+                <div class="input-box_scelta">
                     {{ Form::label('tipologia', 'Tipologia', ['class' => 'label-input']) }}
-                    {{ Form::select('tipologia', ['0' => 'Appartamento', '1' => 'Posto Letto'], 1, ['class' => 'input form-control','id' => 'tipologia']) }}
+                    {{-- {{ Form::select('tipologia', ['0' => 'Appartamento', '1' => 'Posto Letto'], 0, ['class' => 'input form-control','id' => 'tipologia']) }} --}}
+                    <div class="tipologia_inserimento_annuncio">
+                        {{ Form::label('tipo_annuncio', 'Appartamento', ['class' => 'label-input']) }}
+                        {{ Form::radio('tipologia', '0',true, ['class' => 'input','id' => 'tipologia']) }}
+                        {{ Form::label('tipo_annuncio', 'PostoLetto', ['class' => 'label-input']) }}
+                        {{ Form::radio('tipologia', '1',false, ['class' => 'input','id' => 'tipologia']) }}
+                    </div>
                 </div>
 
                 <div class="input-box">
@@ -215,42 +221,42 @@
                     @endif
                 </div>
                 
-                <div class="input-box">
+                <div class="input-box5">
                     {{ Form::label('angolostudio', 'Angolo Studio', ['class' => 'label-input']) }}
                     {{ Form::select('angolostudio', ['1' => 'Disponibile', '0' => 'Non Disponibile'], 1, ['class' => 'input form-control','id' => 'angolostudio']) }}
                 </div>
                 
-                <div class="input-box">
+                <div class="input-box5">
                     {{ Form::label('tipo_stanza', 'Tipo stanza', ['class' => 'label-input']) }}
                     {{ Form::select('tipo_stanza', ['1' => 'Singola', '0' => 'Matrimoniale'], 1, ['class' => 'input form-control','id' => 'tipo_stanza']) }}
                 </div>
                 
-                <div class="input-box">
+                <div class="input-box5">
                     {{ Form::label('numeroletticamera', 'Numero letti nella camera', ['class' => 'label-input']) }}
                     {{ Form::select('numeroletticamera', ['1' => '1', '2' => '2', '3' => '3', '4' => '4', '5' => '5', '6' => '6',], 1, ['class' => 'input form-control','id' => 'cucina']) }}
                 </div>
                 
-                <div class="input-box">
+                <div class="input-box7">
                     {{ Form::label('cucina', 'Cucina', ['class' => 'label-input']) }}
                     {{ Form::select('cucina', ['1' => 'Disponibile', '0' => 'Non Disponibile'], 1, ['class' => 'input form-control','id' => 'cucina']) }}
                 </div>
                 
-                <div class="input-box">
+                <div class="input-box7">
                     {{ Form::label('localericreativo', 'Locale Ricreativo', ['class' => 'label-input']) }}
                     {{ Form::select('localericreativo', ['1' => 'Disponibile', '0' => 'Non Disponibile'], 1, ['class' => 'input form-control','id' => 'localericreativo']) }}
                 </div>
                 
-                <div class="input-box">
+                <div class="input-box7">
                     {{ Form::label('parcheggio', 'Parcheggio', ['class' => 'label-input']) }}
                     {{ Form::select('parcheggio', ['1' => 'Disponibile', '0' => 'Non Disponibile'], 1, ['class' => 'input form-control','id' => 'parcheggio']) }}
                 </div>
                 
-                <div class="input-box">
+                <div class="input-box7">
                     {{ Form::label('lavatrice', 'Lavatrice', ['class' => 'label-input']) }}
                     {{ Form::select('lavatrice', ['1' => 'Disponibile', '0' => 'Non Disponibile'], 1, ['class' => 'input form-control','id' => 'lavatrice']) }}
                 </div>
                 
-                <div class="input-box">
+                <div class="input-box7">
                     {{ Form::label('lavastov', 'Lavastoviglie', ['class' => 'label-input']) }}
                     {{ Form::select('lavastov', ['1' => 'Disponibile', '0' => 'Non Disponibile'], 1, ['class' => 'input form-control','id' => 'lavastov']) }}
                 </div>
@@ -258,6 +264,10 @@
                 <div class="input-box">
                     {{ Form::label('image', 'Immagine', ['class' => 'label-input']) }}
                     {{ Form::file('image', ['class' => 'input','id' => 'image']) }}
+                </div>
+                <div class="input-box6">
+                    {{ Form::label('fitto', 'Tipologia', ['class' => 'label-input']) }}
+                    {{ Form::text('fitto','', ['class' => 'input','id' => 'fitto']) }}
                 </div>
 
                 <div class="container-form-btn input-box"> 
@@ -269,6 +279,4 @@
         </div>
     </div>
 </div>
-
-<script src="{{ asset('js/registration_form.js') }}"></script>
 @endsection

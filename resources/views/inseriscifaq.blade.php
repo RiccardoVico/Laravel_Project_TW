@@ -23,41 +23,37 @@
 });
 </script>
 
-        <title>Registrazione</title>
+        <title>Inserisci FAQ</title>
     </head>
     <body>
-        <div class="registration_container">
+        <div class="faq_container">
             <div class="title">InserisciFaq</div>
             {{ Form::open(array('route' => 'insfaq','id' => 'insfaq', 'class' => 'contact-form')) }}
 
-            <div class="user-details">
+            <div class="faq-details">
 
-                <div class="input-box">
-
+                <div class="input-box_faq">
                     {{ Form::label('domanda', 'domanda', ['class' => 'label-input']) }}
                     {{ Form::textarea('domanda','', ['class' => 'input','id' => 'domanda']) }}
-                    
                 </div>
-                <div class="input-box">
 
+                <div class="input-box_faq">
                     {{ Form::label('risposta', 'rispostacompleta', ['class' => 'label-input']) }}
                     {{ Form::textarea('risposta', '', ['class' => 'input','id' => 'risposta']) }}
                 </div>
-                <div class="input-box">
+
+                <div class="input-box_faq">
                     {{ Form::label('categoria', 'rispostabreve', ['class' => 'label-input']) }}
                     {{ Form::textarea('categoria', '', ['class' => 'input','id' => 'categoria']) }}
                 </div>
+
             </div>
-
-
 
             <div class="button">
                 <input type="submit" value="inseriscifaq">
-
             </div>
+
             {{ Form::close() }}
         </div>
-
-        <script src="js/registration_form.js"></script>
     </body>
 </html>

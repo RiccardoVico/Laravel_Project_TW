@@ -36,6 +36,7 @@
         <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
         <script src="{{ asset('js/owl-carousel/owl.carousel.min.js') }}"></script>
         <script src="{{ asset('js/theme.js') }}"></script>
+        <script src="{{ asset('js/inserisci_annuncio.js') }}"></script>
 
     </body>
 </html>
