@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
-        <a href="{{ route('home') }}" class="navbar-brand">Homex<span class="fg-primary">Students</span></a>
+        <a href="{{ route('home_admin') }}" class="navbar-brand">Homex<span class="fg-primary">Students</span></a>
 
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

@@ -15,7 +15,7 @@
             <div class="hero-carousel-item">
                 <img src="images/bg_image_4.png" alt="">
                 <div class="img-caption">
-                    <h1 class="mb-4">We combine Design, Thinking, and Technical</h1>
+                    <h1 class="mb-4">Sei un locatore? Fai il login e gestisci i tuoi annunci</h1>
                     <!--<a href="#services" class="btn btn-outline-light">Get Started</a>
                     <a href="#services" class="btn btn-primary">See Pricing</a>-->
                 </div>
@@ -24,7 +24,7 @@
                 <img src="images/bg_image_8.png" alt="">
                 <div class="img-caption">
                     <div class="subhead"></div>
-                    <h1 class="mb-4">Live a unique experience</h1>
+                    <h1 class="mb-4">Sei uno studente? Fai il login e trova l'offerta che fa per te</h1>
                     <!--<a href="#services" class="btn btn-primary">Read More</a>-->
                 </div>
             </div>

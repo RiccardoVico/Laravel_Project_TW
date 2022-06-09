@@ -44,7 +44,7 @@
                                 </div>
                                 <div class="col-md-6 col-lg-3 col-xl-4 border-sm-start-none border-start">
                                     <div class="d-flex flex-column mt-4">
-                                        <a href = "{{ route('annuncio', [$annuncio->idannuncio]) }}" class="btn btn-primary btn-sm" type="button">Contatta Locatario</a>
+                                        <a href = "{{ route('messaggistica', [Auth::user()->id, $utente->id]) }}" class="btn btn-primary btn-sm" type="button">Contatta Locatario</a>
                                     </div>
                                 </div>
                             </div>

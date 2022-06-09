@@ -1,6 +1,17 @@
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
+        @can('isLocatore')
+        <a href="{{ route('home_locatore') }}" class="navbar-brand">Homex<span class="fg-primary">Students</span></a>
+        @endcan
+        @can('isLocatario')
+        <a href="{{ route('home_locatario') }}" class="navbar-brand">Homex<span class="fg-primary">Students</span></a>
+        @endcan
+        @can('isAdmin')
+        <a href="{{ route('home_admin') }}" class="navbar-brand">Homex<span class="fg-primary">Students</span></a>
+        @endcan
+        @guest
         <a href="{{ route('home') }}" class="navbar-brand">Homex<span class="fg-primary">Students</span></a>
+        @endguest
 
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

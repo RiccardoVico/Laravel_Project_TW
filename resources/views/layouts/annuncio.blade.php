@@ -156,7 +156,7 @@
                 @endif
                 @endif
                 <div class="d-flex flex-column px-2 mt-4">
-                    <a href = "{{ route('annuncio', [$annuncio->idannuncio]) }}" class="btn btn-primary btn-sm" type="butbtn btn-primary btn-smton">Contatta Locatore</a>
+                    <a href = "{{ route('messaggistica', [Auth::user()->id, $idutente]) }}" class="btn btn-primary btn-sm" type="butbtn btn-primary btn-smton">Contatta Locatore</a>
                 </div>
                 @endcan
                 @endisset()
@@ -167,7 +167,7 @@
                     <a href = "{{ route('modifica_annuncio', [$annuncio->idannuncio]) }}" class="btn btn-primary btn-sm" type="button">Modifica Annuncio</a>
                 </div>
                 <div class="d-flex flex-column px-2 mt-4">
-                    <a href = "{{ route('elimina_annuncio', [$annuncio->idannuncio]) }}" class="btn btn-danger btn-sm" type="button">Elimina Annuncio</a>
+                    <a onclick="return confirm('Sei sicuro di volerlo eliminare?')" href = "{{ route('elimina_annuncio', [$annuncio->idannuncio]) }}" class="btn btn-danger btn-sm" type="button">Elimina Annuncio</a>
                 </div>
                 <div class="d-flex flex-column px-2 mt-4">
                     <a href = "{{ route('richiedenti', [$annuncio->idannuncio]) }}" class="btn btn-success btn-sm" type="button">Visualizza Richiedenti</a>

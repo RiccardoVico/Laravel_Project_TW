@@ -28,27 +28,11 @@
                 <div class="slider-wrapper">
                     <div class="owl-carousel hero-carousel">
                         <div class="hero-carousel-item">
-                            <img src="images/bg_image_1.jpg" alt="">
+                            <img src="images/stats.jpg" alt="">
                             <div class="img-caption">
                                 <div class="subhead"></div>
-                                <h1 class="mb-4">Homex<span class="fg-primary">Students</span></h1>
+                                <h1 class="mb-4">Sezione Amministratore</h1>
                                 <!--<a href="#services" class="btn btn-outline-light">Get Started</a>-->
-                            </div>
-                        </div>
-                        <div class="hero-carousel-item">
-                            <img src="images/bg_image_4.png" alt="">
-                            <div class="img-caption">
-                                <h1 class="mb-4">We combine Design, Thinking, and Technical</h1>
-                                <!--<a href="#services" class="btn btn-outline-light">Get Started</a>
-                                <a href="#services" class="btn btn-primary">See Pricing</a>-->
-                            </div>
-                        </div>
-                        <div class="hero-carousel-item">
-                            <img src="images/bg_image_8.png" alt="">
-                            <div class="img-caption">
-                                <div class="subhead"></div>
-                                <h1 class="mb-4">Live a unique experience</h1>
-                                <!--<a href="#services" class="btn btn-primary">Read More</a>-->
                             </div>
                         </div>
                     </div>
