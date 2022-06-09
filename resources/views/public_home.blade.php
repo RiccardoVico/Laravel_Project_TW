@@ -31,6 +31,24 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+
+$(function () {
+$('#example')
+.on('mouseover', function (event) {
+say("E' la nostra Università!");
+})
+.on('click', function (event) {
+say("Non perdere l'occasione di poter collaborare con noi in sede");
+});
+});
+function say(text) {
+$('#console').append(text + '<br>');
+}
+
+</script>
 @endsection
 
 @section('content')
@@ -133,7 +151,8 @@
     <div class="container-fluid">
         <div class="row row-cols-md-3 row-cols-lg-5 justify-content-center text-center">
             <div class="py-3 px-5">
-                <img src="images/clients/logo_univpm.png" alt="" width="175" style="margin-top: 25px">
+                <img id = "example" src="images/clients/logo_univpm.png" alt="" width="175" style="margin-top: 25px">
+                <p id = "console"></p>
             </div>
             <div class="py-3 px-3">
                 <img src="images/clients/logo_sapienza.png" alt="" width="300" style="margin-top: 50px">

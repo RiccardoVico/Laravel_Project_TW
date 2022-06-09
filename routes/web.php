@@ -59,45 +59,38 @@ Route::get('/profilo/{idutente}','PublicController@showProfilo')
 Route::post('/profilo/{idutente}', 'PublicController@modificaprofilo')
         ->name('modifica_profilo')->middleware('can:isuserbyid,idutente');
 
-//Route::get('/home', 'HomeController@index')->name('home');
-//Route::post('/provafiltraggio', 'LocatarioController@showfiltro')
-//        ->name('filtraggio1');
-
 Route::get('/admin', 'AdminController@index')
         ->name('home_admin')->middleware('can:isAdmin');
 
 Route::post('admininserimentofaq', 'AdminController@store')
-        ->name('insfaq');
+        ->name('insfaq')->middleware('can:isAdmin');
 
 Route::view('/inseriscifaq', 'inseriscifaq')
-        ->name('inseriscifaq');
+        ->name('inseriscifaq')->middleware('can:isAdmin');
 
 Route::get('/statistiche', 'AdminController@totaleannunci')
-        ->name('statistiche');
+        ->name('statistiche')->middleware('can:isAdmin');
 
 Route::post('inserimentoann', 'LocatoreController@inserisciannuncio')
-        ->name('inserimentoann');
+        ->name('inserimentoann')->middleware('can:isLocatore');
 
 Route::post('/statistiche', 'AdminController@totaleannunci')
-        ->name('statistiche');
+        ->name('statistiche')->middleware('can:isAdmin');
 
 Route::get('/stats', 'AdminController@tot')
-        ->name('stats');
-
-//logoutmessaggiprofilo
-Auth::routes();
+        ->name('stats')->middleware('can:isAdmin');
 
 Route::get('/storagein/{nome}/{imagename}', 'LocatoreController@inserimentoperazione')
-        ->name('storagein');
+        ->name('storagein')->middleware('can:isLocatore');
 
 Route::get('/salvafoto/{id}/{imagename}', 'LocatoreController@salvafoto')
-        ->name('salvafoto');
+        ->name('salvafoto')->middleware('can:isLocatore');
 
 Route::get('/annuncio/{annuncio}', 'PublicController@showAnnuncio')
         ->name('annuncio');
 
 Route::post('/annuncio/{annuncio}', 'PublicController@opzionaAnnuncio')
-        ->name('opziona_annuncio');
+        ->name('opziona_annuncio')->middleware('can:isLocatario');
 
 Route::get('/modifica_annuncio/{annuncio}', 'LocatoreController@modificaAnnuncio')
         ->name('modifica_annuncio')->middleware('can:isLocatore');
@@ -111,54 +104,45 @@ Route::get('/elimina_annuncio/{annuncio}', 'LocatoreController@eliminaAnnuncio')
 Route::get('/assegna_annuncio/{annuncio}', 'LocatoreController@assegnaAnnuncio')
         ->name('assegna_annuncio')->middleware('can:isLocatore');
 
-Route::view('/okay', 'okay')
-        ->name('okay');
-
-Route::view('/okayfaq', 'okayfaq')
-        ->name('okayfaq');
-
-Route::view('/okaymodfaq','okaymodfaq')
-        ->name('okaymodfaq');
-
-Route::view('/okayeliminafaq','okayeliminafaq')
-        ->name('okayeliminafaq');
-
-Route::get('/inserisciannuncio', 'LocatoreController@inserisciAnnuncio')
-        ->name('inserisci_annuncio');
-
-Route::post('/inserisciannuncio', 'LocatoreController@storeAnnuncio')
-        ->name('store_annuncio');
-
-Route::get('/richiedenti/{annuncio}', 'PublicController@richiedentiAnnuncio')
-        ->name('richiedenti');
-
-//Route::get('/opziona/{annuncio}', 'PublicController@opzionatoda')
-//        ->name('opziona');
-
-//Route::post('/prova}', 'adminController2@totaleannunci')
-//        ->name('provas');
-
-Route::get('/eliminafaq/{idfaq}','adminController@eliminafaq')
-        ->name('eliminafaq');
-
-Route::get('/modificafaq/{idfaq}', 'adminController@showFaq')
-        ->name('modifica_faq');
-
-Route::view('/modfaq', 'modfaq')
-        ->name('modfaq');
-
-Route::post('/modfaq2/{idfaq}', 'adminController@modificaFaq')
-        ->name('modfaq2');
-
-Route::view('/modmod', 'modmod')
-        ->name('modmod');
-
-Route::get('messaggistica/{idutente}/{idutente2?}', 'PublicController@showMessaggistica')
-        ->name('messaggistica');
-
-Route::post('messaggistica/{idutente}/{idutente2?}', 'PublicController@createMessaggio')
-        ->name('messaggistica_store');
-
 Route::view('/prova2/{$annunci}','prova2')
         ->name('prova2');
+
+Route::view('/okay', 'okay')
+        ->name('okay')->middleware('can:isLocatore');
+
+Route::view('/okayfaq', 'okayfaq')
+        ->name('okayfaq')->middleware('can:isAdmin');
+
+Route::view('/okaymodfaq','okaymodfaq')
+        ->name('okaymodfaq')->middleware('can:isAdmin');
+
+Route::view('/okayeliminafaq','okayeliminafaq')
+        ->name('okayeliminafaq')->middleware('can:isAdmin');
+
+Route::get('/inserisciannuncio', 'LocatoreController@inserisciAnnuncio')
+        ->name('inserisci_annuncio')->middleware('can:isLocatore');
+
+Route::post('/inserisciannuncio', 'LocatoreController@storeAnnuncio')
+        ->name('store_annuncio')->middleware('can:isLocatore');
+
+Route::get('/richiedenti/{annuncio}', 'PublicController@richiedentiAnnuncio')
+        ->name('richiedenti')->middleware('can:isLocatore');
+
+Route::get('/eliminafaq/{idfaq}','adminController@eliminafaq')
+        ->name('eliminafaq')->middleware('can:isAdmin');
+
+Route::get('/modificafaq/{idfaq}', 'adminController@showFaq')
+        ->name('modifica_faq')->middleware('can:isAdmin');
+
+Route::view('/modfaq', 'modfaq')
+        ->name('modfaq')->middleware('can:isAdmin');
+
+Route::post('/modfaq2/{idfaq}', 'adminController@modificaFaq')
+        ->name('modfaq2')->middleware('can:isAdmin');
+
+Route::get('messaggistica/{idutente}/{idutente2?}', 'PublicController@showMessaggistica')
+        ->name('messaggistica')->middleware('can:isUser');
+
+Route::post('messaggistica/{idutente}/{idutente2?}', 'PublicController@createMessaggio')
+        ->name('messaggistica_store')->middleware('can:isUser');
 

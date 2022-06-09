@@ -38,5 +38,9 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('isuserbyid',function($user, $userid){
             return $user->id==$userid;
         });
+        
+        Gate::define('isUser',function($user){
+            return ($user->hasRole('locatore') || $user->hasRole('locatario'));
+        });
     }
 }

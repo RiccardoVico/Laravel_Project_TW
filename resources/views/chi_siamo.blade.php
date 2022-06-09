@@ -18,6 +18,19 @@
         </div>
     </div>
 </div>
+<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+$(function () {
+$('div.caption h2').hover(
+function () {
+$(this).closest('div.module').find('div.body img').fadeOut('slow');
+},
+function () {
+$(this).closest('div.module').find('div.body img').fadeIn('slow');
+}
+);
+});
+</script>
 @endsection
 
 @section('content')
@@ -62,6 +75,39 @@
         </div>
     </div> <!-- .container -->
 </div> <!-- .page-section -->
+
+<center>
+    <h3><i><font color="blue">Tutti a lavoro</font></i></h3>
+    <p>Passa il cursore sulla didascalia dell'immagine per animarla.</p>
+    <div class="module">
+        <div class="caption">
+            <h2><font color="blue">...sull'analisi dei requisiti</font></h2>
+        </div>
+        <div class="body">
+            <img src="images/lav2.jpg">
+        </div>
+    </div>
+    <br>
+    <p>Passa il cursore sulla didascalia dell'immagine per animarla.</p>
+    <div class="module">
+        <div class="caption">
+            <h2><font color="blue">...sulla progettazione</font></h2>
+        </div>
+        <div class="body">
+            <img src="images/lav1.jpg">
+        </div>
+    </div>
+    <br>
+    <p>Passa il cursore sulla didascalia dell'immagine per animarla.</p>
+    <div class="module">
+        <div class="caption">
+            <h2><font color="blue">...sull'implementazione e test del codice</font></h2>
+        </div>
+        <div class="body">
+            <img src="images/lav3.jpg">
+        </div>
+    </div>
+</center>
 
 <div class="page-section">
     <div class="container">
