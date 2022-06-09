@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\AnnRequest;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
+use File;
 
 class LocatoreController extends Controller {
 
@@ -174,6 +175,10 @@ class LocatoreController extends Controller {
         $annuncio->save();
         
         if ($request->hasFile('image')) {
+            $oldfilename = $this->_locatoreModel->getFotoByIdAnnuncio($annuncioId)->first()->descrizione;
+            if ($oldfilename != "default") {
+                File::delete(public_path().'/images/annunci/'.$oldfilename);
+            }
             $image = $request->file('image');
             $extension = $request->file('image')->getClientOriginalExtension();
             $imageName = auth()->user()->id.Str::random(10).'.'.$extension;
@@ -211,6 +216,10 @@ class LocatoreController extends Controller {
     }
     
     public function eliminaAnnuncio($idAnnuncio) {
+        $filename = $this->_locatoreModel->getFotoByIdAnnuncio($idAnnuncio)->first()->descrizione;
+        if($filename != "default") {
+            File::delete(public_path().'/images/annunci/'.$filename);
+        }
         $this->_locatoreModel->deleteFotoByIdAnnuncio($idAnnuncio); 
         $this->_locatoreModel->deleteOperazioniByIdAnnuncio($idAnnuncio);   
         $this->_locatoreModel->deleteAnnuncioById($idAnnuncio);           

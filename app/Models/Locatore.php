@@ -66,6 +66,10 @@ class Locatore {
         Operazione::where('idannuncio', $id)->delete();
     }
     
+    public function getFotoByIdAnnuncio($id) {
+        return Foto::where('idannuncio', $id)->get();
+    }
+    
     public function deleteFotoByIdAnnuncio($id) {
         Foto::where('idannuncio', $id)->delete();
     }
