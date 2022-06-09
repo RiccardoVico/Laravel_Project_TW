@@ -115,7 +115,8 @@ class LocatoreController extends Controller {
         $this->inserimentoOperazione($request);
         $this->salvaFoto($request, $imageName);
 
-        return redirect()->action('LocatoreController@index');
+ //       return redirect()->action('LocatoreController@index');
+        return redirect()->route('okay');
     }
     
     public function modificaAnnuncio($annuncioId) {
@@ -229,8 +230,12 @@ class LocatoreController extends Controller {
         $annuncio = $this->_locatoreModel->getAnnuncioById($idAnnuncio)->first();
         if($annuncio->disponibilita == 1) {
             $annuncio->disponibilita = 0;
+            $prova = Carbon::parse(now());
+            $mydatetime = $prova->format('Y-m-d 00:00:00');
+            $annuncio->datacc = $mydatetime;
         } else if($annuncio->disponibilita == 0) {
             $annuncio->disponibilita = 1;
+            $annuncio->datacc = null;
         }
         $annuncio->save();
         return redirect()->route('annuncio', ['annuncio' => $idAnnuncio]);    
