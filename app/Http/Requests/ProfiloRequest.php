@@ -18,7 +18,12 @@ class ProfiloRequest extends FormRequest {
 
     public function rules() {
         return[
-            "username" => 'required|string|min:4',
+            "username" => [
+                'required',
+                'string',
+                'min:4',
+                Rule::unique('users')->ignore($this->user()->id, 'id')
+            ],
             "nome" => 'required|string|max:20',
             "cognome" => 'required|string|max:20',
             "mail" => 'required|string|email|max:500',
