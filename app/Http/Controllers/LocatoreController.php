@@ -209,7 +209,6 @@ class LocatoreController extends Controller {
         } else {
             $foto->descrizione = "default";
         }
-        $foto->idutente = auth()->user()->id;
         $foto->idannuncio = $this->_locatoreModel->getIdAnnuncio($request->nomeannuncio);
 
         $foto->save();

@@ -14,20 +14,25 @@ class DatabaseSeeder extends Seeder {
      */
     public function run() {
         DB::table('annuncio')->insert([
-            ['idannuncio' => '1', 'nomeannuncio' => 'Prima casa', 'canoneaffitto' => '200', 'cap' => '222', 'numerocivico' => '1', 'citta' => 'Tole', 'disponibilita' => '1', 'datacc' => null, 'superficie' => '222', 'postiletto' => '1', 'wifi' => '1', 'angolostudio' => '1', 'climatizzatore' => '1', 'etamin' => '1', 'etamax' => '99', 'tipologia' => '1', 'descrizione' => 'Casa bellissima zona ok, per info contattatemi.', 'utenze' => 'Nessuna', 'via' => 'Brombeis', 'in_at' => '2022-06-02 00:00:01', 'out_at' => '2022-06-13 00:00:01', 'created_at' => '2022-05-29 00:00:01', 'updated_at' => '2022-05-29 00:00:01'],
-            ['idannuncio' => '2', 'nomeannuncio' => 'Seconda casa', 'canoneaffitto' => '100', 'cap' => '222', 'numerocivico' => '1', 'citta' => 'Tole', 'disponibilita' => '1', 'datacc' => null, 'superficie' => '222', 'postiletto' => '1', 'wifi' => '1', 'angolostudio' => '1', 'climatizzatore' => '1', 'etamin' => '1', 'etamax' => '99', 'tipologia' => '1', 'descrizione' => 'Casa bellissima zona ok, per info contattatemi.', 'utenze' => 'Nessuna', 'via' => 'Brombeis', 'in_at' => '2022-06-02 00:00:01', 'out_at' => '2022-07-06 00:00:01', 'created_at' => '2022-05-26 00:00:01', 'updated_at' => '2022-05-26 00:00:01'],
-            ['idannuncio' => '3', 'nomeannuncio' => 'Terza casa', 'canoneaffitto' => '500', 'cap' => '222', 'numerocivico' => '1', 'citta' => 'Tole', 'disponibilita' => '1', 'datacc' => null, 'superficie' => '222', 'postiletto' => '1', 'wifi' => '1', 'angolostudio' => '1', 'climatizzatore' => '1', 'etamin' => '1', 'etamax' => '99', 'tipologia' => '1', 'descrizione' => 'Casa bellissima zona ok, per info contattatemi.', 'utenze' => 'Nessuna', 'via' => 'Brombeis', 'in_at' => '2022-02-02 00:00:01', 'out_at' => '2022-03-03 00:00:01', 'created_at' => '2022-05-13 00:00:01', 'updated_at' => '2022-05-13 00:00:01']
+            ['nomeannuncio' => 'Appartamento zona centro', 'canoneaffitto' => '600', 'cap' => '60080', 'numerocivico' => '1', 'citta' => 'Torino', 'disponibilita' => '1', 'superficie' => '100', 'postiletto' => '3', 'wifi' => '1', 'climatizzatore' => '1', 'angolostudio' => '-1', 'etamin' => '18', 'etamax' => '99', 'tipologia' => '0', 'descrizione' => 'Appartamento in zona centro, ben collegato ai principali servizi e al politecnico. Camere spaziose, un bagno moderno. Affittasi solo a studenti.', 
+                'utenze' => "A carico dell'affittuario", 'via' => 'Filippi', 'numerototalicamere' => '2', 'genere' => '-1', 'lavatrice' => '1', 'lavastov' => '0', 'cucina' => '1', 'localericrativo' => '0', 'parcheggio' => '1', 'balcone' => '0', 'tipo_stanza' => '0', 'numeroletticamera' => '1', 'in_at' => '2022-06-02 00:00:00', 'out_at' => '2022-10-13 00:00:00', 'created_at' => '2022-05-29 00:00:00', 'updated_at' => '2022-05-29 00:00:00'],
+            ['nomeannuncio' => 'Posto letto Torino', 'canoneaffitto' => '200', 'cap' => '60080', 'numerocivico' => '11', 'citta' => 'Torino', 'disponibilita' => '1', 'superficie' => '80', 'postiletto' => '3', 'wifi' => '1', 'angolostudio' => '1', 'climatizzatore' => '0', 'etamin' => '18', 'etamax' => '40', 'tipologia' => '1', 'descrizione' => 'Posto letto per studenti locato in zona università. La camera è comoda e luminosa, contattarmi per ulteriori informazioni.', 
+                'utenze' => "A carico dell'affittuario", 'via' => 'Emanuele', 'numerototalicamere' => '2', 'genere' => '1', 'lavatrice' => '-1', 'lavastov' => '-1', 'cucina' => '-1', 'localericrativo' => '-1', 'parcheggio' => '-1', 'balcone' => '-1', 'tipo_stanza' => '0', 'numeroletticamera' => '1', 'in_at' => '2022-06-02 00:00:00', 'out_at' => '2022-07-06 00:00:00', 'created_at' => '2022-05-26 00:00:00', 'updated_at' => '2022-05-26 00:00:00'],
+            ['nomeannuncio' => 'Posto letto Roma', 'canoneaffitto' => '220', 'cap' => '59992', 'numerocivico' => '42', 'citta' => 'Roma', 'disponibilita' => '1', 'superficie' => '80', 'postiletto' => '4', 'wifi' => '1', 'angolostudio' => '0', 'climatizzatore' => '1', 'etamin' => '14', 'etamax' => '50', 'tipologia' => '1', 'descrizione' => 'Posto letto per studenti locato in zona San Giovanni. Camera spaziosa e ben arredata, presenti due bagni.', 
+                'utenze' => "A carico dell'affittuario", 'via' => 'San Michele', 'numerototalicamere' => '2', 'genere' => '0', 'lavatrice' => '-1', 'lavastov' => '-1', 'cucina' => '-1', 'localericrativo' => '-1', 'parcheggio' => '-1', 'balcone' => '-1', 'tipo_stanza' => '1', 'numeroletticamera' => '2', 'in_at' => '2022-06-02 00:00:00', 'out_at' => '2022-07-06 00:00:00', 'created_at' => '2022-05-25 00:00:00', 'updated_at' => '2022-05-25 00:00:00']
         ]);
 
         DB::table('users')->insert([
-            ['nome' => 'Martina', 'cognome' => 'Mamy', 'mail' => 'mario@rossiii.it', 'username' => 'martymarty',
-                'password' => Hash::make('martymarty'), 'eta' => '18 ', 'role' => 'locatario'],
-            ['nome' => 'Alex', 'cognome' => 'Mamy', 'mail' => 'mario@rossiii.it', 'username' => 'adminadmin',
-                'password' => Hash::make('adminadmin'), 'eta' => '18', 'role' => 'admin'],
-            ['nome' => 'Alex', 'cognome' => 'Mamy', 'mail' => 'mario@rossiii.it', 'username' => 'alexalex',
-                'password' => Hash::make('alexalex'), 'eta' => '18', 'role' => 'locatore'],
-            ['nome' => 'Pippo', 'cognome' => 'Pippo', 'mail' => 'pippo@pippo.it', 'username' => 'pippopippo',
-                'password' => Hash::make('pippopippo'), 'eta' => '18', 'role' => 'locatore']
+            ['nome' => 'Lario', 'cognome' => 'Lario', 'mail' => 'lario@lario.it', 'username' => 'lariolario', 'recapito' => '12345', 'genere' => 'M', 'via' => 'Uliveti',
+                'citta' => 'Roma', 'numerocivico' => '2', 'cap' => '123', 'provincia' => 'RO', 'paese' => 'Italia', 'password' => Hash::make('2fDtf4Wc'), 'eta' => '18 ', 'role' => 'locatario'],
+            ['nome' => 'Admin', 'cognome' => 'Admin', 'mail' => 'admin@admin.it', 'username' => 'adminadmin', 'recapito' => '12345', 'genere' => 'M', 'via' => 'Uliveti',
+                'citta' => 'Roma', 'numerocivico' => '2', 'cap' => '123', 'provincia' => 'RO', 'paese' => 'Italia', 'password' => Hash::make('2fDtf4Wc'), 'eta' => '18', 'role' => 'admin'],
+            ['nome' => 'Lore', 'cognome' => 'Lore', 'mail' => 'lore@lore.it', 'username' => 'lorelore', 'recapito' => '12345', 'genere' => 'M', 'via' => 'Uliveti',
+                'citta' => 'Roma', 'numerocivico' => '2', 'cap' => '123', 'provincia' => 'RO', 'paese' => 'Italia', 'password' => Hash::make('2fDtf4Wc'), 'eta' => '18', 'role' => 'locatore'],
+            ['nome' => 'Martina', 'cognome' => 'Mamy', 'mail' => 'marty@marty.it', 'username' => 'martymarty', 'recapito' => '12345', 'genere' => 'F', 'via' => 'Uliveti',
+                'citta' => 'Roma', 'numerocivico' => '2', 'cap' => '123', 'provincia' => 'RO', 'paese' => 'Italia', 'password' => Hash::make('martymarty'), 'eta' => '18', 'role' => 'locatario'],
+            ['nome' => 'Pippo', 'cognome' => 'Pippo', 'mail' => 'pippo@pippo.it', 'username' => 'pippopippo', 'recapito' => '12345', 'genere' => 'M', 'via' => 'Uliveti',
+                'citta' => 'Roma', 'numerocivico' => '2', 'cap' => '123', 'provincia' => 'RO', 'paese' => 'Italia', 'password' => Hash::make('pippopippo'), 'eta' => '22', 'role' => 'locatore']
         ]);
 
         DB::table('faq')->insert([
@@ -45,9 +50,9 @@ class DatabaseSeeder extends Seeder {
         ]);
 
         DB::table('foto')->insert([
-            ['descrizione' => 'default', 'idutente' => '3', 'idannuncio' => '1'],
-            ['descrizione' => '2019_Atlantide_1.jpg', 'idutente' => '3', 'idannuncio' => '2'],
-            ['descrizione' => 'default', 'idutente' => '4', 'idannuncio' => '3']
+            ['descrizione' => '2egqc6AfsdG.jpg', 'idannuncio' => '1'],
+            ['descrizione' => 'default', 'idannuncio' => '2'],
+            ['descrizione' => '4kAyUTEi4SF.jpg', 'idannuncio' => '3']
         ]);
 
         DB::table('messaggio')->insert([

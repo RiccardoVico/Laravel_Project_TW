@@ -15,7 +15,7 @@ class Annuncio extends Migration
     {
         Schema::create('annuncio',function (Blueprint $table) {
             $table->BigIncrements('idannuncio')->index();
-            $table->string('nomeannuncio', 30)->unique();
+            $table->string('nomeannuncio', 30);
             $table->integer('canoneaffitto');
             $table->string('cap', 5)->nullable();
             $table->string('numerocivico', 5)->nullable();
@@ -25,24 +25,24 @@ class Annuncio extends Migration
             $table->double('superficie')->nullable();
             $table->integer('postiletto')->nullable();
             $table->boolean('wifi')->nullable();
-            $table->boolean('angolostudio')->nullable()->default(0);
+            $table->boolean('angolostudio')->nullable()->default(-1);
             $table->boolean('climatizzatore')->nullable();
             $table->integer('etamin')->nullable();
             $table->integer('etamax')->nullable();
             $table->boolean('genere')->nullable();
-            $table->boolean('lavatrice')->default(0);
-            $table->boolean('lavastov')->default(0);
+            $table->boolean('lavatrice')->default(-1);
+            $table->boolean('lavastov')->default(-1);
             $table->boolean('tipologia')->nullable();
             $table->text('descrizione')->nullable();
             $table->text('utenze')->nullable();
             $table->string('via', 30)->nullable();
             $table->integer('tipo_stanza')->nullable()->default(-1); //camerasingolaodoppia
             $table->integer('numeroletticamera')->nullable()->default(-1);
-            $table->integer('numerototalicamere')->nullable()->default(-1);
-            $table->boolean('cucina')->nullable()->default(0);
-            $table->boolean('localericrativo')->nullable()->default(0);
-            $table->boolean('parcheggio')->nullable()->default(0);
-            $table->boolean('balcone')->nullable()->default(0);
+            $table->integer('numerototalicamere')->nullable();
+            $table->boolean('cucina')->nullable()->default(-1);
+            $table->boolean('localericrativo')->nullable()->default(-1);
+            $table->boolean('parcheggio')->nullable()->default(-1);
+            $table->boolean('balcone')->nullable()->default(-1);
             $table->rememberToken();
             $table->timestamps();
             $table->datetime('in_at');

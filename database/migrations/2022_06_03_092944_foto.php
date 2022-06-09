@@ -15,9 +15,7 @@ class Foto extends Migration
         Schema::create('foto', function (Blueprint $table) {
             $table->bigIncrements('idfoto')->index();
             $table->text('descrizione');
-            $table->bigInteger('idutente')->unsigned()->nullable();
             $table->BigInteger('idannuncio')->unsigned();
-            $table->foreign('idutente')->references('id')->on('users');
             $table->foreign('idannuncio')->references('idannuncio')->on('annuncio');
         });
     }

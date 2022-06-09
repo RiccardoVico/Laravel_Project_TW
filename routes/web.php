@@ -35,7 +35,7 @@ Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout')
         ->name('logout');
 
-Route::get('register', 'Auth\RegisterController@showRegistrationForm')
+Route::get('register', 'Auth\RegisterController@showRegisterForm')
         ->name('register');
 
 Route::post('register', 'Auth\RegisterController@create')
@@ -145,4 +145,6 @@ Route::get('messaggistica/{idutente}/{idutente2?}', 'PublicController@showMessag
 
 Route::post('messaggistica/{idutente}/{idutente2?}', 'PublicController@createMessaggio')
         ->name('messaggistica_store')->middleware('can:isUser');
+
+Auth::routes();
 
