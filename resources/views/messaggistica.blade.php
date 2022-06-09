@@ -36,7 +36,7 @@
                                         @foreach ($utenti as $utente)
                                         <a href="{{ route('messaggistica', [Auth::user()->id, $utente->id]) }}">
                                             <li class="clearfix" >
-                                                <img src="../../images/person/download.jpg" alt="avatar">
+                                                <img src="{{ asset('images/person/download.jpg') }}" alt="avatar">
                                                 <div class="about">
                                                     <div class="name">{{ $utente->nome }} {{ $utente->cognome }}</div>
                                                 </div>
@@ -52,7 +52,7 @@
                                         <div class="row">
                                             <div class="col-lg-6">
                                                 <a href="javascript:void(0);" data-toggle="modal" data-target="#view_info">
-                                                    <img src="../../images/person/download.jpg" alt="avatar">
+                                                    <img src="{{ asset('images/person/download.jpg') }}" alt="avatar">
                                                 </a>
                                                 <div class="chat-about">
                                                     <h6 class="m-b-0">
