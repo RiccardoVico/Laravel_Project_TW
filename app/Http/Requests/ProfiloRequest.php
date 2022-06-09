@@ -18,17 +18,18 @@ class ProfiloRequest extends FormRequest {
 
     public function rules() {
         return[
-            "username" => 'required',
-            "nome" => 'required',
-            "cognome" => 'required',
-            "mail" => 'required',
-            "recapito" => 'required',
-            "via" => 'required',
-            "citta" => 'required',
-            "numerocivico" => 'required',
-            "cap" => 'required',
-            "provincia" => 'required',
-            "paese" => 'required',
+            "username" => 'required|string|min:4',
+            "nome" => 'required|string|max:20',
+            "cognome" => 'required|string|max:20',
+            "mail" => 'required|string|email|max:500',
+            "recapito" => 'required|string|max:20',
+            "eta" => 'required|integer',
+            "via" => 'required|string|max:20',
+            "citta" => 'required|string|max:20',
+            "numerocivico" => 'required|integer',
+            "cap" => 'required|integer',
+            "provincia" => 'required|max:20',
+            "paese" => 'required|string|max:20',
         ];
     }
 

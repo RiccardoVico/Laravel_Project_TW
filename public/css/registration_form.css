@@ -74,38 +74,7 @@ form .user-details .input-box4{
 .user-details .input-box2 input:valid{
     border-color: #9b59b6;
 }
-/* form .gender-details .gender-title{
-    font-size: 20px;
-    font-weight: 500;
-}
-form .gender-details .category{
-    display: flex;
-    width: 80%;
-    margin: 14px 0;
-    justify-content: space-between;
-}
-.gender-details .category label{
-    display: flex;
-    align-items: center;
-}
-.gender-details .category .dot{
-    height: 18px;
-    width: 18px;
-    background-color: #d9d9d9;
-    border-radius: 50%;
-    margin-right: 10px;
-    border: 5px solid transparent;
-    transition: all 0.3s ease;
-}
-#dot-1:checked ~ .category label .one,
-#dot-2:checked ~ .category label .two,
-#dot-3:checked ~ .category label .three{
-    border-color: #d9d9d9;
-    background: #9b59b6;
-} */
-/* form input[type="radio"]{
-    display: none;
-} */
+
 form .button{
     height: 45px;
     margin: 45px 0;
@@ -176,10 +145,6 @@ body .input-box2{
     line-height: 100%;
 }
 
-/* .errors ul {
-	
-} */
-
 
 @media (max-width: 584px) {
     .registration_container{
@@ -248,22 +213,11 @@ form .campi_univoci{
     margin-left: 15px;
 }
 
-/* .filtro_details .label-input{
-    justify-content: left;
-} */
-
 .filtro_details .input{
     display: block;
     font-weight: 500;
     margin-bottom: 5px;
 }
-
-/* .user-details .input-box .details,
-.user-details .input-box2 .details{
-    display: block;
-    font-weight: 500;
-    margin-bottom: 5px;
-} */
 
 .filtri_avanzati{
     margin-bottom: 10px;
@@ -327,7 +281,7 @@ form .campi_univoci{
     transition: all 0.3s ease;
 }
 
-/* .errors {
+.errors {
 	color: #f93d00;
     font-size: 12px;
     margin-top: 4px;
@@ -335,7 +289,7 @@ form .campi_univoci{
 
 .errors ul {
 	line-height: 100%;
-} */
+}
 
 
 /* Inizio CSS Profilo Locatore e Locatario */
@@ -364,14 +318,6 @@ form .campi_univoci{
     width: 10%;
     border-radius: 5px;
 }
-/* .image_profilo img{
-    height: 80px;
-    width: 80px;
-    margin-left: 25%;
-    margin-top: 20px;
-    border-radius: 50%;
-    background-color: red;
-} */
 .options_buttons{
     padding-top: 20px;
     height: 74.5%;
@@ -430,13 +376,6 @@ form .user-details_profilo .input-box2{
 .user-details_profilo.active .input-box2 input{
     pointer-events: all;
 }
-
-/* .user-details_profilo .input-box input:focus,
-.user-details_profilo .input-box input:valid,
-.user-details_profilo .input-box2 input:focus,
-.user-details_profilo .input-box2 input:valid{
-    border-color: #9b59b6;
-} */
 
 .locatario_profilo form .salva_button{
     pointer-events: none;
@@ -519,16 +458,6 @@ form .user-details_profilo .input-box2{
     float: left;
     border-radius: 50%
 }
-
-/* .people-list .about {
-    float: left;
-    padding-left: 8px
-}
-
-.people-list .status {
-    color: #999;
-    font-size: 13px
-} */
 
 .chat .chat-header {
     padding: 15px 20px;
@@ -648,22 +577,6 @@ form .user-details_profilo .input-box2{
     padding: 20px
 }
 
-/* .online,
-.offline,
-.me {
-    margin-right: 2px;
-    font-size: 8px;
-    vertical-align: middle
-}
-
-.online {
-    color: #86c541
-}
-
-.offline {
-    color: #e47297
-} */
-
 .me {
     color: #1d8ecd
 }
@@ -671,10 +584,6 @@ form .user-details_profilo .input-box2{
 .float-right {
     float: right
 }
-
-/* form .text_chat{
-    width: 100%;
-} */
 
 .clearfix:after {
     visibility: hidden;
@@ -794,6 +703,7 @@ form .annuncio-details .input-box_scelta{
 
 
 /* ----  CSS FAQ  ---- */
+
 .faq_container{
     max-width: 1100px;
     width: 100%;

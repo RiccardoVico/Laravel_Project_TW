@@ -85,10 +85,10 @@ class PublicController extends Controller {
     }
 
     public function modificaprofilo($userId, ProfiloRequest $request) {
-        //echo(current($request->validated()));
+        
         $user = $this->_catalogModel->getuserbyid($userId);
         
-        // $user->fill($request->validated());
+        
         $user->username=$request->username;
         $user->nome=$request->nome;
         $user->cognome=$request->cognome;
@@ -111,24 +111,23 @@ class PublicController extends Controller {
     }
     
     public function showMessaggistica($userId, $userId2 = 0) {
-        // echo($this->_catalogModel->getMessaggiByUserId($userId));
         $idutenti = $this->_catalogModel->getMessaggiByUserId($userId)->pluck('idutente1')->toArray();
         $idutenti = array_merge($idutenti, $this->_catalogModel->getMessaggiByUserId($userId)->pluck('idutente2')->toArray());
         $idutenti = collect($idutenti)->unique()->toArray();
-        // echo(implode(',' , $utenti));
+        
         if (($key = array_search($userId, $idutenti)) !== false) {
             unset($idutenti[$key]);
         }
         $utenti = $this->_catalogModel->getUtenti()->whereIn('id', $idutenti);
-        // echo($utenti);
+        
         if ($userId2 != 0) {
             $destinatario = $this->_catalogModel->getuserbyid($userId2);
             $messaggi = $this->_catalogModel->getMessaggiByTwoUsers($userId, $userId2);
-            // echo($messaggi);
+            
             $messaggi = $messaggi->sortBy(function ($obj, $key) {
                 return strtotime($obj->data);
             });
-            // echo($messaggi);
+            
             return view('messaggistica')
                             ->with('utenti', $utenti)
                             ->with('messaggi', $messaggi)

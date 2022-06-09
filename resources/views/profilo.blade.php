@@ -25,9 +25,6 @@
         <main>
             <div class="page-section">
                 <div class="locatario_profilo">
-                    {{-- <div class="image_profilo">
-                        <img src="">
-                    </div> --}}
                     <div class="registration_container_box">
                         <div class="profilo_container">
                             <div class="title">Gestione Profilo</div>
@@ -48,22 +45,57 @@
                                 <div class="input-box">
                                     {{ Form::label('nome', 'Nome', ['class' => 'label-input']) }}
                                     {{ Form::text('nome', $user->nome, ['class' => 'input','id' => 'nome','placeholder' => 'Inserisci un nome']) }}
+                                    @if ($errors->first('nome'))
+                                    <ul class="errors">
+                                        @foreach ($errors->get('nome') as $message)
+                                        <li>{{ $message }}</li>
+                                        @endforeach
+                                    </ul>
+                                    @endif
                                 </div>
                                 <div class="input-box">
                                     {{ Form::label('cognome', 'Cognome', ['class' => 'label-input']) }}
                                     {{ Form::text('cognome', $user->cognome, ['class' => 'input','id' => 'cognome','placeholder' => 'Inserisci un cognome']) }}
+                                    @if ($errors->first('cognome'))
+                                    <ul class="errors">
+                                        @foreach ($errors->get('cognome') as $message)
+                                        <li>{{ $message }}</li>
+                                        @endforeach
+                                    </ul>
+                                    @endif
                                 </div>
                                 <div class="input-box">
                                     {{ Form::label('mail', 'Email', ['class' => 'label-input']) }}
                                     {{ Form::text('mail', $user->mail, ['class' => 'input','id' => 'mail','placeholder' => 'Inserisci un email']) }}
+                                    @if ($errors->first('mail'))
+                                    <ul class="errors">
+                                        @foreach ($errors->get('mail') as $message)
+                                        <li>{{ $message }}</li>
+                                        @endforeach
+                                    </ul>
+                                    @endif
                                 </div>
                                 <div class="input-box">
                                     {{ Form::label('recapito', 'Recapito', ['class' => 'label-input']) }}
                                     {{ Form::text('recapito', $user->recapito, ['class' => 'input','id' => 'recapito','placeholder' => 'Inserisci un recapito']) }}
+                                    @if ($errors->first('recapito'))
+                                    <ul class="errors">
+                                        @foreach ($errors->get('recapito') as $message)
+                                        <li>{{ $message }}</li>
+                                        @endforeach
+                                    </ul>
+                                    @endif
                                 </div>
                                 <div class="input-box">
                                     {{ Form::label('eta', 'Eta', ['class' => 'label-input']) }}
                                     {{ Form::text('eta', $user->eta, ['class' => 'input','id' => 'eta','placeholder' => 'Inserisci la tua eta']) }}
+                                    @if ($errors->first('eta'))
+                                    <ul class="errors">
+                                        @foreach ($errors->get('eta') as $message)
+                                        <li>{{ $message }}</li>
+                                        @endforeach
+                                    </ul>
+                                    @endif
                                 </div>
                                 <div class="input-box">
                                     {{ Form::label('genere', 'Genere', ['class' => 'label-input']) }}
@@ -72,26 +104,68 @@
                                 <div class="input-box">
                                     {{ Form::label('via', 'Via', ['class' => 'label-input']) }}
                                     {{ Form::text('via', $user->via, ['class' => 'input','id' => 'via','placeholder' => 'Inserisci una via']) }}
+                                    @if ($errors->first('via'))
+                                    <ul class="errors">
+                                        @foreach ($errors->get('via') as $message)
+                                        <li>{{ $message }}</li>
+                                        @endforeach
+                                    </ul>
+                                    @endif
                                 </div>
                                 <div class="input-box">
                                     {{ Form::label('citta', 'Citta', ['class' => 'label-input']) }}
                                     {{ Form::text('citta', $user->citta, ['class' => 'input','id' => 'citta','placeholder' => 'Inserisci una citta']) }}
+                                    @if ($errors->first('citta'))
+                                    <ul class="errors">
+                                        @foreach ($errors->get('citta') as $message)
+                                        <li>{{ $message }}</li>
+                                        @endforeach
+                                    </ul>
+                                    @endif
                                 </div>
                                 <div class="input-box">
                                     {{ Form::label('numerocivico', 'Numero Civico', ['class' => 'label-input']) }}
                                     {{ Form::text('numerocivico', $user->numerocivico, ['class' => 'input','id' => 'numerocivico','placeholder' => 'Inserisci un numero civico']) }}
+                                    @if ($errors->first('numerocivico'))
+                                    <ul class="errors">
+                                        @foreach ($errors->get('numerocivico') as $message)
+                                        <li>{{ $message }}</li>
+                                        @endforeach
+                                    </ul>
+                                    @endif
                                 </div>
                                 <div class="input-box">
                                     {{ Form::label('cap', 'Cap', ['class' => 'label-input']) }}
                                     {{ Form::text('cap', $user->cap, ['class' => 'input','id' => 'cap','placeholder' => 'Inserisci il cap']) }}
+                                    @if ($errors->first('cap'))
+                                    <ul class="errors">
+                                        @foreach ($errors->get('cap') as $message)
+                                        <li>{{ $message }}</li>
+                                        @endforeach
+                                    </ul>
+                                    @endif
                                 </div>
                                 <div class="input-box">
                                     {{ Form::label('provincia', 'Provincia', ['class' => 'label-input']) }}
                                     {{ Form::text('provincia', $user->provincia, ['class' => 'input','id' => 'provincia','placeholder' => 'Inserisci la provincia']) }}
+                                    @if ($errors->first('provincia'))
+                                    <ul class="errors">
+                                        @foreach ($errors->get('provincia') as $message)
+                                        <li>{{ $message }}</li>
+                                        @endforeach
+                                    </ul>
+                                    @endif
                                 </div>
                                 <div class="input-box">
                                     {{ Form::label('paese', 'Paese', ['class' => 'label-input']) }}
                                     {{ Form::text('paese', $user->paese, ['class' => 'input','id' => 'paese','placeholder' => 'Inserisci un paese']) }}
+                                    @if ($errors->first('paese'))
+                                    <ul class="errors">
+                                        @foreach ($errors->get('paese') as $message)
+                                        <li>{{ $message }}</li>
+                                        @endforeach
+                                    </ul>
+                                    @endif
                                 </div>
                                 @can('isLocatario')
                                 <div class="input-box2">

@@ -63,7 +63,6 @@ class RegisterController extends Controller
             'paese' => ['required', 'string', 'max:20'],
             'provincia' => ['required', 'string', 'max:20'],
             'password' => ['required', 'string', 'max:500', 'same:password_confermation','required_with:password_confermation'],
-           // 'username' => ['required', 'string', 'min:4', 'confirmed'],//campo soggetto a conferma altro campo della form gestito come campo per la verigfica correttezza della password automaticamente
         ]);
     }
 
