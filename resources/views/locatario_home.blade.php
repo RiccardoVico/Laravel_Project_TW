@@ -225,13 +225,14 @@
                         <hr>
                         <button type="submit" class="btn btn-outline-light">Filtra</button>
                         {{ Form::close() }}
+                        <a href = "{{ route('home_locatario') }}" class="mt-4 btn btn-outline-light" type="button">Elimina Filtri</a>
 
+                        
 
                     </div>
                 </div>
             </div>
 
-            <div class="page-section">
                 <div class="container">
                     <div class="col text-center pb-3">
                         @isset($annunci)
@@ -242,7 +243,7 @@
                     </div>
                     @include('layouts/catalogo')
                 </div>
-            </div>
+
         </div>
     </div>
 </div>
