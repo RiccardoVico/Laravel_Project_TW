@@ -359,7 +359,8 @@ form .user-details_profilo .input-box2{
     margin-bottom: 5px;
 }
 .user-details_profilo .input-box input,
-.user-details_profilo .input-box2 input{
+.user-details_profilo .input-box2 input,
+.user-details_profilo .input-box select{
     pointer-events: none;
     height: 45px;
     width: 100%;
@@ -373,7 +374,8 @@ form .user-details_profilo .input-box2{
 }
 
 .user-details_profilo.active .input-box input,
-.user-details_profilo.active .input-box2 input{
+.user-details_profilo.active .input-box2 input,
+.user-details_profilo.active .input-box select{
     pointer-events: all;
 }
 

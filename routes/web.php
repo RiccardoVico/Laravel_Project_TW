@@ -128,16 +128,16 @@ Route::post('/inserisciannuncio', 'LocatoreController@storeAnnuncio')
 Route::get('/richiedenti/{annuncio}', 'PublicController@richiedentiAnnuncio')
         ->name('richiedenti')->middleware('can:isLocatore');
 
-Route::get('/eliminafaq/{idfaq}','adminController@eliminafaq')
+Route::get('/eliminafaq/{idfaq}','AdminController@eliminafaq')
         ->name('eliminafaq')->middleware('can:isAdmin');
 
-Route::get('/modificafaq/{idfaq}', 'adminController@showFaq')
+Route::get('/modificafaq/{idfaq}', 'AdminController@showFaq')
         ->name('modifica_faq')->middleware('can:isAdmin');
 
 Route::view('/modfaq', 'modfaq')
         ->name('modfaq')->middleware('can:isAdmin');
 
-Route::post('/modfaq2/{idfaq}', 'adminController@modificaFaq')
+Route::post('/modfaq2/{idfaq}', 'AdminController@modificaFaq')
         ->name('modfaq2')->middleware('can:isAdmin');
 
 Route::get('messaggistica/{idutente}/{idutente2?}', 'PublicController@showMessaggistica')

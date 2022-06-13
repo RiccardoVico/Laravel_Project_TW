@@ -25,7 +25,11 @@ class AnnRequest extends FormRequest {
      */
     public function rules() {
         return [
-            'nomeannuncio' => 'required|max:25',
+            'nomeannuncio' => [
+                'required',
+                'max:25',
+                Rule::unique('annuncio')->ignore($this->route('annuncio'), 'idannuncio')
+            ],
             'canoneaffitto' => 'required|integer',
             'cap' => 'required|integer',
             'numerocivico' => 'required|integer',

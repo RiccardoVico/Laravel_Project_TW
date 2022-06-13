@@ -99,7 +99,7 @@
                                 </div>
                                 <div class="input-box">
                                     {{ Form::label('genere', 'Genere', ['class' => 'label-input']) }}
-                                    {{ Form::text('genere', $user->genere, ['class' => 'input','id' => 'genere','placeholder' => 'Inserisci il tuo genere(M o F)']) }}
+                                    {{ Form::select('genere', ['M'=>'Maschio', 'F'=>'Femmina'], $user->genere, ['class' => 'input']) }}
                                 </div>
                                 <div class="input-box">
                                     {{ Form::label('via', 'Via', ['class' => 'label-input']) }}

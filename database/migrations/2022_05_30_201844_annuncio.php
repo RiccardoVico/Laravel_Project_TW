@@ -15,7 +15,7 @@ class Annuncio extends Migration
     {
         Schema::create('annuncio',function (Blueprint $table) {
             $table->BigIncrements('idannuncio')->index();
-            $table->string('nomeannuncio', 30);
+            $table->string('nomeannuncio', 30)->unique();
             $table->integer('canoneaffitto');
             $table->string('cap', 5)->nullable();
             $table->string('numerocivico', 5)->nullable();

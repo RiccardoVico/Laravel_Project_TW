@@ -14,6 +14,7 @@
         <ul class="footer-menu">
           <li><a href="{{ route('faq') }}">Faq</a></li>
           <li><a href="{{ asset('images/documentazione.pdf') }}">Documentazione</a></li>
+          <li><a href="{{ asset('images/tweb.pdf.pdf') }}">Mock-up</a></li>
           <li><a href="{{ asset('images/trattamento.txt') }}">Termini e condizioni d'utilizzo</a></li>
           <li><a href="{{ asset('images/privacy.pdf') }}">Privacy policy dati</a></li>
         </ul>

@@ -170,15 +170,17 @@ $(this).closest('div.module').find('div.body img').fadeIn('slow');
         </div>
     </div>
 </div>
-<center>
-    <div class="page-section">
-        <div class="container">
-            <div class="text-center">
-                <div class="subhead">Dove siamo</div>
-                <h2 class="title-section">Vieni a trovarci nella nostra Università</h2>
-            </div>
+<center class="my-5">
+    <div class="container">
+        <div class="text-center">
+            <div class="subhead">Dove siamo</div>
+            <h2 class="title-section">Vieni a trovarci nella nostra Università</h2>
         </div>
     </div>
-    <iframe width="638" height="525" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.it/maps?f=q&amp;source=s_q&amp;hl=it&amp;geocode=&amp;q=Via+Brecce+Bianche,+12,+Ancona&amp;aq=0&amp;sll=41.442726,12.392578&amp;sspn=23.377375,53.657227&amp;ie=UTF8&amp;hq=&amp;hnear=Via+Brecce+Bianche,+12,+60131+Ancona,+Marche&amp;z=14&amp;ll=43.581248,13.515684&amp;output=embed"></iframe><br /><small><a href="http://maps.google.it/maps?f=q&amp;source=embed&amp;hl=it&amp;geocode=&amp;q=Via+Brecce+Bianche,+12,+Ancona&amp;aq=0&amp;sll=41.442726,12.392578&amp;sspn=23.377375,53.657227&amp;ie=UTF8&amp;hq=&amp;hnear=Via+Brecce+Bianche,+12,+60131+Ancona,+Marche&amp;z=14&amp;ll=43.581248,13.515684" style="color:#0000FF;text-align:left">Ingrandisci</a></small>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12124.415066842115!2d13.508879608731952!3d43.584726364726826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132d80233dd931ef%3A0x161719e4f3f5daaf!2sUniversit%C3%A0%20Politecnica%20delle%20Marche%20-%20Facolt%C3%A0%20di%20Ingegneria!5e0!3m2!1sit!2sit!4v1654846454401!5m2!1sit!2sit" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <br />
+    <small>
+        <a href="http://maps.google.it/maps?f=q&amp;source=embed&amp;hl=it&amp;geocode=&amp;q=Via+Brecce+Bianche,+12,+Ancona&amp;aq=0&amp;sll=41.442726,12.392578&amp;sspn=23.377375,53.657227&amp;ie=UTF8&amp;hq=&amp;hnear=Via+Brecce+Bianche,+12,+60131+Ancona,+Marche&amp;z=14&amp;ll=43.581248,13.515684" style="color:#0000FF;text-align:left">Ingrandisci</a>
+    </small>
 </center>
 @endsection
